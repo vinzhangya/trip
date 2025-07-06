@@ -1,0 +1,907 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新加坡4天3晚亲子游行程规划</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.1'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+            animation: drift 20s infinite linear;
+        }
+        
+        @keyframes drift {
+            from { transform: translate(0, 0); }
+            to { transform: translate(40px, 40px); }
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .day-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .day-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+        
+        .day-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+        
+        .day-title {
+            flex: 1;
+        }
+        
+        .day-title h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .day-date {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        .attraction {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .attraction-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .time-badge {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-right: 15px;
+            white-space: nowrap;
+        }
+        
+        .attraction-title {
+            font-size: 1.3rem;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .attraction-image {
+            width: 100%;
+            height: 250px;
+            margin: 15px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .attraction-description {
+            color: #666;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+        
+        .tips {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .tips-title {
+            color: #1976d2;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .meal-recommendation {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .meal-title {
+            color: #e65100;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .preparation {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .preparation h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .preparation-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+        }
+        
+        .preparation-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .preparation-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .preparation-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .check-icon {
+            color: #4caf50;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .day-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .day-section {
+                padding: 20px;
+            }
+            
+            .attraction-image {
+                height: 200px;
+            }
+        }
+        
+        /* SVG Icons */
+        .icon-plane {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+        
+        /* 图片样式 */
+        .image-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f0f0;
+            position: relative;
+        }
+        
+        .image-placeholder {
+            text-align: center;
+            color: #999;
+        }
+        
+        /* 插画风格的景点图 */
+        .illustration {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>新加坡4天3晚亲子游</h1>
+            <p class="subtitle">2025年7月19日 - 7月22日 | 早鸟优化版行程</p>
+        </div>
+        
+        <!-- 行前准备 -->
+        <div class="preparation">
+            <h3>
+                <span class="preparation-icon">✈️</span>
+                行前准备清单
+            </h3>
+            <ul class="preparation-list">
+                <li>
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>酒店预订：</strong>务必预订7月18日晚的酒店，推荐圣淘沙名胜世界节庆酒店或滨海湾泛太平洋酒店
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>机场交通：</strong>预约Grab 7座车或MaxiCab，凌晨抵达需提前安排
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>门票预订：</strong>环球影城快速通关票、滨海湾花园双馆票、动物园门票建议提前在Klook购买
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>必备物品：</strong>防晒霜SPF50+、轻便雨衣、泳衣、舒适步行鞋、充电宝
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>交通卡：</strong>购买Singapore Tourist Pass 3日通票（30新币）或使用银联卡直接刷卡乘车
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- 第一天 -->
+        <div class="day-section">
+            <div class="day-header">
+                <div class="day-number">D1</div>
+                <div class="day-title">
+                    <h2>抵达休整 &amp; 滨海湾经典之夜</h2>
+                    <p class="day-date">7月19日 星期六</p>
+                </div>
+            </div>
+            
+            <div class="attraction">
+                <div class="attraction-header">
+                    <span class="time-badge">03:40 - 12:00</span>
+                    <h3 class="attraction-title">抵达与休息</h3>
+                </div>
+                <div class="attraction-image">
+                    <svg class="illustration" viewBox="0 0 400 250">
+                        <!-- 机场和酒店插画 -->
+                        <rect fill="#E3F2FD" width="400" height="250"></rect>
+                        <!-- 飞机 -->
+                        <path d="M50 50 L100 70 L90 75 Z" fill="#2196F3"></path>
+                        <circle cx="75" cy="60" r="3" fill="#fff"></circle>
+                        <!-- 酒店建筑 -->
+                        <rect x="250" y="100" width="120" height="120" fill="#FFF"></rect>
+                        <rect x="260" y="110" width="20" height="20" fill="#64B5F6"></rect>
+                        <rect x="290" y="110" width="20" height="20" fill="#64B5F6"></rect>
+                        <rect x="320" y="110" width="20" height="20" fill="#64B5F6"></rect>
+                        <rect x="260" y="140" width="20" height="20" fill="#64B5F6"></rect>
+                        <rect x="290" y="140" width="20" height="20" fill="#64B5F6"></rect>
+                        <rect x="320" y="140" width="20" height="20" fill="#64B5F6"></rect>
+                        <rect x="290" y="180" width="30" height="40" fill="#90A4AE"></rect>
+                        <!-- 云朵 -->
+                        <circle cx="100" cy="80" r="15" fill="#fff" opacity="0.8"></circle>
+                        <circle cx="115" cy="80" r="18" fill="#fff" opacity="0.8"></circle>
+                        <circle cx="130" cy="80" r="15" fill="#fff" opacity="0.8"></circle>
+                        <!-- 文字 -->
+                        <text x="200" y="240" text-anchor="middle" fill="#666" font-size="14">樟宜机场 → 酒店休息</text>
+                    </svg>
+                </div>
+                <p class="attraction-description">
+                    凌晨抵达新加坡樟宜机场，乘坐预约的7座车前往酒店。办理入住后充分休息，为接下来的行程储备体力。
+                </p>
+            </div>
+            
+            <div class="meal-recommendation">
+                <p class="meal-title">🍽️ 午餐推荐</p>
+                <p>Suntec City的Food Republic大食代 - 汇集各种本地美食，选择丰富，价格实惠</p>
+            </div>
+            
+            <div class="attraction">
+                <div class="attraction-header">
+                    <span class="time-badge">14:30 - 17:30</span>
+                    <h3 class="attraction-title">鱼尾狮公园 &amp; 滨海湾花园</h3>
+                </div>
+                <div class="attraction-image">
+                    <svg class="illustration" viewBox="0 0 400 250">
+                        <!-- 滨海湾花园插画 -->
+                        <rect fill="#E8F5E9" width="400" height="250"></rect>
+                        <!-- 鱼尾狮 -->
+                        <path d="M80 150 Q70 120 80 100 Q90 90 100 100 Q110 120 100 150 Z" fill="#FFF"></path>
+                        <path d="M85 110 Q90 105 95 110" fill="none" stroke="#666" stroke-width="2"></path>
+                        <path d="M100 130 Q120 125 140 130" fill="none" stroke="#64B5F6" stroke-width="3"></path>
+                        <!-- 超级树 -->
+                        <rect x="220" y="120" width="15" height="80" fill="#8D6E63"></rect>
+                        <ellipse cx="227" cy="100" rx="30" ry="40" fill="#4CAF50"></ellipse>
+                        <rect x="280" y="130" width="12" height="70" fill="#8D6E63"></rect>
+                        <ellipse cx="286" cy="115" rx="25" ry="35" fill="#66BB6A"></ellipse>
+                        <rect x="320" y="140" width="10" height="60" fill="#8D6E63"></rect>
+                        <ellipse cx="325" cy="130" rx="20" ry="30" fill="#81C784"></ellipse>
+                        <!-- 云雾林穹顶 -->
+                        <ellipse cx="150" cy="180" rx="40" ry="60" fill="#B3E5FC" opacity="0.6"></ellipse>
+                        <text x="200" y="230" text-anchor="middle" fill="#666" font-size="14">鱼尾狮 &amp; 滨海湾花园</text>
+                    </svg>
+                </div>
+                <p class="attraction-description">
+                    先到鱼尾狮公园打卡拍照，然后前往滨海湾花园。重点参观"云雾林"和"花穹"两个冷室，在清凉的环境中欣赏来自世界各地的珍稀植物。
+                </p>
+                <div class="tips">
+                    <p class="tips-title">💡 小贴士</p>
+                    <p>冷室内温度约23-25°C，建议带件薄外套。购买双馆联票更划算。</p>
+                </div>
+            </div>
+            
+            <div class="meal-recommendation">
+                <p class="meal-title">🍽️ 晚餐推荐</p>
+                <p>Satay by the Bay (沙爹湾) - 品尝地道沙爹烤串、烤魔鬼鱼和各式海鲜，户外用餐氛围极佳</p>
+            </div>
+            
+            <div class="attraction">
+                <div class="attraction-header">
+                    <span class="time-badge">19:45 - 20:45</span>
+                    <h3 class="attraction-title">擎天树声光秀</h3>
+                </div>
+                <div class="attraction-image">
+                    <svg class="illustration" viewBox="0 0 400 250">
+                        <!-- 夜晚的擎天树 -->
+                        <rect fill="#1A237E" width="400" height="250"></rect>
+                        <!-- 星星 -->
+                        <circle cx="50" cy="30" r="2" fill="#FFF"></circle>
+                        <circle cx="100" cy="50" r="2" fill="#FFF"></circle>
+                        <circle cx="150" cy="20" r="2" fill="#FFF"></circle>
+                        <circle cx="350" cy="40" r="2" fill="#FFF"></circle>
+                        <!-- 擎天树与灯光 -->
+                        <rect x="120" y="120" width="15" height="80" fill="#5C6BC0"></rect>
+                        <ellipse cx="127" cy="100" rx="30" ry="40" fill="#7986CB" opacity="0.8"></ellipse>
+                        <rect x="200" y="130" width="12" height="70" fill="#5C6BC0"></rect>
+                        <ellipse cx="206" cy="115" rx="25" ry="35" fill="#9575CD" opacity="0.8"></ellipse>
+                        <rect x="260" y="140" width="10" height="60" fill="#5C6BC0"></rect>
+                        <ellipse cx="265" cy="130" rx="20" ry="30" fill="#BA68C8" opacity="0.8"></ellipse>
+                        <!-- 光线效果 -->
+                        <path d="M127 100 L100 50 M127 100 L150 50" stroke="#FFD54F" stroke-width="2" opacity="0.6"></path>
+                        <path d="M206 115 L180 60 M206 115 L230 60" stroke="#FF7043" stroke-width="2" opacity="0.6"></path>
+                        <path d="M265 130 L245 80 M265 130 L285 80" stroke="#66BB6A" stroke-width="2" opacity="0.6"></path>
+                        <text x="200" y="230" text-anchor="middle" fill="#FFF" font-size="14">花园狂想曲灯光秀</text>
+                    </svg>
+                </div>
+                <p class="attraction-description">
+                    欣赏每晚19:45和20:45的"花园狂想曲"声光秀。擎天树在音乐的伴奏下闪烁变幻，营造出梦幻般的视觉盛宴。建议提前15分钟到达占据最佳观赏位置。
+                </p>
+            </div>
+        </div>
+        
+        <!-- 第二天 -->
+        <div class="day-section">
+            <div class="day-header">
+                <div class="day-number">D2</div>
+                <div class="day-title">
+                    <h2>圣淘沙岛全日狂欢</h2>
+                    <p class="day-date">7月20日 星期日</p>
+                </div>
+            </div>
+            
+            <div class="attraction">
+                <div class="attraction-header">
+                    <span class="time-badge">08:30 出发</span>
+                    <h3 class="attraction-title">前往圣淘沙岛</h3>
+                </div>
+                <p class="attraction-description">
+                    早餐后准时出发，建议乘坐地铁到港湾站(HarbourFront)，然后选择缆车或轻轨进入圣淘沙岛。缆车可以俯瞰整个港湾美景。
+                </p>
+            </div>
+            
+            <div class="attraction">
+                <div class="attraction-header">
+                    <span class="time-badge">09:00 - 14:00</span>
+                    <h3 class="attraction-title">新加坡环球影城</h3>
+                </div>
+                <div class="attraction-image">
+                    <svg class="illustration" viewBox="0 0 400 250">
+                        <!-- 环球影城 -->
+                        <rect fill="#E3F2FD" width="400" height="250"></rect>
+                        <!-- 地球标志 -->
+                        <circle cx="200" cy="100" r="60" fill="#2196F3"></circle>
+                        <ellipse cx="200" cy="100" rx="60" ry="20" fill="none" stroke="#FFF" stroke-width="4"></ellipse>
+                        <text x="200" y="105" text-anchor="middle" fill="#FFF" font-size="20" font-weight="bold">UNIVERSAL</text>
+                        <!-- 过山车轨道 -->
+                        <path d="M50 180 Q100 140 150 160 Q200 180 250 140 Q300 100 350 150" fill="none" stroke="#FF5722" stroke-width="3"></path>
+                        <!-- 城堡 -->
+                        <rect x="280" y="150" width="60" height="50" fill="#9C27B0"></rect>
+                        <polygon points="280,150 310,120 340,150" fill="#7B1FA2"></polygon>
+                        <rect x="295" y="170" width="10" height="30" fill="#FFD54F"></rect>
+                        <rect x="315" y="170" width="10" height="30" fill="#FFD54F"></rect>
+                        <text x="200" y="230" text-anchor="middle" fill="#666" font-size="14">环球影城主题乐园</text>
+                    </svg>
+                </div>
+                <p class="attraction-description">
+                    10点开园即入场，直奔变形金刚3D对决、木乃伊复仇记等热门项目。建议按逆时针方向游玩：科幻城市→古埃及→失落的世界→遥远王国→马达加斯加。
+                </p>
+                <div class="tips">
+                    <p class="tips-title">💡 游玩攻略</p>
+                    <p>• 必玩项目：变形金刚、木乃伊、侏罗纪河流探险、双轨过山车<br>
+                    • 表演推荐：水世界表演（检查时间表）<br>
+                    • 如购买Express Pass，可节省50%以上排队时间</p>
+                </div>
+            </div>
+            
+            <div class="meal-recommendation">
+                <p class="meal-title">🍽️ 午餐推荐</p>
+                <p>马来西亚美食街 - 槟城虾面、炒粿条、沙爹、椰浆饭等地道美食，价格实惠</p>
+            </div>
+            
+            <div class="attraction">
+                <div class="attraction-header">
+                    <span class="time-badge">15:00 - 18:00</span>
+                    <h3 class="attraction-title">水上探险乐园</h3>
+                </div>
+                <div class="attraction-image">
+                    <svg class="illustration" viewBox="0 0 400 250">
+                        <!-- 水上乐园 -->
+                        <rect fill="#E1F5FE" width="400" height="250"></rect>
+                        <!-- 太阳 -->
+                        <circle cx="350" cy="50" r="30" fill="#FFD54F"></circle>
+                        <!-- 滑水道 -->
+                        <path d="M100 50 Q120 100 100 150 Q80 180 100 200" fill="none" stroke="#0288D1" stroke-width="8"></path>
+                        <path d="M150 60 Q170 110 150 160 Q130 190 150 210" fill="none" stroke="#0277BD" stroke-width="8"></path>
+                        <!-- 泳池 -->
+                        <ellipse cx="250" cy="180" rx="80" ry="30" fill="#4FC3F7"></ellipse>
+                        <!-- 棕榈树 -->
+                        <rect x="320" y="140" width="10" height="40" fill="#8D6E63"></rect>
+                        <path d="M325 140 Q310 120 325 100 Q340 120 325 140" fill="#4CAF50"></path>
+                        <!-- 游泳圈 -->
+                        <circle cx="250" cy="180" r="15" fill="none" stroke="#FF5722" stroke-width="4"></circle>
+                        <text x="200" y="230" text-anchor="middle" fill="#666" font-size="14">水上探险乐园</text>
+                    </svg>
+                </div>
+                <p class="attraction-description">
+                    核心体验是"彩虹礁游"浮潜项目，可以近距离观赏2万多条热带鱼。之后享受漂流河、各式滑水道。记得带防水手机套拍照。
+                </p>
+                <div class="tips">
+                    <p class="tips-title">💡 小贴士</p>
+                    <p>• 储物柜租金约10-20新币<br>
+                    • 建议穿着泳衣入园，节省更换时间<br>
+                    • 浮潜装备乐园提供，无需自带</p>
+                </div>
+            </div>
+            
+            <div class="attraction">
+                <div class="attraction-header">
+                    <span class="time-badge">18:00 - 20:00</span>
+                    <h3 class="attraction-title">巴拉望海滩日落</h3>
+                </div>
+                <div class="attraction-image">
+                    <svg class="illustration" viewBox="0 0 400 250">
+                        <!-- 海滩日落 -->
+                        <rect fill="#FF6F61" width="400" height="125"></rect>
+                        <rect fill="#FFB74D" y="125" width="400" height="125"></rect>
+                        <!-- 夕阳 -->
+                        <circle cx="200" cy="125" r="40" fill="#FF5722"></circle>
+                        <!-- 吊桥 -->
+                        <line x1="100" y1="140" x2="300" y2="140" stroke="#8D6E63" stroke-width="2"></line>
+                        <line x1="120" y1="100" x2="120" y2="140" stroke="#8D6E63" stroke-width="2"></line>
+                        <line x1="280" y1="100" x2="280" y2="140" stroke="#8D6E63" stroke-width="2"></line>
+                        <path d="M120 100 Q200 90 280 100" fill="none" stroke="#8D6E63" stroke-width="1"></path>
+                        <!-- 沙滩 -->
+                        <ellipse cx="200" cy="200" rx="150" ry="40" fill="#FFE0B2"></ellipse>
+                        <!-- 椰子树 -->
+                        <rect x="50" y="160" width="8" height="30" fill="#8D6E63"></rect>
+                        <path d="M54 160 Q45 150 54 140 Q63 150 54 160" fill="#4CAF50"></path>
+                        <text x="200" y="230" text-anchor="middle" fill="#666" font-size="14">巴拉望海滩</text>
+                    </svg>
+                </div>
+                <p class="attraction-description">
+                    亚洲大陆最南端，通过吊桥可到达小岛。沙质细腻，适合孩子玩沙。傍晚时分的日落景色绝美，是拍照的最佳时机。
+                </p>
+            </div>
+            
+            <div class="meal-recommendation">
+                <p class="meal-title">🍽️ 晚餐推荐</p>
+                <p>Coastes海滩餐厅 - 在沙滩上用餐，提供西餐和亚洲料理，氛围轻松，孩子可以继续在沙滩玩耍</p>
+            </div>
+        </div>
+        
+        <!-- 第三天 -->
+        <div class="day-section">
+            <div class="day-header">
+                <div class="day-number">D3</div>
+                <div class="day-title">
+                    <h2>动物奇遇 &amp; 文化探索</h2>
+                    <p class="day-date">7月21日 星期一</p>
+                </div>
+            </div>
+            
+            <div class="attraction">
+                <div class="attraction-header">
+                    <span class="time-badge">08:00 出发</span>
+                    <h3 class="attraction-title">前往新加坡动物园</h3>
+                </div>
+                <p class="attraction-description">
+                    建议打车前往，车程约30分钟。也可以乘坐地铁到卡迪站(Khatib)，再转乘Mandai Express。
+                </p>
+            </div>
+            
+            <div class="attraction">
+                <div class="attraction-header">
+                    <span class="time-badge">09:00 - 13:00</span>
+                    <h3 class="attraction-title">新加坡动物园</h3>
+                </div>
+                <div class="attraction-image">
+                    <svg class="illustration" viewBox="0 0 400 250">
+                        <!-- 动物园场景 -->
+                        <rect fill="#E8F5E9" width="400" height="250"></rect>
+                        <!-- 树木背景 -->
+                        <circle cx="50" cy="100" r="40" fill="#66BB6A" opacity="0.7"></circle>
+                        <circle cx="100" cy="90" r="35" fill="#4CAF50" opacity="0.7"></circle>
+                        <circle cx="350" cy="95" r="38" fill="#66BB6A" opacity="0.7"></circle>
+                        <!-- 大象 -->
+                        <ellipse cx="150" cy="150" rx="40" ry="35" fill="#9E9E9E"></ellipse>
+                        <ellipse cx="120" cy="165" rx="8" ry="20" fill="#9E9E9E"></ellipse>
+                        <ellipse cx="180" cy="165" rx="8" ry="20" fill="#9E9E9E"></ellipse>
+                        <path d="M110 140 Q100 160 110 180" fill="none" stroke="#9E9E9E" stroke-width="6"></path>
+                        <circle cx="135" cy="140" r="3" fill="#000"></circle>
+                        <!-- 长颈鹿 -->
+                        <rect x="250" y="140" width="15" height="50" fill="#FFB74D"></rect>
+                        <ellipse cx="257" cy="125" rx="12" ry="18" fill="#FFB74D"></ellipse>
+                        <rect x="245" y="170" width="8" height="25" fill="#FFB74D"></rect>
+                        <rect x="267" y="170" width="8" height="25" fill="#FFB74D"></rect>
+                        <circle cx="257" cy="110" r="2" fill="#8D6E63"></circle>
+                        <circle cx="257" cy="105" r="2" fill="#8D6E63"></circle>
+                        <circle cx="252" cy="120" r="2" fill="#000"></circle>
+                        <circle cx="262" cy="120" r="2" fill="#000"></circle>
+                        <!-- 猴子 -->
+                        <circle cx="320" cy="130" r="15" fill="#8D6E63"></circle>
+                        <ellipse cx="320" cy="145" rx="12" ry="15" fill="#8D6E63"></ellipse>
+                        <path d="M308 145 Q300 150 305 160" fill="none" stroke="#8D6E63" stroke-width="3"></path>
+                        <circle cx="315" cy="128" r="2" fill="#000"></circle>
+                        <circle cx="325" cy="128" r="2" fill="#000"></circle>
+                        <text x="200" y="230" text-anchor="middle" fill="#666" font-size="14">新加坡动物园</text>
+                    </svg>
+                </div>
+                <p class="attraction-description">
+                    开放式园区设计，动物生活在接近自然的环境中。推荐先乘坐导览车了解园区，然后重点参观：白虎王国、灵长类王国、亚洲大象园。别错过10:30的大象表演。
+                </p>
+                <div class="tips">
+                    <p class="tips-title">💡 游览建议</p>
+                    <p>• 早上动物最活跃，建议9点开园即入<br>
+                    • 可以购买动物饲料，体验喂食长颈鹿<br>
+                    • 带防蚊液，园区蚊虫较多</p>
+                </div>
+            </div>
+            
+            <div class="meal-recommendation">
+                <p class="meal-title">🍽️ 午餐推荐</p>
+                <p>阿明餐厅 (Ah Meng Restaurant) - 动物园内的餐厅，提供本地和西式美食，可以边用餐边欣赏园景</p>
+            </div>
+            
+            <div class="attraction">
+                <div class="attraction-header">
+                    <span class="time-badge">14:30 - 16:00</span>
+                    <h3 class="attraction-title">哈芝巷 &amp; 甘榜格南</h3>
+                </div>
+                <div class="attraction-image">
+                    <svg class="illustration" viewBox="0 0 400 250">
+                        <!-- 哈芝巷街景 -->
+                        <rect fill="#FFF3E0" width="400" height="250"></rect>
+                        <!-- 彩色店铺 -->
+                        <rect x="50" y="100" width="60" height="100" fill="#E91E63"></rect>
+                        <rect x="55" y="180" width="20" height="20" fill="#880E4F"></rect>
+                        <rect x="85" y="180" width="20" height="20" fill="#880E4F"></rect>
+                        <polygon points="50,100 80,70 110,100" fill="#AD1457"></polygon>
+                        
+                        <rect x="120" y="90" width="60" height="110" fill="#9C27B0"></rect>
+                        <rect x="125" y="175" width="20" height="25" fill="#4A148C"></rect>
+                        <rect x="155" y="175" width="20" height="25" fill="#4A148C"></rect>
+                        <polygon points="120,90 150,60 180,90" fill="#6A1B9A"></polygon>
+                        
+                        <rect x="190" y="95" width="60" height="105" fill="#00BCD4"></rect>
+                        <rect x="195" y="175" width="20" height="25" fill="#006064"></rect>
+                        <rect x="225" y="175" width="20" height="25" fill="#006064"></rect>
+                        <polygon points="190,95 220,65 250,95" fill="#0097A7"></polygon>
+                        
+                        <!-- 涂鸦墙 -->
+                        <rect x="260" y="100" width="80" height="100" fill="#FFF"></rect>
+                        <text x="300" y="140" text-anchor="middle" fill="#FF5722" font-size="20" transform="rotate(-10 300 140)">ART</text>
+                        <circle cx="280" cy="170" r="15" fill="none" stroke="#4CAF50" stroke-width="3"></circle>
+                        
+                        <!-- 清真寺圆顶 -->
+                        <ellipse cx="350" cy="150" rx="30" ry="40" fill="#FFD54F"></ellipse>
+                        <rect x="335" y="150" width="30" height="50" fill="#FFC107"></rect>
+                        
+                        <text x="200" y="230" text-anchor="middle" fill="#666" font-size="14">哈芝巷艺术街区</text>
+                    </svg>
+                </div>
+                <p class="attraction-description">
+                    新加坡最文艺的街区，狭窄的巷子两旁布满色彩缤纷的涂鸦和精品小店。甘榜格南是马来文化区，可以参观苏丹清真寺（外观），感受多元文化融合。
+                </p>
+            </div>
+            
+            <div class="attraction">
+                <div class="attraction-header">
+                    <span class="time-badge">16:30 - 18:00</span>
+                    <h3 class="attraction-title">牛车水（唐人街）</h3>
+                </div>
+                <div class="attraction-image">
+                    <svg class="illustration" viewBox="0 0 400 250">
+                        <!-- 牛车水街景 -->
+                        <rect fill="#FFEBEE" width="400" height="250"></rect>
+                        <!-- 中式建筑 -->
+                        <rect x="50" y="120" width="70" height="80" fill="#D32F2F"></rect>
+                        <polygon points="40,120 85,80 130,120" fill="#B71C1C"></polygon>
+                        <rect x="60" y="170" width="15" height="30" fill="#FFC107"></rect>
+                        <rect x="95" y="170" width="15" height="30" fill="#FFC107"></rect>
+                        <path d="M85 90 Q85 85 85 80" stroke="#FFD54F" stroke-width="3"></path>
+                        
+                        <!-- 佛牙寺 -->
+                        <rect x="150" y="100" width="100" height="100" fill="#F44336"></rect>
+                        <polygon points="140,100 200,60 260,100" fill="#C62828"></polygon>
+                        <rect x="175" y="120" width="50" height="80" fill="#B71C1C"></rect>
+                        <rect x="185" y="170" width="30" height="30" fill="#FFC107"></rect>
+                        <circle cx="200" cy="140" r="15" fill="#FFD54F"></circle>
+                        
+                        <!-- 灯笼装饰 -->
+                        <ellipse cx="100" cy="50" rx="10" ry="15" fill="#FF5722"></ellipse>
+                        <ellipse cx="150" cy="45" rx="10" ry="15" fill="#FF5722"></ellipse>
+                        <ellipse cx="200" cy="50" rx="10" ry="15" fill="#FF5722"></ellipse>
+                        <ellipse cx="250" cy="45" rx="10" ry="15" fill="#FF5722"></ellipse>
+                        
+                        <!-- 小贩推车 -->
+                        <rect x="280" y="160" width="40" height="30" fill="#795548"></rect>
+                        <circle cx="285" cy="195" r="5" fill="#424242"></circle>
+                        <circle cx="315" cy="195" r="5" fill="#424242"></circle>
+                        <rect x="285" y="150" width="30" height="10" fill="#FF9800"></rect>
+                        
+                        <text x="200" y="230" text-anchor="middle" fill="#666" font-size="14">牛车水唐人街</text>
+                    </svg>
+                </div>
+                <p class="attraction-description">
+                    新加坡的唐人街，可以参观佛牙寺龙华院，逛逛传统店铺。牛车水原貌馆可以了解早期华人移民的生活。街道上的装饰很有中国特色，是购买纪念品的好地方。
+                </p>
+            </div>
+            
+            <div class="meal-recommendation">
+                <p class="meal-title">🍽️ 晚餐推荐（三选一）</p>
+                <p>• 麦士威熟食中心 - 天天海南鸡饭，必尝的国民美食<br>
+                • 珍宝海鲜 - 辣椒螃蟹和麦片虾，新加坡招牌菜<br>
+                • 牛车水美食街 - 露天大排档，各种小吃应有尽有</p>
+            </div>
+        </div>
+        
+        <!-- 第四天 -->
+        <div class="day-section">
+            <div class="day-header">
+                <div class="day-number">D4</div>
+                <div class="day-title">
+                    <h2>星耀樟宜告别日</h2>
+                    <p class="day-date">7月22日 星期二</p>
+                </div>
+            </div>
+            
+            <div class="attraction">
+                <div class="attraction-header">
+                    <span class="time-badge">08:30</span>
+                    <h3 class="attraction-title">酒店退房</h3>
+                </div>
+                <p class="attraction-description">
+                    办理退房手续，确保所有行李都已打包完毕。建议在酒店用完早餐后再出发。
+                </p>
+            </div>
+            
+            <div class="attraction">
+                <div class="attraction-header">
+                    <span class="time-badge">09:00 - 13:00</span>
+                    <h3 class="attraction-title">星耀樟宜</h3>
+                </div>
+                <div class="attraction-image">
+                    <svg class="illustration" viewBox="0 0 400 250">
+                        <!-- 星耀樟宜 -->
+                        <rect fill="#E8EAF6" width="400" height="250"></rect>
+                        <!-- 建筑外观 -->
+                        <ellipse cx="200" cy="200" rx="150" ry="50" fill="#C5CAE9" opacity="0.5"></ellipse>
+                        <!-- 雨林漩涡 -->
+                        <ellipse cx="200" cy="150" rx="60" ry="100" fill="#E3F2FD"></ellipse>
+                        <path d="M200 50 L200 150" stroke="#2196F3" stroke-width="40" opacity="0.6"></path>
+                        <path d="M200 80 L200 150" stroke="#1976D2" stroke-width="30" opacity="0.6"></path>
+                        <path d="M200 110 L200 150" stroke="#0D47A1" stroke-width="20" opacity="0.6"></path>
+                        <!-- 环形步道 -->
+                        <ellipse cx="200" cy="100" rx="100" ry="30" fill="none" stroke="#4CAF50" stroke-width="3"></ellipse>
+                        <ellipse cx="200" cy="120" rx="90" ry="25" fill="none" stroke="#66BB6A" stroke-width="3"></ellipse>
+                        <!-- 植物装饰 -->
+                        <circle cx="120" cy="90" r="15" fill="#4CAF50" opacity="0.7"></circle>
+                        <circle cx="280" cy="95" r="18" fill="#66BB6A" opacity="0.7"></circle>
+                        <circle cx="150" cy="130" r="12" fill="#81C784" opacity="0.7"></circle>
+                        <circle cx="250" cy="125" r="14" fill="#4CAF50" opacity="0.7"></circle>
+                        <!-- 玻璃穹顶线条 -->
+                        <path d="M50 50 Q200 20 350 50" fill="none" stroke="#9FA8DA" stroke-width="2"></path>
+                        <path d="M70 70 Q200 40 330 70" fill="none" stroke="#9FA8DA" stroke-width="2"></path>
+                        
+                        <text x="200" y="230" text-anchor="middle" fill="#666" font-size="14">星耀樟宜 - 雨林漩涡</text>
+                    </svg>
+                </div>
+                <p class="attraction-description">
+                    世界最高室内瀑布"雨林漩涡"震撼人心。星空花园有天空之网、树篱迷宫、镜子迷宫等游乐设施。建议先寄存行李（B2层），轻松游玩。
+                </p>
+                <div class="tips">
+                    <p class="tips-title">💡 游玩顺序</p>
+                    <p>1. 先到5楼拍摄雨林漩涡全景<br>
+                    2. 购买星空花园套票，体验各项设施<br>
+                    3. 留出1小时用餐和购物时间</p>
+                </div>
+            </div>
+            
+            <div class="meal-recommendation">
+                <p class="meal-title">🍽️ 午餐推荐</p>
+                <p>• Shake Shack - 网红汉堡店，奶昔必点<br>
+                • 松发肉骨茶 - 最后品尝新加坡特色<br>
+                • A&amp;W - 怀旧美式快餐，漂浮冰淇淋是招牌</p>
+            </div>
+            
+            <div class="attraction">
+                <div class="attraction-header">
+                    <span class="time-badge">14:00 - 16:00</span>
+                    <h3 class="attraction-title">值机与购物</h3>
+                </div>
+                <div class="attraction-image">
+                    <svg class="illustration" viewBox="0 0 400 250">
+                        <!-- 机场购物 -->
+                        <rect fill="#FFF3E0" width="400" height="250"></rect>
+                        <!-- 免税店 -->
+                        <rect x="50" y="100" width="80" height="100" fill="#FFF"></rect>
+                        <rect x="55" y="105" width="70" height="40" fill="#FF5722" opacity="0.3"></rect>
+                        <text x="90" y="130" text-anchor="middle" fill="#D84315" font-size="16">DUTY FREE</text>
+                        
+                        <!-- 购物袋 -->
+                        <path d="M160 150 L160 180 L190 180 L190 150" fill="none" stroke="#795548" stroke-width="3"></path>
+                        <path d="M165 150 Q175 140 185 150" fill="none" stroke="#795548" stroke-width="3"></path>
+                        
+                        <!-- 斑斓蛋糕盒 -->
+                        <rect x="220" y="140" width="60" height="40" fill="#4CAF50"></rect>
+                        <text x="250" y="165" text-anchor="middle" fill="#FFF" font-size="12">Bengawan</text>
+                        
+                        <!-- 飞机图标 -->
+                        <path d="M320 120 L360 130 L350 135 Z" fill="#2196F3"></path>
+                        <path d="M335 127 L345 150 L340 150 Z" fill="#1976D2"></path>
+                        
+                        <!-- 时钟 -->
+                        <circle cx="320" cy="180" r="20" fill="none" stroke="#666" stroke-width="2"></circle>
+                        <line x1="320" y1="180" x2="320" y2="170" stroke="#666" stroke-width="2"></line>
+                        <line x1="320" y1="180" x2="328" y2="180" stroke="#666" stroke-width="2"></line>
+                        
+                        <text x="200" y="230" text-anchor="middle" fill="#666" font-size="14">机场购物时光</text>
+                    </svg>
+                </div>
+                <p class="attraction-description">
+                    取回行李后前往相应航站楼办理值机。过关后在免税店购买伴手礼：Bengawan Solo斑斓蛋糕、TWG茶叶、肉骨茶料包等都是不错的选择。
+                </p>
+            </div>
+            
+            <div class="attraction">
+                <div class="attraction-header">
+                    <span class="time-badge">16:40</span>
+                    <h3 class="attraction-title">准时登机</h3>
+                </div>
+                <p class="attraction-description">
+                    提前到达登机口，结束愉快的新加坡之旅。记得检查是否有遗漏的物品，确保所有购买的商品都已妥善打包。
+                </p>
+            </div>
+        </div>
+        
+        <!-- 特别提醒 -->
+        <div class="preparation">
+            <h3>
+                <span class="preparation-icon">📌</span>
+                行程小贴士
+            </h3>
+            <ul class="preparation-list">
+                <li>
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>天气应对：</strong>7月多阵雨，建议随身携带雨具。室内外温差大，准备薄外套
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>亲子建议：</strong>根据孩子体力随时调整行程，保持充足饮水，准备小零食
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>拍照技巧：</strong>早上光线最好，建议重要景点早去。手机充电宝必备
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>预算参考：</strong>餐饮人均15-30新币/餐，打车市区内15-25新币/次
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</body></html>
