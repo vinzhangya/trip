@@ -3,432 +3,1313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新加坡4天3晚亲子游行程规划（索菲特酒店版）</title>
+    <title>新加坡4天3晚亲子游 - 详细行程安排</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f4f8;
+        }
+        
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        h1, h2, h3, h4 {
-            color: #0056b3;
-            border-bottom: 2px solid #dee2e6;
-            padding-bottom: 10px;
-            margin-top: 30px;
+        
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
-        h1 { font-size: 2em; text-align: center; border: none; }
-        h2 { font-size: 1.8em; }
-        h3 { font-size: 1.5em; border-bottom: 1px solid #e9ecef; }
-        h4 { font-size: 1.2em; border: none; color: #17a2b8; }
-        .intro, .summary {
-            background-color: #e9f7ff;
-            border-left: 5px solid #007bff;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
-        .day-block {
-            border: 1px solid #ddd;
-            padding: 20px;
+        
+        .header h1 {
+            font-size: 3rem;
             margin-bottom: 20px;
-            border-radius: 8px;
-            background: #fff;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        .day-block h2 {
-            background-color: #0056b3;
-            color: #fff;
-            padding: 10px 15px;
-            margin: -20px -20px 20px -20px;
-            border-radius: 8px 8px 0 0;
-            font-size: 1.6em;
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
         }
+        
+        .overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .overview-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .overview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .overview-card h3 {
+            color: #2a5298;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .overview-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .day-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .day-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #e8f0fe;
+        }
+        
+        .day-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-right: 30px;
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
+        }
+        
+        .day-info h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .day-info p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+        
         .timeline {
             position: relative;
-            list-style: none;
-            padding-left: 20px;
+            padding-left: 40px;
         }
-        .timeline:before {
+        
+        .timeline::before {
             content: '';
             position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
+            left: 10px;
+            top: 10px;
+            bottom: 10px;
             width: 2px;
-            background: #007bff;
+            background: #e0e0e0;
         }
-        .timeline li {
-            margin-bottom: 20px;
+        
+        .timeline-item {
             position: relative;
-            padding-left: 25px;
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
         }
-        .timeline li .time-icon {
+        
+        .timeline-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+        
+        .timeline-item::before {
+            content: '';
             position: absolute;
-            left: -11px;
-            top: 0;
-            width: 24px;
-            height: 24px;
-            background: #fff;
-            border: 2px solid #007bff;
+            left: -36px;
+            top: 30px;
+            width: 16px;
+            height: 16px;
+            background: #f5576c;
             border-radius: 50%;
-            text-align: center;
-            line-height: 22px;
-            font-size: 1.2em;
+            box-shadow: 0 0 0 4px white, 0 0 0 6px #f5576c;
         }
-        .timeline li h4 {
-            margin-top: 0;
-            font-size: 1.1em;
-            color: #0056b3;
+        
+        .time-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
         }
-        .highlight {
-            background-color: #fff3cd;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ffeeba;
+        
+        .location-tag {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-left: 10px;
         }
-        .tip {
-            background-color: #d1ecf1;
-            padding: 15px;
-            border-left: 5px solid #0c5460;
+        
+        .activity-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .activity-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .transport-section {
+            background: #e8f4f8;
+            border-radius: 12px;
+            padding: 20px;
             margin: 15px 0;
-            border-radius: 5px;
+            border-left: 4px solid #2196f3;
         }
-        .warning {
-            background-color: #f8d7da;
-            padding: 15px;
-            border-left: 5px solid #721c24;
-            margin: 15px 0;
-            border-radius: 5px;
+        
+        .transport-section h4 {
+            color: #1565c0;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
         }
-        .grid-container {
+        
+        .transport-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        .transport-options {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
+            margin-top: 15px;
         }
-        .grid-item {
-            background: #f8f9fa;
+        
+        .transport-option {
+            background: white;
             padding: 15px;
-            border-radius: 5px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            position: relative;
         }
-        .grid-item h4 {
-            margin-top: 0;
+        
+        .transport-option.recommended {
+            border: 2px solid #2196f3;
+            background: #f3f9ff;
         }
-        @media (max-width: 600px) {
+        
+        .transport-option.recommended::before {
+            content: "推荐";
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background: #2196f3;
+            color: white;
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .transport-option h5 {
+            color: #1976d2;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .transport-option p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 5px 0;
+        }
+        
+        .tips-box {
+            background: #fff3e0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .tips-box h4 {
+            color: #e65100;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tips-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tips-box li {
+            padding: 5px 0;
+            color: #666;
+        }
+        
+        .tips-box li::before {
+            content: "•";
+            color: #ff9800;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .meal-section {
+            background: #fce4ec;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #e91e63;
+        }
+        
+        .meal-section h4 {
+            color: #c2185b;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .highlight-tag {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+        
+        .magic-tag {
+            background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%);
+        }
+        
+        .summary-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+        
+        .summary-section h3 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        
+        .summary-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .summary-item .icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .summary-item .label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .summary-item .value {
+            color: #2e7d32;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .total-budget {
+            background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .total-budget h2 {
+            color: #e65100;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        
+        .budget-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .budget-item {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .budget-item h4 {
+            color: #f57c00;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .budget-item .amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .budget-item .desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .final-tips {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .final-tips h3 {
+            color: #2196f3;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .final-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .final-tips li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #666;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .final-tips li:last-child {
+            border-bottom: none;
+        }
+        
+        .final-tips li::before {
+            content: "✓";
+            color: #4caf50;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
             .container {
                 padding: 10px;
             }
-            h1 { font-size: 1.8em; }
-            h2 { font-size: 1.5em; }
-            .day-block h2 { font-size: 1.4em; }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .day-container {
+                padding: 20px;
+            }
+            
+            .timeline {
+                padding-left: 20px;
+            }
+            
+            .timeline-item {
+                padding: 15px;
+            }
+            
+            .transport-options {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <h1>新加坡4天3晚亲子游行程规划（索菲特酒店版）</h1>
-    <p style="text-align:center; color: #6c757d;">2025年7月19日 - 7月22日 | 索菲特酒店版</p>
-
-    <div class="intro">
-        <p><strong>📢 行程优化调整 (已按您的要求更新)</strong></p>
-        <ul>
-            <li>🏨 全程入住市中心索菲特酒店，避免换酒店麻烦</li>
-            <li>🎢 将原计划的活动顺序调整，以满足新的游玩组合</li>
-            <li>📍 市中心住宿，去各景点都方便，节省交通时间</li>
-        </ul>
-    </div>
-
-    <h2>🏨 新加坡索菲特酒店 - 全程住宿</h2>
-    <p>Sofitel Singapore City Centre - 五星级豪华酒店，2024年新开业，位置绝佳！</p>
-    <div class="grid-container">
-        <div class="grid-item">
-            <h4>📍 黄金地段</h4>
-            <p>达士岭地铁站上盖（直通）<br>步行5分钟到牛车水<br>15分钟到滨海湾<br>到圣淘沙仅20分钟车程</p>
+    <div class="container">
+        <div class="header">
+            <h1>新加坡4天3晚亲子游</h1>
+            <p>2025年7月19日 - 7月22日 | 索菲特城市中心酒店</p>
         </div>
-        <div class="grid-item">
-            <h4>🎯 酒店设施</h4>
-            <p>35楼无边泳池俯瞰全城<br>儿童俱乐部和游戏室<br>24小时健身中心<br>多家餐厅包括米其林</p>
+        
+        <div class="overview">
+            <div class="overview-card">
+                <h3>🌅 第一天</h3>
+                <p>抵达新加坡<br>滨海湾区域<br>城市风光初体验</p>
+            </div>
+            <div class="overview-card">
+                <h3>💦 第二天</h3>
+                <p>水上探险乐园<br>国立大学参观<br>夜间野生动物园</p>
+            </div>
+            <div class="overview-card">
+                <h3>🎢 第三天</h3>
+                <p>环球影城<br>哈利波特魔法展<br>市区晚餐</p>
+            </div>
+            <div class="overview-card">
+                <h3>🛍️ 第四天</h3>
+                <p>牛车水购物<br>星耀樟宜<br>返程航班</p>
+            </div>
         </div>
-        <div class="grid-item">
-            <h4>🏠 家庭优势</h4>
-            <p>豪华家庭房45平米<br>儿童欢迎礼包<br>12岁以下儿童免费早餐<br>可加床或婴儿床</p>
+
+        <!-- 第一天 -->
+        <div class="day-container">
+            <div class="day-header">
+                <div class="day-number">D1</div>
+                <div class="day-info">
+                    <h2>抵达新加坡 · 滨海湾初体验</h2>
+                    <p>7月19日 星期六</p>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time-badge">11:00</span>
+                    <span class="location-tag">📍 樟宜机场</span>
+                    <h3 class="activity-title">抵达新加坡樟宜机场</h3>
+                    <p class="activity-description">
+                        办理入境手续，领取行李。樟宜机场设施完善，有儿童游乐区和母婴室。
+                    </p>
+                    
+                    <div class="tips-box">
+                        <h4>💡 入境贴士</h4>
+                        <ul>
+                            <li>准备好护照和入境卡（飞机上填写）</li>
+                            <li>机场有免费WiFi，密码在信息柜台获取</li>
+                            <li>可在机场购买交通卡（EZ-Link）</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="transport-section">
+                        <h4><span class="transport-icon">🚗</span>机场到酒店交通</h4>
+                        <div class="transport-options">
+                            <div class="transport-option recommended">
+                                <h5>打车</h5>
+                                <p>⏱️ 时长：25分钟</p>
+                                <p>💰 费用：25-30新币</p>
+                                <p>📍 上车点：到达大厅外</p>
+                            </div>
+                            <div class="transport-option">
+                                <h5>地铁</h5>
+                                <p>⏱️ 时长：45分钟</p>
+                                <p>💰 费用：3新币/人</p>
+                                <p>🚇 绿线转红线</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">12:30-14:00</span>
+                    <span class="location-tag">📍 索菲特城市中心</span>
+                    <h3 class="activity-title">酒店入住 & 午餐</h3>
+                    <p class="activity-description">
+                        办理入住，稍作休息。酒店位于市中心，交通便利，楼下就是Tanjong Pagar地铁站。
+                    </p>
+                    
+                    <div class="meal-section">
+                        <h4>🍽️ 午餐推荐</h4>
+                        <ul>
+                            <li>酒店餐厅：方便快捷</li>
+                            <li>Maxwell美食中心（步行5分钟）：天天海南鸡饭</li>
+                            <li>老巴刹美食广场（步行10分钟）：沙爹、叻沙</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">14:30-16:00</span>
+                    <span class="location-tag">📍 滨海湾</span>
+                    <span class="highlight-tag">适合儿童</span>
+                    <h3 class="activity-title">鱼尾狮公园</h3>
+                    <p class="activity-description">
+                        新加坡标志性景点，可以拍摄鱼尾狮喷水的经典照片。公园不大，适合带孩子轻松游览。
+                    </p>
+                    
+                    <div class="transport-section">
+                        <h4><span class="transport-icon">🚶</span>酒店到鱼尾狮公园</h4>
+                        <div class="transport-options">
+                            <div class="transport-option recommended">
+                                <h5>步行</h5>
+                                <p>⏱️ 时长：20分钟</p>
+                                <p>💰 费用：免费</p>
+                                <p>🚶 沿河边走风景好</p>
+                            </div>
+                            <div class="transport-option">
+                                <h5>地铁</h5>
+                                <p>⏱️ 时长：15分钟</p>
+                                <p>💰 费用：1.5新币/人</p>
+                                <p>🚇 绿线到Raffles Place</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">16:30-19:00</span>
+                    <span class="location-tag">📍 滨海湾</span>
+                    <span class="highlight-tag">适合儿童</span>
+                    <h3 class="activity-title">滨海湾花园</h3>
+                    <p class="activity-description">
+                        参观超级树和花穹。下午时分温度适宜，花穹内有空调，是避暑的好地方。
+                    </p>
+                    
+                    <div class="transport-section">
+                        <h4><span class="transport-icon">🚶</span>鱼尾狮到滨海湾花园</h4>
+                        <div class="transport-options">
+                            <div class="transport-option recommended">
+                                <h5>步行</h5>
+                                <p>⏱️ 时长：15分钟</p>
+                                <p>💰 费用：免费</p>
+                                <p>🌉 经过螺旋桥</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tips-box">
+                        <h4>💡 游览建议</h4>
+                        <ul>
+                            <li>花穹门票：成人28新币，儿童15新币</li>
+                            <li>超级树空中走道：成人8新币，儿童5新币</li>
+                            <li>19:45和20:45有免费灯光秀</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">19:30-21:00</span>
+                    <span class="location-tag">📍 滨海湾</span>
+                    <h3 class="activity-title">晚餐 & 返回酒店</h3>
+                    
+                    <div class="meal-section">
+                        <h4>🍽️ 晚餐推荐</h4>
+                        <ul>
+                            <li>老巴刹美食广场：各种当地美食</li>
+                            <li>珍宝海鲜（克拉码头）：辣椒蟹</li>
+                            <li>滨海湾金沙商场：多种选择</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="transport-section">
+                        <h4><span class="transport-icon">🚕</span>返回酒店</h4>
+                        <div class="transport-options">
+                            <div class="transport-option recommended">
+                                <h5>打车</h5>
+                                <p>⏱️ 时长：15分钟</p>
+                                <p>💰 费用：15新币</p>
+                                <p>🌙 晚上带孩子打车方便</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="summary-section">
+                <h3>第一天总结</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="icon">🚗</div>
+                        <div class="label">交通费用</div>
+                        <div class="value">约70新币</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="icon">🎫</div>
+                        <div class="label">门票费用</div>
+                        <div class="value">约110新币</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="icon">🍽️</div>
+                        <div class="label">餐饮预算</div>
+                        <div class="value">约100新币</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="icon">👣</div>
+                        <div class="label">步行距离</div>
+                        <div class="value">约3公里</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第二天 -->
+        <div class="day-container">
+            <div class="day-header">
+                <div class="day-number">D2</div>
+                <div class="day-info">
+                    <h2>水上乐园 · 国立大学 · 夜间动物园</h2>
+                    <p>7月20日 星期日</p>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time-badge">7:30-8:30</span>
+                    <span class="location-tag">📍 酒店</span>
+                    <h3 class="activity-title">酒店早餐</h3>
+                    <p class="activity-description">
+                        在酒店享用丰盛的自助早餐，为今天的行程储备能量。记得多喝水，今天运动量较大。
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">9:30-14:00</span>
+                    <span class="location-tag">📍 圣淘沙</span>
+                    <span class="highlight-tag">适合儿童</span>
+                    <h3 class="activity-title">水上探险乐园</h3>
+                    <p class="activity-description">
+                        东南亚最棒的水上乐园之一，有适合各年龄段的水上设施。记得带防晒霜和换洗衣物。
+                    </p>
+                    
+                    <div class="transport-section">
+                        <h4><span class="transport-icon">🚇</span>酒店到水上探险乐园（推荐方案）</h4>
+                        <div class="transport-options">
+                            <div class="transport-option recommended">
+                                <h5>地铁+圣淘沙捷运</h5>
+                                <p>⏱️ 总时长：35分钟</p>
+                                <p>💰 费用：4新币/人</p>
+                                <p>🚇 Tanjong Pagar → Outram Park → HarbourFront</p>
+                                <p>🚂 转圣淘沙捷运到Beach Station</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tips-box">
+                        <h4>💡 游玩建议</h4>
+                        <ul>
+                            <li>9:30-10:30：先玩刺激项目（人少）</li>
+                            <li>10:30-11:30：彩虹礁浮潜</li>
+                            <li>11:30-13:00：探险河漂流、冲浪湾</li>
+                            <li>13:30-14:00：冲洗更衣</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">14:00-14:30</span>
+                    <span class="location-tag">📍 圣淘沙/怡丰城</span>
+                    <h3 class="activity-title">简餐</h3>
+                    
+                    <div class="meal-section">
+                        <h4>🍽️ 用餐建议</h4>
+                        <ul>
+                            <li>圣淘沙名胜世界美食街</li>
+                            <li>怡丰城大食代（HarbourFront站）</li>
+                            <li>打包车上吃（节省时间）</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">15:00-17:30</span>
+                    <span class="location-tag">📍 肯特岗</span>
+                    <h3 class="activity-title">新加坡国立大学参观</h3>
+                    <p class="activity-description">
+                        亚洲顶尖学府，以走马观花方式参观，重点看建筑外观和特色景点。
+                    </p>
+                    
+                    <div class="transport-section">
+                        <h4><span class="transport-icon">🚕</span>圣淘沙到国立大学（推荐方案）</h4>
+                        <div class="transport-options">
+                            <div class="transport-option recommended">
+                                <h5>打车（带着泳具行李）</h5>
+                                <p>⏱️ 时长：30分钟</p>
+                                <p>💰 费用：30新币</p>
+                                <p>📍 目的地：NUS University Town</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tips-box">
+                        <h4>💡 参观路线（轻松版）</h4>
+                        <ul>
+                            <li>15:00-15:30：University Town中央草坪（让孩子活动）</li>
+                            <li>15:30-16:00：Education Resource Centre（像积木的建筑）</li>
+                            <li>16:00-16:30：Stephen Riady Centre（圆形阶梯教室）</li>
+                            <li>16:30-17:00：Yale-NUS College（现代化宿舍区）</li>
+                            <li>17:00-17:30：纪念品店购物</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">17:30-18:30</span>
+                    <span class="location-tag">📍 国大/金文泰</span>
+                    <h3 class="activity-title">晚餐</h3>
+                    
+                    <div class="meal-section">
+                        <h4>🍽️ 推荐地点</h4>
+                        <ul>
+                            <li>The Deck食阁（国大内）：便宜实惠，体验大学食堂</li>
+                            <li>Clementi Mall（5分钟车程）：更多选择，有空调</li>
+                            <li>推荐菜品：鸡饭、炒粿条、印度煎饼</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">19:00-22:30</span>
+                    <span class="location-tag">📍 万礼</span>
+                    <span class="highlight-tag">适合儿童</span>
+                    <h3 class="activity-title">夜间野生动物园</h3>
+                    <p class="activity-description">
+                        全球首个夜间野生动物园，可以近距离观察夜行动物的生活习性。
+                    </p>
+                    
+                    <div class="transport-section">
+                        <h4><span class="transport-icon">🚕</span>国大到夜间动物园（推荐方案）</h4>
+                        <div class="transport-options">
+                            <div class="transport-option recommended">
+                                <h5>打车（必须）</h5>
+                                <p>⏱️ 时长：20分钟</p>
+                                <p>💰 费用：25新币</p>
+                                <p>📍 晚上公共交通不便</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tips-box">
+                        <h4>💡 游览安排</h4>
+                        <ul>
+                            <li>19:15：婆罗洲土著表演</li>
+                            <li>19:45：中文导览车（40分钟）</li>
+                            <li>20:30：夜晚精灵动物表演</li>
+                            <li>21:00-22:00：步行小径（渔猫小径最受欢迎）</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="transport-section">
+                        <h4><span class="transport-icon">🚕</span>返回酒店</h4>
+                        <div class="transport-options">
+                            <div class="transport-option recommended">
+                                <h5>打车（必须）</h5>
+                                <p>⏱️ 时长：40分钟</p>
+                                <p>💰 费用：35新币</p>
+                                <p>🌙 22:30后公共交通停运</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="summary-section">
+                <h3>第二天总结</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="icon">🚗</div>
+                        <div class="label">交通费用</div>
+                        <div class="value">约110新币</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="icon">🎫</div>
+                        <div class="label">门票费用</div>
+                        <div class="value">约200新币</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="icon">🍽️</div>
+                        <div class="label">餐饮预算</div>
+                        <div class="value">约80新币</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="icon">⏰</div>
+                        <div class="label">活动时长</div>
+                        <div class="value">约14小时</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第三天 -->
+        <div class="day-container">
+            <div class="day-header">
+                <div class="day-number">D3</div>
+                <div class="day-info">
+                    <h2>圣淘沙与魔法 · 环球影城 · 哈利波特</h2>
+                    <p>7月21日 星期一</p>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time-badge">8:00-8:30</span>
+                    <span class="location-tag">📍 酒店</span>
+                    <h3 class="activity-title">酒店早餐</h3>
+                    <p class="activity-description">
+                        今天行程较满，建议早餐吃饱，带些小零食和水。
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">9:00-15:00</span>
+                    <span class="location-tag">📍 圣淘沙</span>
+                    <span class="highlight-tag">适合儿童</span>
+                    <h3 class="activity-title">新加坡环球影城</h3>
+                    <p class="activity-description">
+                        东南亚首个环球影城，24个游乐设施，建议早点到达避开人流高峰。
+                    </p>
+                    
+                    <div class="transport-section">
+                        <h4><span class="transport-icon">🚇</span>酒店到环球影城</h4>
+                        <div class="transport-options">
+                            <div class="transport-option recommended">
+                                <h5>地铁+圣淘沙捷运</h5>
+                                <p>⏱️ 时长：35分钟</p>
+                                <p>💰 费用：4新币/人</p>
+                                <p>🚇 路线同第二天</p>
+                                <p>🚂 到Waterfront Station</p>
+                            </div>
+                            <div class="transport-option">
+                                <h5>打车</h5>
+                                <p>⏱️ 时长：20分钟</p>
+                                <p>💰 费用：25新币</p>
+                                <p>⏰ 想早点入园可选</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tips-box">
+                        <h4>💡 高效游玩攻略</h4>
+                        <ul>
+                            <li>9:00 开园即入，先去最里面的古埃及区</li>
+                            <li>必玩项目：变形金刚3D、木乃伊复仇记</li>
+                            <li>10:30 未来水世界表演（提前15分钟入场）</li>
+                            <li>亲子项目：马达加斯加木箱漂流、小龙飞行学校</li>
+                            <li>12:00-13:00 午餐（园内或自带）</li>
+                            <li>下午玩较温和的项目，避开排队高峰</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="meal-section">
+                        <h4>🍽️ 园内餐饮</h4>
+                        <ul>
+                            <li>梅尔斯快餐店：经典美式汉堡</li>
+                            <li>路易纽约披萨：适合分享</li>
+                            <li>可自带少量零食和水</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">15:00-17:30</span>
+                    <span class="location-tag">📍 圣淘沙名胜世界</span>
+                    <span class="magic-tag highlight-tag">✨ 魔法体验</span>
+                    <h3 class="activity-title">哈利·波特：展览</h3>
+                    <p class="activity-description">
+                        全球巡回的哈利波特主题展览，展示电影道具、服装和场景，是哈迷必访之地。
+                    </p>
+                    
+                    <div class="transport-section">
+                        <h4><span class="transport-icon">🚶</span>环球影城到魔法展</h4>
+                        <div class="transport-options">
+                            <div class="transport-option recommended">
+                                <h5>步行</h5>
+                                <p>⏱️ 时长：10分钟</p>
+                                <p>💰 费用：免费</p>
+                                <p>📍 就在名胜世界内</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tips-box">
+                        <h4>✨ 展览亮点</h4>
+                        <ul>
+                            <li>分院帽体验：可以被分到霍格沃茨学院</li>
+                            <li>魁地奇体验：投掷鬼飞球</li>
+                            <li>草药学和魔药学课堂</li>
+                            <li>电影道具近距离观赏</li>
+                            <li>纪念品商店：魔杖、巧克力蛙等</li>
+                            <li>建议预留2-2.5小时充分体验</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">17:30-18:00</span>
+                    <h3 class="activity-title">返回市区</h3>
+                    
+                    <div class="transport-section">
+                        <h4><span class="transport-icon">🚕</span>圣淘沙到市区</h4>
+                        <div class="transport-options">
+                            <div class="transport-option">
+                                <h5>地铁</h5>
+                                <p>⏱️ 时长：40分钟</p>
+                                <p>💰 费用：3新币/人</p>
+                                <p>🚇 圣淘沙捷运+地铁</p>
+                            </div>
+                            <div class="transport-option recommended">
+                                <h5>打车</h5>
+                                <p>⏱️ 时长：20分钟</p>
+                                <p>💰 费用：20新币</p>
+                                <p>😴 玩累了打车舒适</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">18:00-20:00</span>
+                    <span class="location-tag">📍 市区</span>
+                    <h3 class="activity-title">市区晚餐</h3>
+                    
+                    <div class="meal-section">
+                        <h4>🍽️ 推荐餐厅</h4>
+                        <ul>
+                            <li>珍宝海鲜楼（克拉码头）：必试辣椒蟹</li>
+                            <li>松发肉骨茶（克拉码头）：清汤肉骨茶</li>
+                            <li>老巴刹美食中心：多样选择，经济实惠</li>
+                            <li>莆田餐厅（多家分店）：福建菜</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tips-box">
+                        <h4>💡 用餐建议</h4>
+                        <ul>
+                            <li>辣椒蟹配炸馒头是绝配</li>
+                            <li>肉骨茶要配油条</li>
+                            <li>可以逛逛克拉码头夜景</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">20:00-20:30</span>
+                    <h3 class="activity-title">返回酒店休息</h3>
+                    
+                    <div class="transport-section">
+                        <h4><span class="transport-icon">🚶</span>返回酒店</h4>
+                        <div class="transport-options">
+                            <div class="transport-option recommended">
+                                <h5>步行/打车</h5>
+                                <p>⏱️ 克拉码头步行20分钟</p>
+                                <p>💰 打车10-15新币</p>
+                                <p>🌙 看用餐地点而定</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="summary-section">
+                <h3>第三天总结</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="icon">🚗</div>
+                        <div class="label">交通费用</div>
+                        <div class="value">约60新币</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="icon">🎫</div>
+                        <div class="label">门票费用</div>
+                        <div class="value">约350新币</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="icon">🍽️</div>
+                        <div class="label">餐饮预算</div>
+                        <div class="value">约150新币</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="icon">🎢</div>
+                        <div class="label">游玩项目</div>
+                        <div class="value">15+个</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第四天 -->
+        <div class="day-container">
+            <div class="day-header">
+                <div class="day-number">D4</div>
+                <div class="day-info">
+                    <h2>购物启程 · 牛车水 · 星耀樟宜</h2>
+                    <p>7月22日 星期二</p>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time-badge">8:00-8:30</span>
+                    <span class="location-tag">📍 酒店</span>
+                    <h3 class="activity-title">退房 & 寄存行李</h3>
+                    <p class="activity-description">
+                        办理退房手续，将大件行李寄存在酒店，轻装购物。记得确认取行李时间。
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">9:00-11:30</span>
+                    <span class="location-tag">📍 牛车水</span>
+                    <h3 class="activity-title">牛车水购物与文化</h3>
+                    <p class="activity-description">
+                        新加坡的唐人街，充满中华文化气息，是购买纪念品和品尝美食的好地方。
+                    </p>
+                    
+                    <div class="transport-section">
+                        <h4><span class="transport-icon">🚇</span>酒店到牛车水</h4>
+                        <div class="transport-options">
+                            <div class="transport-option recommended">
+                                <h5>地铁</h5>
+                                <p>⏱️ 时长：10分钟</p>
+                                <p>💰 费用：1.5新币/人</p>
+                                <p>🚇 绿线直达Chinatown站</p>
+                            </div>
+                            <div class="transport-option">
+                                <h5>步行</h5>
+                                <p>⏱️ 时长：15分钟</p>
+                                <p>💰 费用：免费</p>
+                                <p>🚶 距离不远可步行</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tips-box">
+                        <h4>💡 购物&游览建议</h4>
+                        <ul>
+                            <li>佛牙寺龙华院：免费参观，建筑壮观</li>
+                            <li>牛车水原貌馆：了解早期华人生活</li>
+                            <li>宝塔街&丁加奴街：纪念品购物</li>
+                            <li>推荐购买：肉干、中药、茶叶、纪念品</li>
+                            <li>林志源肉干：新加坡最有名的肉干店</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="meal-section">
+                        <h4>🍽️ 美食推荐</h4>
+                        <ul>
+                            <li>了凡香港油鸡饭面：米其林一星</li>
+                            <li>南洋老咖啡：传统早餐</li>
+                            <li>味香园：云吞面</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">11:30-12:00</span>
+                    <span class="location-tag">📍 酒店</span>
+                    <h3 class="activity-title">返回酒店取行李</h3>
+                    
+                    <div class="transport-section">
+                        <h4><span class="transport-icon">🚇</span>牛车水到酒店</h4>
+                        <div class="transport-options">
+                            <div class="transport-option recommended">
+                                <h5>地铁/步行</h5>
+                                <p>⏱️ 时长：10分钟</p>
+                                <p>💰 费用：1.5新币/人</p>
+                                <p>🧳 取行李准备去机场</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">12:00-12:30</span>
+                    <h3 class="activity-title">前往樟宜机场</h3>
+                    
+                    <div class="transport-section">
+                        <h4><span class="transport-icon">🚕</span>酒店到机场</h4>
+                        <div class="transport-options">
+                            <div class="transport-option recommended">
+                                <h5>打车</h5>
+                                <p>⏱️ 时长：25分钟</p>
+                                <p>💰 费用：25-30新币</p>
+                                <p>🧳 带行李必选打车</p>
+                            </div>
+                            <div class="transport-option">
+                                <h5>地铁</h5>
+                                <p>⏱️ 时长：45分钟</p>
+                                <p>💰 费用：3新币/人</p>
+                                <p>🚇 需在Tanah Merah转线</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">12:30-16:00</span>
+                    <span class="location-tag">📍 樟宜机场</span>
+                    <span class="highlight-tag">适合儿童</span>
+                    <h3 class="activity-title">星耀樟宜游览</h3>
+                    <p class="activity-description">
+                        世界最高室内瀑布，集购物、餐饮、娱乐于一体的综合体，是离境前的完美去处。
+                    </p>
+                    
+                    <div class="tips-box">
+                        <h4>💡 必看景点</h4>
+                        <ul>
+                            <li>雨漩涡（HSBC Rain Vortex）：40米高室内瀑布</li>
+                            <li>森林谷（Forest Valley）：室内花园</li>
+                            <li>天空之网：儿童游乐设施（额外收费）</li>
+                            <li>迷雾碗：互动水景</li>
+                            <li>各类品牌店购物</li>
+                            <li>建议13:30前办理值机，再轻松游览</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="meal-section">
+                        <h4>🍽️ 午餐选择</h4>
+                        <ul>
+                            <li>Shake Shack：美式汉堡</li>
+                            <li>鼎泰丰：小笼包</li>
+                            <li>Five Spice美食广场：多样选择</li>
+                            <li>各类咖啡店和甜品店</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">16:00-16:40</span>
+                    <span class="location-tag">📍 樟宜机场</span>
+                    <h3 class="activity-title">安检登机</h3>
+                    <p class="activity-description">
+                        预留充足时间通过安检和移民局。樟宜机场登机口也有购物店可以最后采购。
+                    </p>
+                    
+                    <div class="tips-box">
+                        <h4>💡 离境提醒</h4>
+                        <ul>
+                            <li>提前40分钟到达登机口</li>
+                            <li>记得办理退税（GST Refund）</li>
+                            <li>登机口附近还有免税店</li>
+                            <li>可购买最后的纪念品</li>
+                            <li>16:40航班，祝您旅途愉快！</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="summary-section">
+                <h3>第四天总结</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="icon">🚗</div>
+                        <div class="label">交通费用</div>
+                        <div class="value">约40新币</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="icon">🛍️</div>
+                        <div class="label">购物预算</div>
+                        <div class="value">自行决定</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="icon">🍽️</div>
+                        <div class="label">餐饮预算</div>
+                        <div class="value">约80新币</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="icon">✈️</div>
+                        <div class="label">起飞时间</div>
+                        <div class="value">16:40</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 总预算 -->
+        <div class="total-budget">
+            <h2>💰 4天3晚总预算估算（一家三口）</h2>
+            <div class="budget-grid">
+                <div class="budget-item">
+                    <h4>🏨 住宿</h4>
+                    <div class="amount">2,100 新币</div>
+                    <div class="desc">索菲特3晚</div>
+                </div>
+                <div class="budget-item">
+                    <h4>🚗 交通</h4>
+                    <div class="amount">320 新币</div>
+                    <div class="desc">含机场接送</div>
+                </div>
+                <div class="budget-item">
+                    <h4>🎫 门票</h4>
+                    <div class="amount">810 新币</div>
+                    <div class="desc">各景点门票</div>
+                </div>
+                <div class="budget-item">
+                    <h4>🍽️ 餐饮</h4>
+                    <div class="amount">410 新币</div>
+                    <div class="desc">正餐+小食</div>
+                </div>
+                <div class="budget-item">
+                    <h4>🛍️ 购物/其他</h4>
+                    <div class="amount">500 新币</div>
+                    <div class="desc">纪念品等</div>
+                </div>
+                <div class="budget-item">
+                    <h4>💵 总计</h4>
+                    <div class="amount">4,140 新币</div>
+                    <div class="desc">约21,000人民币</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 行程贴士 -->
+        <div class="final-tips">
+            <h3>🌟 行程小贴士</h3>
+            <ul>
+                <li>新加坡天气炎热，记得防晒和多喝水，随身携带防晒霜和遮阳伞</li>
+                <li>地铁站和商场都有空调，可以适时进入避暑休息</li>
+                <li>准备一些零食和水，特别是带小朋友出行时很有必要</li>
+                <li>景点门票建议提前网上购买，通常有10-20%的折扣</li>
+                <li>打车高峰期（18:00-20:00）可能需要等待，可以使用Grab打车软件</li>
+                <li>购物满100新币记得开税单，离境时可退税7%</li>
+                <li>星耀樟宜值得预留充足时间游览，建议至少3小时</li>
+                <li>随身携带雨具，新加坡午后常有短暂阵雨</li>
+            </ul>
         </div>
     </div>
-
-    <div class="highlight">
-        <h3>🎆 新加坡建国60周年特别体验 🎆</h3>
-        <p>恰逢新加坡独立60周年庆典，7月19日晚将有盛大烟花表演！整个7-8月都有特别庆祝活动，让您的旅程更加难忘！</p>
-    </div>
-
-    <h2>📅 四天行程精华概览 (已更新)</h2>
-    <div class="summary">
-        <p><strong>第一天：初识狮城</strong><br>
-            🕐 14:00 鸭子船水陆观光<br>
-            🕐 15:30 滨海湾花园<br>
-            🕐 21:00 SG60烟花盛典
-        </p>
-        <p><strong>第二天：乐园与探索</strong><br>
-            🕐 09:30 水上探险乐园<br>
-            🕐 14:30 国立大学参观<br>
-            🕐 19:00 夜间动物园
-        </p>
-        <p><strong>第三天：圣淘沙与魔法</strong><br>
-            🕐 09:00 环球影城<br>
-            🕐 15:00 哈利波特魔法展<br>
-            🕐 18:00 市区晚餐
-        </p>
-        <p><strong>第四天：购物启程</strong><br>
-            🕐 09:00 牛车水购物<br>
-            🕐 11:30 星耀樟宜<br>
-            🕐 16:40 返程航班
-        </p>
-    </div>
-
-    <h2>✨ 调整后的行程优势</h2>
-    <div class="grid-container">
-        <div class="grid-item">
-            <h4>🏨 住宿优势</h4>
-            <p>全程一家酒店，免去换酒店麻烦。市中心位置，去哪都方便。每天可回酒店午休（第二天除外）。行李寄存更灵活。</p>
-        </div>
-        <div class="grid-item">
-            <h4>⏰ 时间安排</h4>
-            <p>将水上活动与陆地探索结合，体验更多元化。但需注意第二天交通时间较长，行程较为紧凑。</p>
-        </div>
-        <div class="grid-item">
-            <h4>💰 经济实惠</h4>
-            <p>减少了往返圣淘沙的次数。市区餐饮选择更多，购物更方便，且无需入住圣淘沙岛上的高价酒店。</p>
-        </div>
-    </div>
-
-
-    <!-- DAY 1 -->
-    <div class="day-block">
-        <h2>D1 抵达 & 鸭子船 & SG60烟花盛典</h2>
-        <p><strong>7月19日 星期六</strong></p>
-        <ul class="timeline">
-            <li>
-                <div class="time-icon">✈️</div>
-                <h4>03:40 - 13:00 抵达与入住</h4>
-                <p>凌晨抵达樟宜机场，打车至索菲特酒店（约30分钟）。</p>
-                <div class="tip">
-                    <strong>📍 酒店位置信息</strong><br>
-                    Sofitel Singapore City Centre<br>
-                    地址：9 Wallich Street, Singapore 078885<br>
-                    机场打车：约30分钟，费用约30-40新币<br>
-                    地铁：Tanjong Pagar达士岭站（直通酒店）<br>
-                    早到可寄存行李，14:00后办理入住。
-                </div>
-                <h5>🍽️ 午餐推荐（12:30）</h5>
-                <p><strong>牛车水大厦熟食中心</strong><br>地址：335 Smith Street（从酒店步行5分钟）<br>推荐：天天海南鸡饭、了凡香港油鸡饭（米其林）<br>人均：5-10新币</p>
-            </li>
-            <li>
-                <div class="time-icon">🦆</div>
-                <h4>14:00 - 15:00 DUCKtours鸭子船水陆观光</h4>
-                <p>从索菲特打车到新达城约15分钟（15新币）。现场购票。</p>
-                <div class="tip">
-                    <strong>📍 登船地点</strong><br>
-                    地址：Suntec City Mall #01-330<br>
-                    建议乘坐14:00班次。1小时游览陆地和海上景点，从陆地"扑通"入水最精彩，选择右侧座位视野更好。
-                </div>
-            </li>
-            <li>
-                <div class="time-icon">🌳</div>
-                <h4>15:30 - 19:00 滨海湾花园</h4>
-                <h5>⏰ 建议游览顺序</h5>
-                <ol>
-                    <li><strong>15:30-16:30 云雾林:</strong> 35米高室内瀑布，云雾缭绕如仙境。</li>
-                    <li><strong>16:30-17:30 花穹:</strong> 世界最大玻璃温室，7月有向日葵展。</li>
-                    <li><strong>17:30-18:30 晚餐+占位:</strong> 在超级树下草坪占据烟花最佳位置。</li>
-                </ol>
-                <h5>🍽️ 晚餐建议（17:30）</h5>
-                <p><strong>Satay by the Bay</strong> (滨海湾花园内的美食中心)<br>建议打包到草坪野餐：沙爹串、炒粿条、椰子水。<br>人均：20-30新币</p>
-            </li>
-            <li>
-                <div class="time-icon">🎆</div>
-                <h4>21:00 - 21:30 SG60新加坡建国60周年烟花表演</h4>
-                <div class="warning">
-                    <strong>⚠️ 重要提醒</strong><br>
-                    • 18:00前必须在超级树草坪占好位置。<br>
-                    • 19:45和20:45有常规灯光秀。<br>
-                    • 21:00准时开始SG60烟花。<br>
-                    • 结束后原地休息30分钟避开人流，然后乘地铁回Tanjong Pagar站。
-                </div>
-            </li>
-        </ul>
-    </div>
-
-    <!-- DAY 2 UPDATED -->
-    <div class="day-block">
-        <h2>D2 水上乐园 & 大学参观 & 夜间动物园</h2>
-        <p><strong>7月20日 星期日</strong></p>
-        <div class="warning">
-            <strong>⚠️ 行程提醒：</strong><br>
-            今天的行程跨度较大，涉及圣淘沙、肯特岗和万礼三个区域，交通时间较长，会比较辛苦，且无法安排午休。请做好体力准备。
-        </div>
-        <ul class="timeline">
-            <li>
-                <div class="time-icon">🏨</div>
-                <h4>08:00 - 09:00 酒店早餐 & 准备</h4>
-                <p>在索菲特享用丰盛早餐，准备泳装、防晒霜、换洗衣物等，轻装前往圣淘沙。</p>
-            </li>
-            <li>
-                <div class="time-icon">💦</div>
-                <h4>09:30 - 13:30 水上探险乐园</h4>
-                <p>从酒店打车直达圣淘沙名胜世界（约20分钟，25新币），或乘地铁到HarbourFront转圣淘沙捷运。</p>
-                <div class="tip">
-                    <strong>💡 游玩建议</strong><br>
-                    • 必玩项目：激流磁力道（水磁过山车）、彩虹礁游（与鱼共游）、探险河流漂流。<br>
-                    • 园内储物柜需付费（10-20新币）。<br>
-                    • 建议提前预订彩虹礁浮潜时段。
-                </div>
-                <h5>🍽️ 午餐（13:30-14:30）</h5>
-                <p><strong>马来西亚美食街</strong> (水上乐园出口附近)<br>推荐：槟城炒粿条、吉隆坡煲仔饭。<br>人均：15-20新币</p>
-            </li>
-            <li>
-                <div class="time-icon">🎓</div>
-                <h4>14:30 - 17:00 新加坡国立大学</h4>
-                <p>从圣淘沙/HarbourFront打车前往肯特岗（约20分钟），或乘坐地铁环线（Circle Line）到Kent Ridge站。</p>
-                <h5>🎓 参观路线</h5>
-                <ol>
-                    <li><strong>中央图书馆:</strong> 亚洲最美图书馆之一。</li>
-                    <li><strong>University Town:</strong> 现代化学生生活区，建筑独特。</li>
-                    <li><strong>学生餐厅+纪念品:</strong> 体验大学食堂，购买NUS纪念品。</li>
-                </ol>
-            </li>
-            <li>
-                <div class="time-icon">🦓</div>
-                <h4>19:00 - 22:30 夜间野生动物园</h4>
-                <p>从国大打车前往万礼（约30-40分钟，35新币）。这是当天最长的一段交通。</p>
-                <div class="tip">
-                    <strong>🍽️ 简便晚餐（18:00）</strong><br>
-                    可在国大附近解决，或在夜间动物园入口处的餐厅用餐。
-                </div>
-                <h5>🌙 夜游安排 (建议预订中文导览车)</h5>
-                <ol>
-                    <li><strong>19:15 婆罗洲土著表演</strong></li>
-                    <li><strong>19:45 中文导览车 (40分钟)</strong></li>
-                    <li><strong>20:30 夜晚精灵表演</strong></li>
-                    <li><strong>21:00 步行小径 (推荐渔猫小径)</strong></li>
-                </ol>
-                <p>结束后在园内出租车站打车返回索菲特酒店。</p>
-            </li>
-        </ul>
-    </div>
-
-    <!-- DAY 3 UPDATED -->
-    <div class="day-block">
-        <h2>D3 环球影城 & 哈利波特魔法展</h2>
-        <p><strong>7月21日 星期一</strong></p>
-        <ul class="timeline">
-            <li>
-                <div class="time-icon">🏨</div>
-                <h4>08:00 - 08:30 酒店早餐 & 出发</h4>
-                <p>早餐后再次轻装前往圣淘沙。</p>
-                <div class="tip">
-                    <strong>📍 交通方式</strong><br>
-                    从索菲特到圣淘沙：<br>
-                    • 打车直达环球影城（20分钟，25新币）<br>
-                    • 地铁：紫线到HarbourFront，转圣淘沙捷运
-                </div>
-            </li>
-            <li>
-                <div class="time-icon">🎢</div>
-                <h4>09:00 - 15:00 新加坡环球影城</h4>
-                <p>建议购买快速通行证，以在有限时间内玩遍核心项目。</p>
-                <h5>🎢 6小时高效攻略</h5>
-                <ol>
-                    <li><strong>09:00-09:30 开园冲刺:</strong> 直奔变形金刚3D对决。</li>
-                    <li><strong>09:30-10:00 双轨过山车:</strong> 人类战队或机械战队。</li>
-                    <li><strong>10:00-11:00 古埃及区:</strong> 木乃伊复仇记。</li>
-                    <li><strong>11:00-12:00 失落的世界:</strong> 侏罗纪河流探险。</li>
-                    <li><strong>12:00-12:30 未来水世界表演。</strong></li>
-                    <li><strong>12:30-13:30 午餐+购物:</strong> 园内快餐或出园到马来西亚美食街。</li>
-                    <li><strong>13:30-15:00 补完项目:</strong> 补玩喜欢的项目或与卡通人物拍照。</li>
-                </ol>
-            </li>
-            <li>
-                <div class="time-icon">🪄</div>
-                <h4>15:30 - 17:30 哈利波特：魔法幻象展览</h4>
-                <p>从圣淘沙返回市区。乘坐圣淘沙捷运转地铁东北线，在多美歌换乘环线或市区线至Bayfront站（全程约40分钟）。或直接打车（约20分钟，25新币）。</p>
-                <div class="tip">
-                    <strong>📍 地点：金沙艺术科学博物馆 (需预订时段)</strong><br>
-                    <strong>🪄 展览亮点</strong><br>
-                    15个沉浸式展厅，还原电影场景。可以体验守护神咒互动和魔药课。别忘了逛逛限定纪念品商店。
-                </div>
-            </li>
-            <li>
-                <div class="time-icon">🍽️</div>
-                <h4>18:00 晚餐 & 返回酒店</h4>
-                <p>在金沙购物中心用餐，选择丰富。</p>
-                <h5>🍽️ 晚餐推荐</h5>
-                <p><strong>金沙购物中心</strong><br>推荐：鼎泰丰（B2-44）、TWG茶餐厅。<br>人均：30-50新币</p>
-                <p>晚餐后，可乘坐地铁从Bayfront站返回酒店所在的Tanjong Pagar站，或打车返回。晚上可以在牛车水逛逛夜市。</p>
-            </li>
-        </ul>
-    </div>
-
-    <!-- DAY 4 -->
-    <div class="day-block">
-        <h2>D4 文化探索 & 星耀樟宜完美收官</h2>
-        <p><strong>7月22日 星期二</strong></p>
-        <ul class="timeline">
-            <li>
-                <div class="time-icon">🏨</div>
-                <h4>08:00 - 09:00 早餐与退房</h4>
-                <p>享用在索菲特的最后一顿丰盛早餐，然后办理退房，将行李寄存在前台。</p>
-            </li>
-            <li>
-                <div class="time-icon">🛍️</div>
-                <h4>09:00 - 10:30 牛车水文化区购物</h4>
-                <p>从索菲特步行5分钟即到牛车水。</p>
-                <h5>🛍️ 购物路线</h5>
-                <p><strong>A. 林志源肉干:</strong> 203 New Bridge Road，必买招牌猪肉干。<br>
-                   <strong>B. 牛车水大厦2楼:</strong> 购买传统糕点、中药材、SG60纪念品。<br>
-                   <strong>C. 宝塔街:</strong> 选购工艺品、冰箱贴、明信片。</p>
-            </li>
-            <li>
-                <div class="time-icon">✈️</div>
-                <h4>10:30 - 11:30 前往机场</h4>
-                <p>步行5分钟回索菲特取行李，然后打车或乘坐地铁前往樟宜机场。</p>
-            </li>
-            <li>
-                <div class="time-icon">💎</div>
-                <h4>11:30 - 14:30 星耀樟宜深度游</h4>
-                <h5>⏰ 3小时完美计划</h5>
-                <ol>
-                    <li><strong>11:30-11:45 行李寄存:</strong> B2层寄存处。</li>
-                    <li><strong>11:45-12:45 星空花园:</strong> 体验天空之网、奇幻滑梯等。</li>
-                    <li><strong>12:45-13:30 午餐:</strong> 5楼景观餐厅，边用餐边看雨漩涡。</li>
-                    <li><strong>13:30-14:00 雨漩涡拍照:</strong> 40米高室内瀑布。</li>
-                    <li><strong>14:00-14:30 最后购物:</strong> 购买TWG茶、班兰蛋糕等手信。</li>
-                </ol>
-            </li>
-            <li>
-                <div class="time-icon">🛫</div>
-                <h4>14:30 - 16:40 值机与登机</h4>
-                <div class="tip">
-                    <strong>💡 离境流程</strong><br>
-                    • 14:30 取行李去值机<br>
-                    • 14:45 办理值机手续<br>
-                    • 15:00 办理退税（消费满100新币）<br>
-                    • 15:15 安检出境<br>
-                    • 15:30-16:20 免税店购物<br>
-                    • 16:40 准时登机
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
-
 </body>
 </html>
