@@ -15,7 +15,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f0f4f8;
+            background-color: #f5f5f5;
         }
         
         .container {
@@ -26,389 +26,242 @@
         
         .header {
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 20px;
             margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         
         .header h1 {
             font-size: 2.5rem;
+            color: #333;
             margin-bottom: 10px;
-            font-weight: 700;
         }
         
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+        .header .subtitle {
+            color: #666;
+            font-size: 1.1rem;
         }
         
-        .summary-card {
+        .booking-table {
             background: white;
-            border-radius: 15px;
-            padding: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .table-header {
+            background: #4a90e2;
+            color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        thead {
+            background: #f8f9fa;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #555;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        td {
+            padding: 20px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+        
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+        
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .item-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .item-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .content-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .content-list li {
+            padding: 3px 0;
+            color: #555;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .content-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #4a90e2;
+        }
+        
+        .platform-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .platform-item {
+            background: #f0f7ff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #d6e9ff;
+        }
+        
+        .platform-item.recommended {
+            background: #e6f3ff;
+            border: 2px solid #4a90e2;
+            position: relative;
+        }
+        
+        .platform-item.recommended::before {
+            content: "推荐";
+            position: absolute;
+            top: -8px;
+            right: 10px;
+            background: #4a90e2;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+        }
+        
+        .platform-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        
+        .platform-desc {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        
+        .booking-time {
+            background: #fff3cd;
+            padding: 8px 12px;
+            border-radius: 5px;
+            color: #856404;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 1.2rem;
+        }
+        
+        .price-detail {
+            color: #666;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+        
+        .summary-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .summary-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
         }
         
         .summary-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            margin-top: 20px;
         }
         
         .summary-item {
             text-align: center;
             padding: 20px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-radius: 10px;
-        }
-        
-        .summary-item h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-        
-        .summary-item .amount {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .summary-item .desc {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .booking-section {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        
-        .section-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #f0f0f0;
-        }
-        
-        .section-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-right: 20px;
-        }
-        
-        .section-title {
-            flex: 1;
-        }
-        
-        .section-title h2 {
-            color: #333;
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-        }
-        
-        .section-title p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-        
-        .booking-item {
             background: #f8f9fa;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
-            border: 1px solid #e9ecef;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .booking-item:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
-            transition: all 0.3s ease;
-        }
-        
-        .booking-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-        
-        .booking-title {
-            flex: 1;
-        }
-        
-        .booking-title h3 {
-            color: #2c3e50;
-            font-size: 1.4rem;
-            margin-bottom: 5px;
-        }
-        
-        .booking-date {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .booking-date::before {
-            content: "📅";
-            margin-right: 5px;
-        }
-        
-        .price-tag {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(245, 87, 108, 0.3);
-        }
-        
-        .booking-content {
-            margin-bottom: 20px;
-        }
-        
-        .content-section {
-            margin-bottom: 15px;
-        }
-        
-        .content-section h4 {
-            color: #667eea;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .content-section h4::before {
-            content: "✨";
-            margin-right: 8px;
-        }
-        
-        .content-list {
-            list-style: none;
-            padding-left: 20px;
-        }
-        
-        .content-list li {
-            padding: 5px 0;
-            color: #555;
-            position: relative;
-        }
-        
-        .content-list li::before {
-            content: "•";
-            color: #667eea;
-            font-weight: bold;
-            position: absolute;
-            left: -15px;
-        }
-        
-        .booking-websites {
-            background: #e8f4f8;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .booking-websites h4 {
-            color: #1976d2;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .booking-websites h4::before {
-            content: "🌐";
-            margin-right: 8px;
-        }
-        
-        .website-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 10px;
-        }
-        
-        .website-option {
-            background: white;
-            padding: 15px;
             border-radius: 8px;
-            border: 1px solid #e0e0e0;
         }
         
-        .website-option.recommended {
-            border: 2px solid #1976d2;
+        .summary-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .summary-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4a90e2;
+        }
+        
+        .tips-section {
+            background: #f0f8ff;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid #d6e9ff;
+        }
+        
+        .tips-title {
+            color: #0066cc;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .tips-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tips-list li {
+            padding: 8px 0;
+            padding-left: 25px;
             position: relative;
+            color: #555;
         }
         
-        .website-option.recommended::before {
-            content: "推荐";
-            position: absolute;
-            top: -10px;
-            right: 10px;
-            background: #1976d2;
-            color: white;
-            padding: 2px 10px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-        }
-        
-        .website-name {
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
-        }
-        
-        .website-feature {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .booking-tips {
-            background: #fff3e0;
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 15px;
-        }
-        
-        .booking-tips h4 {
-            color: #e65100;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .booking-tips h4::before {
+        .tips-list li:before {
             content: "💡";
-            margin-right: 8px;
+            position: absolute;
+            left: 0;
         }
         
-        .booking-tips ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .booking-tips li {
-            padding: 5px 0;
-            color: #666;
-        }
-        
-        .booking-tips li::before {
-            content: "•";
-            color: #ff9800;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        
-        .priority-badge {
-            display: inline-block;
-            background: #ff5722;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            margin-left: 10px;
-        }
-        
-        .no-booking-needed {
-            background: #e8f5e9;
-            border-radius: 10px;
-            padding: 20px;
+        .no-booking {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px 15px;
+            border-radius: 5px;
             text-align: center;
-            color: #2e7d32;
             font-weight: 500;
-        }
-        
-        .total-section {
-            background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%);
-            border-radius: 20px;
-            padding: 40px;
-            margin-top: 40px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .total-section h2 {
-            color: #e65100;
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        
-        .total-amount {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #333;
-            margin: 20px 0;
-        }
-        
-        .timeline-reminder {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin-top: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        
-        .timeline-reminder h3 {
-            color: #2196f3;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .timeline-reminder h3::before {
-            content: "⏰";
-            margin-right: 10px;
-            font-size: 1.5rem;
-        }
-        
-        .timeline-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .timeline-list li {
-            padding: 15px 0;
-            border-bottom: 1px solid #f0f0f0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .timeline-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .timeline-task {
-            flex: 1;
-            color: #333;
-            font-weight: 500;
-        }
-        
-        .timeline-when {
-            color: #666;
-            font-size: 0.9rem;
-            background: #f0f0f0;
-            padding: 5px 15px;
-            border-radius: 15px;
         }
         
         @media (max-width: 768px) {
@@ -420,17 +273,26 @@
                 font-size: 2rem;
             }
             
-            .website-grid {
+            table {
+                font-size: 0.9rem;
+            }
+            
+            th, td {
+                padding: 12px 8px;
+            }
+            
+            .booking-table {
+                overflow-x: auto;
+            }
+            
+            .summary-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .summary-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .booking-header {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .price-tag {
-                align-self: flex-start;
             }
         }
     </style>
@@ -438,435 +300,387 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>新加坡4天3晚 - 预订清单</h1>
-            <p>2025年7月19日 - 7月22日</p>
+            <h1>新加坡4天3晚亲子游 - 预订清单</h1>
+            <p class="subtitle">2025年7月19日 - 7月22日</p>
         </div>
         
         <!-- 预订总览 -->
-        <div class="summary-card">
-            <h2 style="text-align: center; color: #667eea; margin-bottom: 20px;">预订费用总览</h2>
+        <div class="summary-section">
+            <h2 class="summary-title">预订费用总览</h2>
             <div class="summary-grid">
                 <div class="summary-item">
-                    <h3>🏨 住宿</h3>
-                    <div class="amount">2,100 SGD</div>
-                    <div class="desc">索菲特酒店3晚</div>
+                    <div class="summary-label">🏨 住宿费用</div>
+                    <div class="summary-value">S$2,100</div>
                 </div>
                 <div class="summary-item">
-                    <h3>🎫 门票</h3>
-                    <div class="amount">910 SGD</div>
-                    <div class="desc">所有景点门票</div>
+                    <div class="summary-label">🎫 门票费用</div>
+                    <div class="summary-value">S$910</div>
                 </div>
                 <div class="summary-item">
-                    <h3>✈️ 机票</h3>
-                    <div class="amount">待定</div>
-                    <div class="desc">往返机票</div>
+                    <div class="summary-label">🚗 其他预订</div>
+                    <div class="summary-value">S$50</div>
                 </div>
                 <div class="summary-item">
-                    <h3>💰 需预订总计</h3>
-                    <div class="amount">3,010 SGD</div>
-                    <div class="desc">约15,000人民币</div>
+                    <div class="summary-label">💰 预订总计</div>
+                    <div class="summary-value">S$3,060</div>
                 </div>
             </div>
         </div>
 
         <!-- 住宿预订 -->
-        <div class="booking-section">
-            <div class="section-header">
-                <div class="section-icon">🏨</div>
-                <div class="section-title">
-                    <h2>住宿预订</h2>
-                    <p>建议提前1-2个月预订</p>
-                </div>
-            </div>
-            
-            <div class="booking-item">
-                <div class="booking-header">
-                    <div class="booking-title">
-                        <h3>索菲特新加坡城市中心酒店</h3>
-                        <div class="booking-date">7月19日-22日（3晚）</div>
-                    </div>
-                    <div class="price-tag">2,100 SGD</div>
-                </div>
-                
-                <div class="booking-content">
-                    <div class="content-section">
-                        <h4>酒店特色</h4>
-                        <ul class="content-list">
-                            <li>位于市中心，Tanjong Pagar地铁站直连</li>
-                            <li>高级双床房，适合家庭入住</li>
-                            <li>含早餐自助餐</li>
-                            <li>屋顶泳池，儿童游乐设施</li>
-                            <li>24小时礼宾服务</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="booking-websites">
-                    <h4>预订平台推荐</h4>
-                    <div class="website-grid">
-                        <div class="website-option recommended">
-                            <div class="website-name">Booking.com</div>
-                            <div class="website-feature">免费取消政策，价格透明</div>
-                        </div>
-                        <div class="website-option">
-                            <div class="website-name">Agoda</div>
-                            <div class="website-feature">亚洲酒店选择多，常有优惠</div>
-                        </div>
-                        <div class="website-option">
-                            <div class="website-name">携程/飞猪</div>
-                            <div class="website-feature">中文服务，支付方便</div>
-                        </div>
-                        <div class="website-option">
-                            <div class="website-name">酒店官网</div>
-                            <div class="website-feature">会员价格，积分奖励</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="booking-tips">
-                    <h4>预订贴士</h4>
-                    <ul>
-                        <li>选择"可免费取消"的房型，以防行程变化</li>
-                        <li>确认是否包含早餐（每人约30-40 SGD的价值）</li>
-                        <li>查看是否有"住3付2"等优惠活动</li>
-                        <li>提前告知酒店有儿童入住，可能提供儿童用品</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="booking-table">
+            <div class="table-header">🏨 住宿预订</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="25%">预订项目</th>
+                        <th width="25%">内容说明</th>
+                        <th width="25%">预订平台</th>
+                        <th width="15%">预订时间</th>
+                        <th width="10%">参考价格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="item-name">索菲特新加坡城市中心</div>
+                            <div class="item-date">7月19-22日 (3晚)</div>
+                        </td>
+                        <td>
+                            <ul class="content-list">
+                                <li>高级双床房</li>
+                                <li>含自助早餐</li>
+                                <li>Tanjong Pagar地铁站直连</li>
+                                <li>屋顶泳池</li>
+                                <li>免费WiFi</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="platform-grid">
+                                <div class="platform-item recommended">
+                                    <div class="platform-name">Booking.com</div>
+                                    <div class="platform-desc">免费取消，价格透明</div>
+                                </div>
+                                <div class="platform-item">
+                                    <div class="platform-name">Agoda</div>
+                                    <div class="platform-desc">亚洲酒店优惠多</div>
+                                </div>
+                                <div class="platform-item">
+                                    <div class="platform-name">携程/飞猪</div>
+                                    <div class="platform-desc">中文服务，支付方便</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="booking-time">提前1-2个月</div>
+                        </td>
+                        <td>
+                            <div class="price">S$2,100</div>
+                            <div class="price-detail">S$700/晚</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- 景点门票预订 -->
-        <div class="booking-section">
-            <div class="section-header">
-                <div class="section-icon">🎫</div>
-                <div class="section-title">
-                    <h2>景点门票预订</h2>
-                    <p>建议提前1-2周预订，可享受优惠价格</p>
-                </div>
-            </div>
-            
-            <!-- 第一天门票 -->
-            <div class="booking-item">
-                <div class="booking-header">
-                    <div class="booking-title">
-                        <h3>滨海湾花园双馆门票</h3>
-                        <div class="booking-date">7月19日使用</div>
-                    </div>
-                    <div class="price-tag">150 SGD</div>
-                </div>
-                
-                <div class="booking-content">
-                    <div class="content-section">
-                        <h4>包含内容</h4>
-                        <ul class="content-list">
-                            <li>云雾林（Cloud Forest）</li>
-                            <li>花穹（Flower Dome）</li>
-                            <li>当日多次进出</li>
-                            <li>价格：成人53 SGD × 2 + 儿童28 SGD × 1</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="booking-websites">
-                    <h4>预订平台推荐</h4>
-                    <div class="website-grid">
-                        <div class="website-option recommended">
-                            <div class="website-name">Klook</div>
-                            <div class="website-feature">85折优惠，即买即用</div>
-                        </div>
-                        <div class="website-option">
-                            <div class="website-name">官方网站</div>
-                            <div class="website-feature">原价购买，可选时段</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- DUCKtours -->
-            <div class="booking-item">
-                <div class="booking-header">
-                    <div class="booking-title">
-                        <h3>DUCKtours鸭子船</h3>
-                        <div class="booking-date">7月19日使用<span class="priority-badge">无需预订</span></div>
-                    </div>
-                    <div class="price-tag">119 SGD</div>
-                </div>
-                
-                <div class="no-booking-needed">
-                    现场购票即可，无需提前预订<br>
-                    成人43 SGD × 2 + 儿童33 SGD × 1
-                </div>
-            </div>
-            
-            <!-- 第二天门票 -->
-            <div class="booking-item">
-                <div class="booking-header">
-                    <div class="booking-title">
-                        <h3>水上探险乐园</h3>
-                        <div class="booking-date">7月20日使用</div>
-                    </div>
-                    <div class="price-tag">114 SGD</div>
-                </div>
-                
-                <div class="booking-content">
-                    <div class="content-section">
-                        <h4>包含内容</h4>
-                        <ul class="content-list">
-                            <li>全天无限次游玩所有设施</li>
-                            <li>彩虹礁浮潜体验</li>
-                            <li>探险河漂流</li>
-                            <li>价格：成人38 SGD × 3</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="booking-websites">
-                    <h4>预订平台推荐</h4>
-                    <div class="website-grid">
-                        <div class="website-option recommended">
-                            <div class="website-name">Klook</div>
-                            <div class="website-feature">优惠价32 SGD起</div>
-                        </div>
-                        <div class="website-option">
-                            <div class="website-name">圣淘沙官网</div>
-                            <div class="website-feature">套票优惠</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 夜间动物园 -->
-            <div class="booking-item">
-                <div class="booking-header">
-                    <div class="booking-title">
-                        <h3>夜间野生动物园</h3>
-                        <div class="booking-date">7月20日使用</div>
-                    </div>
-                    <div class="price-tag">147 SGD</div>
-                </div>
-                
-                <div class="booking-content">
-                    <div class="content-section">
-                        <h4>包含内容</h4>
-                        <ul class="content-list">
-                            <li>入园门票</li>
-                            <li>中文导览车（建议预订）</li>
-                            <li>所有表演观看</li>
-                            <li>价格：成人49 SGD × 3</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="booking-websites">
-                    <h4>预订平台推荐</h4>
-                    <div class="website-grid">
-                        <div class="website-option recommended">
-                            <div class="website-name">官方网站</div>
-                            <div class="website-feature">可预订中文导览车时段</div>
-                        </div>
-                        <div class="website-option">
-                            <div class="website-name">Klook</div>
-                            <div class="website-feature">套票更优惠</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="booking-tips">
-                    <h4>预订贴士</h4>
-                    <ul>
-                        <li>建议预订19:15或20:15的中文导览车</li>
-                        <li>可购买"动物园套票"更划算</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- 第三天门票 -->
-            <div class="booking-item">
-                <div class="booking-header">
-                    <div class="booking-title">
-                        <h3>新加坡环球影城</h3>
-                        <div class="booking-date">7月21日使用<span class="priority-badge">建议购买快速通行证</span></div>
-                    </div>
-                    <div class="price-tag">237 SGD</div>
-                </div>
-                
-                <div class="booking-content">
-                    <div class="content-section">
-                        <h4>包含内容</h4>
-                        <ul class="content-list">
-                            <li>一日门票</li>
-                            <li>所有游乐设施和表演</li>
-                            <li>价格：成人79 SGD × 3</li>
-                            <li>快速通行证（可选）：80-150 SGD/人</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="booking-websites">
-                    <h4>预订平台推荐</h4>
-                    <div class="website-grid">
-                        <div class="website-option recommended">
-                            <div class="website-name">Klook</div>
-                            <div class="website-feature">电子票，扫码入园</div>
-                        </div>
-                        <div class="website-option">
-                            <div class="website-name">环球影城官网</div>
-                            <div class="website-feature">可购买指定日期票</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="booking-tips">
-                    <h4>预订贴士</h4>
-                    <ul>
-                        <li>7月为旺季，建议购买Express Pass节省排队时间</li>
-                        <li>选择"指定日期票"比"灵活日期票"便宜</li>
-                        <li>提前下载USS官方APP查看排队时间</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- 哈利波特展览 -->
-            <div class="booking-item">
-                <div class="booking-header">
-                    <div class="booking-title">
-                        <h3>哈利·波特：展览</h3>
-                        <div class="booking-date">7月21日使用</div>
-                    </div>
-                    <div class="price-tag">123 SGD</div>
-                </div>
-                
-                <div class="booking-content">
-                    <div class="content-section">
-                        <h4>包含内容</h4>
-                        <ul class="content-list">
-                            <li>展览门票</li>
-                            <li>互动体验（分院帽、魁地奇等）</li>
-                            <li>音频导览</li>
-                            <li>价格：成人41 SGD × 3</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="booking-websites">
-                    <h4>预订平台推荐</h4>
-                    <div class="website-grid">
-                        <div class="website-option recommended">
-                            <div class="website-name">官方网站</div>
-                            <div class="website-feature">可选择入场时段</div>
-                        </div>
-                        <div class="website-option">
-                            <div class="website-name">Klook</div>
-                            <div class="website-feature">偶有优惠套票</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="booking-tips">
-                    <h4>预订贴士</h4>
-                    <ul>
-                        <li>建议预订15:00-15:30时段，避开人流</li>
-                        <li>展览时长约2-2.5小时</li>
-                        <li>可在展览商店购买独家纪念品</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="booking-table">
+            <div class="table-header">🎫 景点门票预订</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="25%">预订项目</th>
+                        <th width="25%">内容说明</th>
+                        <th width="25%">预订平台</th>
+                        <th width="15%">预订时间</th>
+                        <th width="10%">参考价格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="item-name">滨海湾花园双馆</div>
+                            <div class="item-date">7月19日</div>
+                        </td>
+                        <td>
+                            <ul class="content-list">
+                                <li>云雾林 (Cloud Forest)</li>
+                                <li>花穹 (Flower Dome)</li>
+                                <li>当日多次进出</li>
+                                <li>建议游览2-3小时</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="platform-grid">
+                                <div class="platform-item recommended">
+                                    <div class="platform-name">Klook</div>
+                                    <div class="platform-desc">85折优惠，即买即用</div>
+                                </div>
+                                <div class="platform-item">
+                                    <div class="platform-name">官方网站</div>
+                                    <div class="platform-desc">原价，可选时段</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="booking-time">提前1周</div>
+                        </td>
+                        <td>
+                            <div class="price">S$150</div>
+                            <div class="price-detail">成人S$53×2<br>儿童S$28×1</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item-name">DUCKtours鸭子船</div>
+                            <div class="item-date">7月19日</div>
+                        </td>
+                        <td>
+                            <ul class="content-list">
+                                <li>水陆两栖观光</li>
+                                <li>1小时游览</li>
+                                <li>中英文讲解</li>
+                                <li>新达城出发</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="no-booking">现场购票即可</div>
+                        </td>
+                        <td>
+                            <div class="booking-time">无需预订</div>
+                        </td>
+                        <td>
+                            <div class="price">S$119</div>
+                            <div class="price-detail">成人S$43×2<br>儿童S$33×1</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item-name">水上探险乐园</div>
+                            <div class="item-date">7月20日</div>
+                        </td>
+                        <td>
+                            <ul class="content-list">
+                                <li>全天无限次游玩</li>
+                                <li>彩虹礁浮潜</li>
+                                <li>探险河漂流</li>
+                                <li>冲浪湾</li>
+                                <li>储物柜需额外付费</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="platform-grid">
+                                <div class="platform-item recommended">
+                                    <div class="platform-name">Klook</div>
+                                    <div class="platform-desc">优惠价S$32起</div>
+                                </div>
+                                <div class="platform-item">
+                                    <div class="platform-name">圣淘沙官网</div>
+                                    <div class="platform-desc">套票优惠</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="booking-time">提前3-5天</div>
+                        </td>
+                        <td>
+                            <div class="price">S$114</div>
+                            <div class="price-detail">S$38×3人</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item-name">夜间野生动物园</div>
+                            <div class="item-date">7月20日</div>
+                        </td>
+                        <td>
+                            <ul class="content-list">
+                                <li>入园门票</li>
+                                <li>中文导览车</li>
+                                <li>婆罗洲土著表演</li>
+                                <li>夜晚精灵表演</li>
+                                <li>步行小径</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="platform-grid">
+                                <div class="platform-item recommended">
+                                    <div class="platform-name">官方网站</div>
+                                    <div class="platform-desc">可预订导览车时段</div>
+                                </div>
+                                <div class="platform-item">
+                                    <div class="platform-name">Klook</div>
+                                    <div class="platform-desc">套票更优惠</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="booking-time">提前1-2周</div>
+                        </td>
+                        <td>
+                            <div class="price">S$147</div>
+                            <div class="price-detail">S$49×3人</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item-name">新加坡环球影城</div>
+                            <div class="item-date">7月21日</div>
+                        </td>
+                        <td>
+                            <ul class="content-list">
+                                <li>一日门票</li>
+                                <li>7大主题区</li>
+                                <li>24个游乐设施</li>
+                                <li>建议购买Express Pass</li>
+                                <li>可携带少量零食</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="platform-grid">
+                                <div class="platform-item recommended">
+                                    <div class="platform-name">Klook</div>
+                                    <div class="platform-desc">电子票，扫码入园</div>
+                                </div>
+                                <div class="platform-item">
+                                    <div class="platform-name">环球影城官网</div>
+                                    <div class="platform-desc">指定日期票</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="booking-time">提前2-4周</div>
+                        </td>
+                        <td>
+                            <div class="price">S$237</div>
+                            <div class="price-detail">S$79×3人</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item-name">哈利·波特：展览</div>
+                            <div class="item-date">7月21日</div>
+                        </td>
+                        <td>
+                            <ul class="content-list">
+                                <li>互动式展览</li>
+                                <li>分院帽体验</li>
+                                <li>魁地奇体验</li>
+                                <li>电影道具展示</li>
+                                <li>纪念品商店</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="platform-grid">
+                                <div class="platform-item recommended">
+                                    <div class="platform-name">官方网站</div>
+                                    <div class="platform-desc">可选入场时段</div>
+                                </div>
+                                <div class="platform-item">
+                                    <div class="platform-name">Klook</div>
+                                    <div class="platform-desc">偶有优惠</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="booking-time">提前1周</div>
+                        </td>
+                        <td>
+                            <div class="price">S$123</div>
+                            <div class="price-detail">S$41×3人</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
-        <!-- 其他预订 -->
-        <div class="booking-section">
-            <div class="section-header">
-                <div class="section-icon">🎯</div>
-                <div class="section-title">
-                    <h2>其他可选预订</h2>
-                    <p>提升旅行体验的额外选择</p>
-                </div>
-            </div>
-            
-            <div class="booking-item">
-                <div class="booking-header">
-                    <div class="booking-title">
-                        <h3>新加坡交通卡 EZ-Link</h3>
-                        <div class="booking-date">全程使用</div>
-                    </div>
-                    <div class="price-tag">12 SGD/张</div>
-                </div>
-                
-                <div class="booking-content">
-                    <div class="content-section">
-                        <h4>购买建议</h4>
-                        <ul class="content-list">
-                            <li>机场、地铁站均可购买</li>
-                            <li>含5 SGD卡费 + 7 SGD储值</li>
-                            <li>地铁、巴士通用，还可在便利店使用</li>
-                            <li>充值方便，离境可退余额</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="booking-item">
-                <div class="booking-header">
-                    <div class="booking-title">
-                        <h3>4G上网卡/WiFi蛋</h3>
-                        <div class="booking-date">全程使用</div>
-                    </div>
-                    <div class="price-tag">30-50 SGD</div>
-                </div>
-                
-                <div class="booking-websites">
-                    <h4>预订平台推荐</h4>
-                    <div class="website-grid">
-                        <div class="website-option">
-                            <div class="website-name">Klook</div>
-                            <div class="website-feature">机场领取，多种套餐</div>
-                        </div>
-                        <div class="website-option">
-                            <div class="website-name">淘宝</div>
-                            <div class="website-feature">提前寄送，价格便宜</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- 其他预订项目 -->
+        <div class="booking-table">
+            <div class="table-header">🎯 其他预订项目</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="25%">预订项目</th>
+                        <th width="25%">内容说明</th>
+                        <th width="25%">预订平台</th>
+                        <th width="15%">预订时间</th>
+                        <th width="10%">参考价格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="item-name">4G上网卡</div>
+                            <div class="item-date">全程使用</div>
+                        </td>
+                        <td>
+                            <ul class="content-list">
+                                <li>5天无限流量</li>
+                                <li>4G高速网络</li>
+                                <li>可开热点</li>
+                                <li>机场领取</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="platform-grid">
+                                <div class="platform-item recommended">
+                                    <div class="platform-name">Klook</div>
+                                    <div class="platform-desc">机场24小时领取</div>
+                                </div>
+                                <div class="platform-item">
+                                    <div class="platform-name">淘宝</div>
+                                    <div class="platform-desc">提前寄送</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="booking-time">提前3-5天</div>
+                        </td>
+                        <td>
+                            <div class="price">S$30</div>
+                            <div class="price-detail">5天套餐</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item-name">EZ-Link交通卡</div>
+                            <div class="item-date">全程使用</div>
+                        </td>
+                        <td>
+                            <ul class="content-list">
+                                <li>地铁巴士通用</li>
+                                <li>便利店可用</li>
+                                <li>充值方便</li>
+                                <li>离境可退余额</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="no-booking">机场/地铁站购买</div>
+                        </td>
+                        <td>
+                            <div class="booking-time">到达后购买</div>
+                        </td>
+                        <td>
+                            <div class="price">S$12/张</div>
+                            <div class="price-detail">含S$5卡费</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
-        <!-- 预订时间提醒 -->
-        <div class="timeline-reminder">
-            <h3>预订时间线提醒</h3>
-            <ul class="timeline-list">
-                <li>
-                    <span class="timeline-task">✈️ 预订往返机票</span>
-                    <span class="timeline-when">出发前2-3个月</span>
-                </li>
-                <li>
-                    <span class="timeline-task">🏨 预订酒店住宿</span>
-                    <span class="timeline-when">出发前1-2个月</span>
-                </li>
-                <li>
-                    <span class="timeline-task">🎫 购买环球影城门票</span>
-                    <span class="timeline-when">出发前2-4周</span>
-                </li>
-                <li>
-                    <span class="timeline-task">🎟️ 预订其他景点门票</span>
-                    <span class="timeline-when">出发前1-2周</span>
-                </li>
-                <li>
-                    <span class="timeline-task">📱 购买上网卡/租WiFi</span>
-                    <span class="timeline-when">出发前3-5天</span>
-                </li>
-                <li>
-                    <span class="timeline-task">💱 兑换新币现金</span>
-                    <span class="timeline-when">出发前1-2天</span>
-                </li>
+        <!-- 预订贴士 -->
+        <div class="tips-section">
+            <h3 class="tips-title">💡 预订贴士</h3>
+            <ul class="tips-list">
+                <li>酒店选择"可免费取消"的房型，以防行程变化</li>
+                <li>景点门票在Klook等平台预订通常有10-20%优惠</li>
+                <li>环球影城建议购买Express Pass，可节省2-3小时排队时间</li>
+                <li>夜间动物园的中文导览车需提前预订时段</li>
+                <li>建议办理一张新加坡当地银行卡支持的信用卡，部分景点现场购票只接受特定卡种</li>
+                <li>购买景点门票时注意是否包含额外项目（如储物柜、照片等）</li>
+                <li>提前下载好各景点的官方APP，查看实时信息</li>
             </ul>
-        </div>
-
-        <!-- 总计 -->
-        <div class="total-section">
-            <h2>预订费用总计</h2>
-            <div class="total-amount">3,010 SGD</div>
-            <p style="color: #666; font-size: 1.2rem;">约合人民币 15,000 元</p>
-            <p style="margin-top: 20px; color: #e65100;">💡 提前预订可节省10-20%的费用</p>
         </div>
     </div>
 </body>
