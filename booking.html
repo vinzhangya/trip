@@ -40,6 +40,17 @@
             font-size: 1.1rem;
         }
         
+        .exchange-rate {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            padding: 10px;
+            background: #fff3cd;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
         .booking-table {
             background: white;
             border-radius: 10px;
@@ -170,16 +181,40 @@
             display: inline-block;
         }
         
-        .price {
-            font-weight: bold;
-            color: #e74c3c;
-            font-size: 1.2rem;
+        .price-box {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
         }
         
-        .price-detail {
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            padding: 5px 0;
+        }
+        
+        .price-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .price-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .price-value {
+            font-weight: bold;
+            color: #e74c3c;
+            text-align: right;
+        }
+        
+        .price-rmb {
             color: #666;
             font-size: 0.85rem;
-            margin-top: 5px;
+            font-weight: normal;
         }
         
         .summary-section {
@@ -217,9 +252,16 @@
         }
         
         .summary-value {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: #4a90e2;
+            margin-bottom: 5px;
+        }
+        
+        .summary-value-rmb {
+            font-size: 1rem;
+            color: #666;
+            font-weight: normal;
         }
         
         .tips-section {
@@ -264,6 +306,34 @@
             font-weight: 500;
         }
         
+        .pass-recommendation {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .pass-recommendation h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+        
+        .pass-content {
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .savings-highlight {
+            background: #ffebee;
+            color: #c62828;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
         @media (max-width: 768px) {
             .container {
                 padding: 10px;
@@ -304,6 +374,24 @@
             <p class="subtitle">2025年7月19日 - 7月22日</p>
         </div>
         
+        <div style="text-align: center;">
+            <span class="exchange-rate">💱 汇率参考：1 新币 ≈ 5 人民币</span>
+        </div>
+        
+        <!-- Klook通票推荐 -->
+        <div class="pass-recommendation">
+            <h3>🎫 Klook景点通票推荐</h3>
+            <div class="pass-content">
+                <p><strong>推荐方案：</strong>购买5个景点通票</p>
+                <p><strong>包含景点：</strong>滨海湾花园双馆、环球影城、水上探险乐园、DUCKtours、哈利波特展览</p>
+                <p><strong>通票价格：</strong>成人 ¥600/人，儿童 ¥450/人（3-12岁）</p>
+                <p><strong>单买总价：</strong>成人约 ¥900+/人，儿童约 ¥600+/人</p>
+            </div>
+            <div class="savings-highlight">
+                💰 使用通票可节省30-35%，约省 ¥900-1,000
+            </div>
+        </div>
+        
         <!-- 预订总览 -->
         <div class="summary-section">
             <h2 class="summary-title">预订费用总览</h2>
@@ -311,18 +399,22 @@
                 <div class="summary-item">
                     <div class="summary-label">🏨 住宿费用</div>
                     <div class="summary-value">S$2,100</div>
+                    <div class="summary-value-rmb">约 ¥10,500</div>
                 </div>
                 <div class="summary-item">
                     <div class="summary-label">🎫 门票费用</div>
-                    <div class="summary-value">S$910</div>
+                    <div class="summary-value">¥1,650</div>
+                    <div class="summary-value-rmb">使用通票价</div>
                 </div>
                 <div class="summary-item">
-                    <div class="summary-label">🚗 其他预订</div>
+                    <div class="summary-label">🎯 其他预订</div>
                     <div class="summary-value">S$50</div>
+                    <div class="summary-value-rmb">约 ¥250</div>
                 </div>
                 <div class="summary-item">
                     <div class="summary-label">💰 预订总计</div>
-                    <div class="summary-value">S$3,060</div>
+                    <div class="summary-value">约 ¥12,400</div>
+                    <div class="summary-value-rmb">含通票优惠</div>
                 </div>
             </div>
         </div>
@@ -375,8 +467,11 @@
                             <div class="booking-time">提前1-2个月</div>
                         </td>
                         <td>
-                            <div class="price">S$2,100</div>
-                            <div class="price-detail">S$700/晚</div>
+                            <div class="price-box">
+                                <div class="price-value">S$700/晚<br>
+                                    <span class="price-rmb">约¥3,500/晚</span>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -385,7 +480,7 @@
 
         <!-- 景点门票预订 -->
         <div class="booking-table">
-            <div class="table-header">🎫 景点门票预订</div>
+            <div class="table-header">🎫 景点门票预订（单买价格参考）</div>
             <table>
                 <thead>
                     <tr>
@@ -393,7 +488,7 @@
                         <th width="25%">内容说明</th>
                         <th width="25%">预订平台</th>
                         <th width="15%">预订时间</th>
-                        <th width="10%">参考价格</th>
+                        <th width="10%">单人票价</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -413,12 +508,12 @@
                         <td>
                             <div class="platform-grid">
                                 <div class="platform-item recommended">
-                                    <div class="platform-name">Klook</div>
-                                    <div class="platform-desc">85折优惠，即买即用</div>
+                                    <div class="platform-name">Klook通票</div>
+                                    <div class="platform-desc">包含在5景点通票内</div>
                                 </div>
                                 <div class="platform-item">
                                     <div class="platform-name">官方网站</div>
-                                    <div class="platform-desc">原价，可选时段</div>
+                                    <div class="platform-desc">单独购买</div>
                                 </div>
                             </div>
                         </td>
@@ -426,8 +521,16 @@
                             <div class="booking-time">提前1周</div>
                         </td>
                         <td>
-                            <div class="price">S$150</div>
-                            <div class="price-detail">成人S$53×2<br>儿童S$28×1</div>
+                            <div class="price-box">
+                                <div class="price-item">
+                                    <span class="price-label">成人</span>
+                                    <span class="price-value">S$53<br><span class="price-rmb">约¥265</span></span>
+                                </div>
+                                <div class="price-item">
+                                    <span class="price-label">儿童</span>
+                                    <span class="price-value">S$28<br><span class="price-rmb">约¥140</span></span>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -444,14 +547,31 @@
                             </ul>
                         </td>
                         <td>
-                            <div class="no-booking">现场购票即可</div>
+                            <div class="platform-grid">
+                                <div class="platform-item recommended">
+                                    <div class="platform-name">Klook通票</div>
+                                    <div class="platform-desc">包含在5景点通票内</div>
+                                </div>
+                                <div class="platform-item">
+                                    <div class="platform-name">现场购票</div>
+                                    <div class="platform-desc">新达城售票处</div>
+                                </div>
+                            </div>
                         </td>
                         <td>
                             <div class="booking-time">无需预订</div>
                         </td>
                         <td>
-                            <div class="price">S$119</div>
-                            <div class="price-detail">成人S$43×2<br>儿童S$33×1</div>
+                            <div class="price-box">
+                                <div class="price-item">
+                                    <span class="price-label">成人</span>
+                                    <span class="price-value">S$43<br><span class="price-rmb">约¥215</span></span>
+                                </div>
+                                <div class="price-item">
+                                    <span class="price-label">儿童</span>
+                                    <span class="price-value">S$33<br><span class="price-rmb">约¥165</span></span>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -471,12 +591,12 @@
                         <td>
                             <div class="platform-grid">
                                 <div class="platform-item recommended">
-                                    <div class="platform-name">Klook</div>
-                                    <div class="platform-desc">优惠价S$32起</div>
+                                    <div class="platform-name">Klook通票</div>
+                                    <div class="platform-desc">包含在5景点通票内</div>
                                 </div>
                                 <div class="platform-item">
                                     <div class="platform-name">圣淘沙官网</div>
-                                    <div class="platform-desc">套票优惠</div>
+                                    <div class="platform-desc">单独购买</div>
                                 </div>
                             </div>
                         </td>
@@ -484,8 +604,16 @@
                             <div class="booking-time">提前3-5天</div>
                         </td>
                         <td>
-                            <div class="price">S$114</div>
-                            <div class="price-detail">S$38×3人</div>
+                            <div class="price-box">
+                                <div class="price-item">
+                                    <span class="price-label">成人</span>
+                                    <span class="price-value">S$38<br><span class="price-rmb">约¥190</span></span>
+                                </div>
+                                <div class="price-item">
+                                    <span class="price-label">儿童</span>
+                                    <span class="price-value">S$38<br><span class="price-rmb">约¥190</span></span>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -509,8 +637,8 @@
                                     <div class="platform-desc">可预订导览车时段</div>
                                 </div>
                                 <div class="platform-item">
-                                    <div class="platform-name">Klook</div>
-                                    <div class="platform-desc">套票更优惠</div>
+                                    <div class="platform-name">Klook单买</div>
+                                    <div class="platform-desc">不含在通票内</div>
                                 </div>
                             </div>
                         </td>
@@ -518,8 +646,16 @@
                             <div class="booking-time">提前1-2周</div>
                         </td>
                         <td>
-                            <div class="price">S$147</div>
-                            <div class="price-detail">S$49×3人</div>
+                            <div class="price-box">
+                                <div class="price-item">
+                                    <span class="price-label">成人</span>
+                                    <span class="price-value">S$49<br><span class="price-rmb">约¥245</span></span>
+                                </div>
+                                <div class="price-item">
+                                    <span class="price-label">儿童</span>
+                                    <span class="price-value">S$49<br><span class="price-rmb">约¥245</span></span>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -539,8 +675,8 @@
                         <td>
                             <div class="platform-grid">
                                 <div class="platform-item recommended">
-                                    <div class="platform-name">Klook</div>
-                                    <div class="platform-desc">电子票，扫码入园</div>
+                                    <div class="platform-name">Klook通票</div>
+                                    <div class="platform-desc">包含在5景点通票内</div>
                                 </div>
                                 <div class="platform-item">
                                     <div class="platform-name">环球影城官网</div>
@@ -552,8 +688,16 @@
                             <div class="booking-time">提前2-4周</div>
                         </td>
                         <td>
-                            <div class="price">S$237</div>
-                            <div class="price-detail">S$79×3人</div>
+                            <div class="price-box">
+                                <div class="price-item">
+                                    <span class="price-label">成人</span>
+                                    <span class="price-value">S$79<br><span class="price-rmb">约¥395</span></span>
+                                </div>
+                                <div class="price-item">
+                                    <span class="price-label">儿童</span>
+                                    <span class="price-value">S$59<br><span class="price-rmb">约¥295</span></span>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -573,12 +717,12 @@
                         <td>
                             <div class="platform-grid">
                                 <div class="platform-item recommended">
-                                    <div class="platform-name">官方网站</div>
-                                    <div class="platform-desc">可选入场时段</div>
+                                    <div class="platform-name">Klook通票</div>
+                                    <div class="platform-desc">包含在5景点通票内</div>
                                 </div>
                                 <div class="platform-item">
-                                    <div class="platform-name">Klook</div>
-                                    <div class="platform-desc">偶有优惠</div>
+                                    <div class="platform-name">官方网站</div>
+                                    <div class="platform-desc">可选入场时段</div>
                                 </div>
                             </div>
                         </td>
@@ -586,8 +730,16 @@
                             <div class="booking-time">提前1周</div>
                         </td>
                         <td>
-                            <div class="price">S$123</div>
-                            <div class="price-detail">S$41×3人</div>
+                            <div class="price-box">
+                                <div class="price-item">
+                                    <span class="price-label">成人</span>
+                                    <span class="price-value">S$41<br><span class="price-rmb">约¥205</span></span>
+                                </div>
+                                <div class="price-item">
+                                    <span class="price-label">儿童</span>
+                                    <span class="price-value">S$30<br><span class="price-rmb">约¥150</span></span>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -637,8 +789,11 @@
                             <div class="booking-time">提前3-5天</div>
                         </td>
                         <td>
-                            <div class="price">S$30</div>
-                            <div class="price-detail">5天套餐</div>
+                            <div class="price-box">
+                                <div class="price-value">S$30<br>
+                                    <span class="price-rmb">约¥150</span>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -661,8 +816,11 @@
                             <div class="booking-time">到达后购买</div>
                         </td>
                         <td>
-                            <div class="price">S$12/张</div>
-                            <div class="price-detail">含S$5卡费</div>
+                            <div class="price-box">
+                                <div class="price-value">S$12/张<br>
+                                    <span class="price-rmb">约¥60/张</span>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -673,13 +831,14 @@
         <div class="tips-section">
             <h3 class="tips-title">💡 预订贴士</h3>
             <ul class="tips-list">
+                <li><strong>强烈推荐购买Klook 5景点通票</strong>，可节省约30%费用</li>
+                <li>通票有效期30天，从第一次使用开始计算</li>
+                <li>夜间动物园不包含在通票内，需单独购买</li>
+                <li>环球影城Express Pass（S$80-150/人）需额外购买，旺季建议购买</li>
                 <li>酒店选择"可免费取消"的房型，以防行程变化</li>
-                <li>景点门票在Klook等平台预订通常有10-20%优惠</li>
-                <li>环球影城建议购买Express Pass，可节省2-3小时排队时间</li>
-                <li>夜间动物园的中文导览车需提前预订时段</li>
-                <li>建议办理一张新加坡当地银行卡支持的信用卡，部分景点现场购票只接受特定卡种</li>
-                <li>购买景点门票时注意是否包含额外项目（如储物柜、照片等）</li>
-                <li>提前下载好各景点的官方APP，查看实时信息</li>
+                <li>所有景点都支持电子票，无需打印</li>
+                <li>部分景点（如夜间动物园）需预约入场时间</li>
+                <li>汇率会有波动，建议关注实时汇率变化</li>
             </ul>
         </div>
     </div>
