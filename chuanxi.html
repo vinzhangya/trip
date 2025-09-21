@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>川西稻城亚丁六日游 - 完美行程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat;
+            animation: wave 20s linear infinite;
+        }
+        
+        @keyframes wave {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-50%) translateY(-50%); }
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .summary-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .summary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .card-title {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .card-value {
+            font-size: 1.8rem;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e0e0e0;
+            transform: translateX(-50%);
+        }
+        
+        .day-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .day-number {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            transform: translateX(-50%);
+            background: #667eea;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            z-index: 2;
+        }
+        
+        .day-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        
+        .day-title {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .day-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .info-section {
+            margin-bottom: 20px;
+        }
+        
+        .info-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .info-list {
+            list-style: none;
+            padding-left: 25px;
+        }
+        
+        .info-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .info-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin: 0 5px;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .warning-title {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .tips-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .tip-card {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .tip-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .day-number {
+                left: 30px;
+            }
+            
+            .day-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .day-card {
+                margin-left: 60px;
+            }
+        }
+        
+        .food-highlight {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 2px;
+        }
+        
+        .price-tag {
+            color: #f57c00;
+            font-weight: bold;
+        }
+        
+        .must-do {
+            background: #ffebee;
+            color: #c62828;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏔️ 川西稻城亚丁六日游</h1>
+        <p class="subtitle">2024.09.28 - 10.03 | 从蓝色星球到最后的香格里拉</p>
+    </div>
+    
+    <div class="container">
+        <div class="summary-cards">
+            <div class="summary-card">
+                <div class="card-icon">📅</div>
+                <div class="card-title">行程天数</div>
+                <div class="card-value">6天5晚</div>
+            </div>
+            <div class="summary-card">
+                <div class="card-icon">🚗</div>
+                <div class="card-title">总里程</div>
+                <div class="card-value">约2000km</div>
+            </div>
+            <div class="summary-card">
+                <div class="card-icon">🏔️</div>
+                <div class="card-title">最高海拔</div>
+                <div class="card-value">4700m</div>
+            </div>
+            <div class="summary-card">
+                <div class="card-icon">💰</div>
+                <div class="card-title">预计花费</div>
+                <div class="card-value">¥8600-12700</div>
+            </div>
+        </div>
+        
+        <div class="timeline">
+            <!-- Day 0 -->
+            <div class="day-card">
+                <div class="day-number">D0</div>
+                <h2 class="day-title">9月28日 - 抵达成都</h2>
+                <p class="day-subtitle">春秋航空 22:10-01:05 | 宿机场酒店</p>
+            </div>
+            
+            <!-- Day 1 -->
+            <div class="day-card">
+                <div class="day-number">D1</div>
+                <h2 class="day-title">9月29日 - 成都→新都桥</h2>
+                <p class="day-subtitle">全程350公里 | 翻越折多山 | 摄影天堂</p>
+                <div class="day-content">
+                    <div>
+                        <div class="info-section">
+                            <div class="info-title">🚗 行程路线</div>
+                            <ul class="info-list">
+                                <li>08:00 机场出发</li>
+                                <li>11:00 泸定桥（游览45分钟）</li>
+                                <li>16:00 折多山垭口（4298米）</li>
+                                <li>17:30 抵达新都桥</li>
+                            </ul>
+                        </div>
+                        <div class="info-section">
+                            <div class="info-title">📸 景点亮点</div>
+                            <ul class="info-list">
+                                <li>泸定桥 - 红军飞夺泸定桥</li>
+                                <li>折多山 - 川藏第一关</li>
+                                <li>新都桥 - 十里长廊摄影</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="info-section">
+                            <div class="info-title">🍜 餐饮安排</div>
+                            <ul class="info-list">
+                                <li>午餐：泸定牛肉面 <span class="price-tag">¥40-60</span></li>
+                                <li>晚餐：新都桥藏餐 <span class="price-tag">¥80-120</span></li>
+                            </ul>
+                        </div>
+                        <div class="info-section">
+                            <div class="info-title">🏨 住宿</div>
+                            <p>新都桥精品客栈 <span class="price-tag">¥400-600</span></p>
+                            <p style="margin-top: 10px; color: #666; font-size: 0.9rem;">海拔3300米，注意保暖</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 2 -->
+            <div class="day-card">
+                <div class="day-number">D2</div>
+                <h2 class="day-title">9月30日 - 新都桥→理塘</h2>
+                <p class="day-subtitle">全程180公里 | 世界高城 | 适应高海拔</p>
+                <div class="day-content">
+                    <div>
+                        <div class="info-section">
+                            <div class="info-title">🏔️ 沿途美景</div>
+                            <ul class="info-list">
+                                <li>天路十八弯观景台</li>
+                                <li>卡子拉山垭口（4718米）</li>
+                                <li>毛垭大草原</li>
+                                <li>长青春科尔寺</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="info-section">
+                            <div class="info-title">⚠️ 高反提醒</div>
+                            <p>理塘海拔4014米，是世界高城</p>
+                            <ul class="info-list" style="margin-top: 10px;">
+                                <li>多喝水，避免剧烈运动</li>
+                                <li>晚上早点休息</li>
+                                <li>备好红景天等药物</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 3 -->
+            <div class="day-card">
+                <div class="day-number">D3</div>
+                <h2 class="day-title">10月1日 - 理塘→亚丁村</h2>
+                <p class="day-subtitle">全程150公里 | 进入核心景区 | 珍珠海短线</p>
+                <div class="day-content">
+                    <div>
+                        <div class="info-section">
+                            <div class="info-title">🌄 上午行程</div>
+                            <ul class="info-list">
+                                <li>08:00 理塘出发</li>
+                                <li>09:30 海子山（1145个海子）</li>
+                                <li>11:00 稻城白塔</li>
+                                <li>13:00 进入亚丁景区</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="info-section">
+                            <div class="info-title">🥾 下午短线</div>
+                            <ul class="info-list">
+                                <li>珍珠海往返3小时</li>
+                                <li>仙乃日神山最佳观赏点</li>
+                                <li>傍晚看日照金山</li>
+                            </ul>
+                        </div>
+                        <div class="info-section" style="margin-top: 15px;">
+                            <div class="info-title">💡 住景区优势</div>
+                            <p>省去往返时间，可看日出日落</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 4 - 重点日程 -->
+            <div class="day-card" style="border: 2px solid #667eea;">
+                <div class="day-number" style="background: #f44336;">D4</div>
+                <h2 class="day-title">10月2日 - 亚丁长线→新都桥</h2>
+                <p class="day-subtitle"><span class="must-do">关键一天！</span> 五色海+连夜赶路</p>
+                
+                <div class="warning-box">
+                    <div class="warning-title">
+                        ⏰ 时间管理是成功的关键
+                    </div>
+                    <ul class="info-list">
+                        <li><strong>05:30</strong> 必须起床（这是去五色海的关键）</li>
+                        <li><strong>07:00</strong> 必须坐电瓶车到洛绒牛场（省2小时）</li>
+                        <li><strong>13:00</strong> 必须开始下山</li>
+                        <li><strong>16:00</strong> 必须离开景区</li>
+                        <li><strong>22:00</strong> 预计抵达新都桥</li>
+                    </ul>
+                </div>
+                
+                <div class="day-content">
+                    <div>
+                        <div class="info-section">
+                            <div class="info-title">🏃 长线攻略</div>
+                            <ul class="info-list">
+                                <li>08:00-11:00 徒步到牛奶海</li>
+                                <li>11:30-12:00 攀登五色海</li>
+                                <li>12:00-12:30 五色海拍照</li>
+                                <li>13:00-15:00 快速下山</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="info-section">
+                            <div class="info-title">🚗 连夜赶路计划</div>
+                            <ul class="info-list">
+                                <li>16:00 离开景区</li>
+                                <li>18:00 稻城快速晚餐</li>
+                                <li>18:00-22:00 赶往新都桥</li>
+                                <li>轮流驾驶，注意安全</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 5 - 成都美食日 -->
+            <div class="day-card" style="background: #fff3e0;">
+                <div class="day-number" style="background: #ff9800;">D5</div>
+                <h2 class="day-title">10月3日 - 新都桥→成都→返程</h2>
+                <p class="day-subtitle">🍜 成都美食半日游 | 完美收官</p>
+                
+                <div class="day-content">
+                    <div>
+                        <div class="info-section">
+                            <div class="info-title">🕐 时间安排</div>
+                            <ul class="info-list">
+                                <li><strong>06:30</strong> 从新都桥出发</li>
+                                <li><strong>10:30</strong> 抵达成都市区</li>
+                                <li><strong>10:30-16:30</strong> 美食之旅</li>
+                                <li><strong>16:30</strong> 前往机场</li>
+                                <li><strong>20:55</strong> 起飞返程</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="info-section">
+                            <div class="info-title">🥟 成都美食清单</div>
+                            <p><strong>宽窄巷子（10:30-13:00）</strong></p>
+                            <div style="margin: 10px 0;">
+                                <span class="food-highlight">龙抄手</span>
+                                <span class="food-highlight">担担面</span>
+                                <span class="food-highlight">三大炮</span>
+                                <span class="food-highlight">糖油果子</span>
+                            </div>
+                            <p style="margin-top: 15px;"><strong>锦里古街（14:00-16:00）</strong></p>
+                            <div style="margin: 10px 0;">
+                                <span class="food-highlight">张飞牛肉</span>
+                                <span class="food-highlight">伤心凉粉</span>
+                                <span class="food-highlight">兔头</span>
+                                <span class="food-highlight">肥肠粉</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 小贴士 -->
+        <div class="tips-section">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #667eea;">📌 实用小贴士</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-title">🎒 装备清单</div>
+                    <ul class="info-list">
+                        <li>羽绒服（必备，早晚温差大）</li>
+                        <li>登山鞋、登山杖</li>
+                        <li>防晒霜SPF50+、墨镜</li>
+                        <li>保温杯、能量棒、巧克力</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-title">💊 高反预防</div>
+                    <ul class="info-list">
+                        <li>提前一周服用红景天</li>
+                        <li>到达高原后多喝水</li>
+                        <li>避免剧烈运动和饮酒</li>
+                        <li>备好芬必得、感冒药</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-title">📸 拍照建议</div>
+                    <ul class="info-list">
+                        <li>日出日落是黄金时间</li>
+                        <li>牛奶海最佳拍摄点在东侧</li>
+                        <li>新都桥清晨有晨雾</li>
+                        <li>准备充足的电池和内存卡</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; padding: 40px 0; color: #666;">
+            <p>祝您旅途愉快，收获满满的美景与美食！🎉</p>
+        </div>
+    </div>
+</body>
+</html>
