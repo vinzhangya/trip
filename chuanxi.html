@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>川西稻城亚丁六日游 - 完整行程攻略</title>
+    <title>川西稻城亚丁六日游 - 完整行程攻略（含美食推荐）</title>
     <style>
         * {
             margin: 0;
@@ -304,6 +304,55 @@
             text-align: center;
         }
         
+        .restaurant-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .restaurant-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .restaurant-name {
+            font-weight: bold;
+            color: #d84315;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .restaurant-info {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .meal-type {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+        }
+        
+        .meal-type.breakfast {
+            background: #ff9800;
+        }
+        
+        .meal-type.lunch {
+            background: #2196f3;
+        }
+        
+        .meal-type.dinner {
+            background: #9c27b0;
+        }
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -435,6 +484,28 @@
         .special-day {
             border: 3px solid #f44336;
         }
+        
+        .meal-section {
+            background: #f5f5f5;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .meal-section h4 {
+            color: #ff6f00;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .recommended-dish {
+            background: #ffebee;
+            color: #c62828;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            margin-left: 5px;
+        }
     </style>
 </head>
 <body>
@@ -509,16 +580,37 @@
                     </div>
                     <div>
                         <div class="info-section">
-                            <div class="info-title">🍜 餐饮安排</div>
-                            <ul class="info-list">
-                                <li>午餐：泸定牛肉面 <span class="price-tag">¥40-60</span></li>
-                                <li>晚餐：新都桥藏餐 <span class="price-tag">¥80-120</span></li>
-                            </ul>
-                        </div>
-                        <div class="info-section">
                             <div class="info-title">🏨 住宿</div>
                             <p>新都桥精品客栈 <span class="price-tag">¥400-600</span></p>
                             <p style="margin-top: 10px; color: #666; font-size: 0.9rem;">海拔3300米，注意保暖</p>
+                        </div>
+                        <div class="meal-section">
+                            <h4>🍜 今日餐厅推荐</h4>
+                            <div class="restaurant-card">
+                                <div class="restaurant-name">
+                                    <span class="meal-type breakfast">早餐</span>
+                                    机场简餐/路边早点
+                                </div>
+                                <div class="restaurant-info">💰 人均：20-30元</div>
+                            </div>
+                            <div class="restaurant-card">
+                                <div class="restaurant-name">
+                                    <span class="meal-type lunch">午餐</span>
+                                    泸定桥头牛肉面馆
+                                </div>
+                                <div class="restaurant-info">📍 泸定桥景区旁</div>
+                                <div class="restaurant-info">🍜 推荐：牛肉面、酸菜面 <span class="recommended-dish">必吃</span></div>
+                                <div class="restaurant-info">💰 人均：40-60元</div>
+                            </div>
+                            <div class="restaurant-card">
+                                <div class="restaurant-name">
+                                    <span class="meal-type dinner">晚餐</span>
+                                    雅克藏餐厅（新都桥店）
+                                </div>
+                                <div class="restaurant-info">📍 新都桥镇中心</div>
+                                <div class="restaurant-info">🍖 推荐：牦牛肉火锅、酥油茶、青稞饼</div>
+                                <div class="restaurant-info">💰 人均：80-120元</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -540,8 +632,6 @@
                                 <li>长青春科尔寺</li>
                             </ul>
                         </div>
-                    </div>
-                    <div>
                         <div class="info-section">
                             <div class="info-title">⚠️ 高反提醒</div>
                             <p>理塘海拔4014米，是世界高城</p>
@@ -550,6 +640,38 @@
                                 <li>晚上早点休息</li>
                                 <li>备好红景天等药物</li>
                             </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="meal-section">
+                            <h4>🍜 今日餐厅推荐</h4>
+                            <div class="restaurant-card">
+                                <div class="restaurant-name">
+                                    <span class="meal-type breakfast">早餐</span>
+                                    新都桥面馆
+                                </div>
+                                <div class="restaurant-info">🍜 推荐：酥油茶、糌粑、牛肉包子</div>
+                                <div class="restaurant-info">💰 人均：25-35元</div>
+                            </div>
+                            <div class="restaurant-card">
+                                <div class="restaurant-name">
+                                    <span class="meal-type lunch">午餐</span>
+                                    雅江鱼庄
+                                </div>
+                                <div class="restaurant-info">📍 雅江县城</div>
+                                <div class="restaurant-info">🐟 推荐：雅鱼、松茸炖鸡 <span class="recommended-dish">特色</span></div>
+                                <div class="restaurant-info">💰 人均：60-80元</div>
+                            </div>
+                            <div class="restaurant-card">
+                                <div class="restaurant-name">
+                                    <span class="meal-type dinner">晚餐</span>
+                                    理塘高原食府
+                                </div>
+                                <div class="restaurant-info">📍 理塘县城中心</div>
+                                <div class="restaurant-info">🍖 推荐：青稞酒、牦牛肉、酸奶</div>
+                                <div class="restaurant-info">💰 人均：70-100元</div>
+                                <div class="restaurant-info">⚠️ 注意：高原少饮酒</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -571,8 +693,6 @@
                                 <li>13:00 进入亚丁景区</li>
                             </ul>
                         </div>
-                    </div>
-                    <div>
                         <div class="info-section">
                             <div class="info-title">🥾 下午短线</div>
                             <ul class="info-list">
@@ -581,9 +701,37 @@
                                 <li>傍晚看日照金山</li>
                             </ul>
                         </div>
-                        <div class="info-section" style="margin-top: 15px;">
-                            <div class="info-title">💡 住景区优势</div>
-                            <p>省去往返时间，可看日出日落</p>
+                    </div>
+                    <div>
+                        <div class="meal-section">
+                            <h4>🍜 今日餐厅推荐</h4>
+                            <div class="restaurant-card">
+                                <div class="restaurant-name">
+                                    <span class="meal-type breakfast">早餐</span>
+                                    酒店餐厅
+                                </div>
+                                <div class="restaurant-info">🍳 建议：吃饱，今天路程较长</div>
+                                <div class="restaurant-info">💰 人均：30-40元</div>
+                            </div>
+                            <div class="restaurant-card">
+                                <div class="restaurant-name">
+                                    <span class="meal-type lunch">午餐</span>
+                                    稻城印象餐厅
+                                </div>
+                                <div class="restaurant-info">📍 稻城县城</div>
+                                <div class="restaurant-info">🍜 推荐：松茸炖鸡、青稞饼</div>
+                                <div class="restaurant-info">💰 人均：80-100元</div>
+                            </div>
+                            <div class="restaurant-card">
+                                <div class="restaurant-name">
+                                    <span class="meal-type dinner">晚餐</span>
+                                    亚丁村藏家乐
+                                </div>
+                                <div class="restaurant-info">📍 亚丁村内</div>
+                                <div class="restaurant-info">🍲 推荐：牦牛肉汤锅、酥油茶 <span class="recommended-dish">暖身</span></div>
+                                <div class="restaurant-info">💰 人均：100-150元</div>
+                                <div class="restaurant-info">💡 提示：村内餐厅选择少，价格较高</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -619,8 +767,6 @@
                                 <li>13:00-15:00 快速下山</li>
                             </ul>
                         </div>
-                    </div>
-                    <div>
                         <div class="info-section">
                             <div class="info-title">🚗 连夜赶路计划</div>
                             <ul class="info-list">
@@ -629,6 +775,37 @@
                                 <li>18:00-22:00 赶往新都桥</li>
                                 <li>轮流驾驶，注意安全</li>
                             </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="meal-section">
+                            <h4>🍜 今日餐厅推荐</h4>
+                            <div class="restaurant-card">
+                                <div class="restaurant-name">
+                                    <span class="meal-type breakfast">早餐</span>
+                                    打包干粮
+                                </div>
+                                <div class="restaurant-info">🥐 建议：面包、鸡蛋、巧克力</div>
+                                <div class="restaurant-info">💡 山上无餐厅，必须自备</div>
+                            </div>
+                            <div class="restaurant-card">
+                                <div class="restaurant-name">
+                                    <span class="meal-type lunch">午餐</span>
+                                    自带能量补给
+                                </div>
+                                <div class="restaurant-info">🍫 士力架、牛肉干、葡萄干</div>
+                                <div class="restaurant-info">💧 热水、功能饮料</div>
+                            </div>
+                            <div class="restaurant-card">
+                                <div class="restaurant-name">
+                                    <span class="meal-type dinner">晚餐</span>
+                                    稻城快餐店
+                                </div>
+                                <div class="restaurant-info">📍 稻城县城（快速解决）</div>
+                                <div class="restaurant-info">🍜 推荐：盖浇饭、面条 <span class="recommended-dish">节省时间</span></div>
+                                <div class="restaurant-info">💰 人均：40-60元</div>
+                                <div class="restaurant-info">⏰ 用餐时间控制在30分钟内</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -675,6 +852,39 @@
                             <div>
                                 <strong>前往机场</strong> - 还车、值机、返程
                             </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 成都美食餐厅推荐 -->
+                    <div style="margin-top: 20px;">
+                        <h4 style="color: #ff6f00; margin-bottom: 15px;">🍜 成都必吃餐厅推荐</h4>
+                        
+                        <div class="restaurant-card">
+                            <div class="restaurant-name">鹤鸣茶社（人民公园店）</div>
+                            <div class="restaurant-info">📍 人民公园内</div>
+                            <div class="restaurant-info">🍵 推荐：盖碗茶、瓜子、采耳服务</div>
+                            <div class="restaurant-info">💰 人均：30-50元</div>
+                        </div>
+                        
+                        <div class="restaurant-card">
+                            <div class="restaurant-name">龙抄手（宽窄巷子总店）</div>
+                            <div class="restaurant-info">📍 宽窄巷子内</div>
+                            <div class="restaurant-info">🥟 推荐：龙抄手、担担面、钟水饺套餐 <span class="recommended-dish">老字号</span></div>
+                            <div class="restaurant-info">💰 人均：50-70元</div>
+                        </div>
+                        
+                        <div class="restaurant-card">
+                            <div class="restaurant-name">成都映象（宽窄巷子店）</div>
+                            <div class="restaurant-info">📍 宽窄巷子附近</div>
+                            <div class="restaurant-info">🍖 推荐：麻婆豆腐、回锅肉、宫保鸡丁</div>
+                            <div class="restaurant-info">💰 人均：80-120元</div>
+                        </div>
+                        
+                        <div class="restaurant-card">
+                            <div class="restaurant-name">锦里小吃一条街</div>
+                            <div class="restaurant-info">📍 锦里古街内</div>
+                            <div class="restaurant-info">🍢 推荐：张飞牛肉、伤心凉粉、三大炮、叶儿粑</div>
+                            <div class="restaurant-info">💰 人均：50-80元（多种小吃）</div>
                         </div>
                     </div>
                     
@@ -729,31 +939,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="day-content" style="margin-top: 30px;">
-                    <div>
-                        <div class="info-section">
-                            <div class="info-title">🕐 时间控制</div>
-                            <ul class="info-list">
-                                <li><strong>06:30</strong> 从新都桥出发</li>
-                                <li><strong>10:30</strong> 抵达成都市区</li>
-                                <li><strong>17:00</strong> 必须离开锦里</li>
-                                <li><strong>20:55</strong> 航班起飞</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="info-section">
-                            <div class="info-title">💡 游玩建议</div>
-                            <ul class="info-list">
-                                <li>小吃为主，正餐为辅</li>
-                                <li>特产集中在锦里购买</li>
-                                <li>大件行李放车上</li>
-                                <li>预留充足时间去机场</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         
@@ -786,7 +971,7 @@
                     <div class="tip-title">🚗 其他费用</div>
                     <ul class="info-list">
                         <li>租车+油费：3500-4500元</li>
-                        <li>餐饮费用：2200-3500元</li>
+                        <li>餐饮费用：2500-4000元</li>
                         <li>成都美食：300-500元</li>
                         <li>特产购物：300-800元</li>
                         <li><strong>总计：8600-12700元</strong></li>
