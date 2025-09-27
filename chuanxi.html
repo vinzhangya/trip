@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>川西稻城亚丁六日游 - 优化行程（含美食推荐）</title>
+    <title>川西格聂南线+稻城亚丁深度游 - 小众秘境路线</title>
     <style>
         * {
             margin: 0;
@@ -224,17 +224,6 @@
             font-size: 1.2rem;
         }
         
-        .highlight {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            display: inline-block;
-            margin: 0 5px;
-            font-weight: 500;
-        }
-        
         .warning-box {
             background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
             border-left: 5px solid #ffc107;
@@ -289,102 +278,48 @@
             font-size: 1.2rem;
         }
         
-        .food-section {
-            background: linear-gradient(135deg, #fff9e6 0%, #ffe8cc 100%);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 20px 0;
-            border: 2px solid #ff9800;
-        }
-        
-        .food-title {
-            color: #e65100;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .restaurant-card {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 15px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .restaurant-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-        
-        .restaurant-name {
-            font-weight: bold;
-            color: #d84315;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-        
-        .restaurant-info {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-        }
-        
-        .meal-type {
-            display: inline-block;
-            background: #4caf50;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            margin-right: 10px;
-        }
-        
-        .meal-type.breakfast {
-            background: #ff9800;
-        }
-        
-        .meal-type.lunch {
-            background: #2196f3;
-        }
-        
-        .meal-type.dinner {
-            background: #9c27b0;
-        }
-        
-        .museum-section {
+        .special-route-box {
             background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
             border-radius: 20px;
             padding: 30px;
-            margin: 20px 0;
-            border: 2px solid #4caf50;
+            margin: 30px 0;
+            position: relative;
         }
         
-        .museum-title {
+        .special-route-title {
             color: #2e7d32;
             font-size: 1.5rem;
             margin-bottom: 20px;
             text-align: center;
+            font-weight: bold;
         }
         
-        .museum-info-card {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 15px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        .exhibit-highlight {
-            background: #c8e6c9;
-            color: #1b5e20;
+        .route-highlight {
+            background: #4caf50;
+            color: white;
             padding: 3px 10px;
             border-radius: 15px;
             font-size: 0.85rem;
             display: inline-block;
             margin: 3px;
             font-weight: 500;
+        }
+        
+        .difficulty-box {
+            background: #ffebee;
+            border-left: 5px solid #f44336;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(244, 67, 54, 0.2);
+        }
+        
+        .difficulty-title {
+            color: #c62828;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
         }
         
         @media (max-width: 768px) {
@@ -414,17 +349,6 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
             }
-        }
-        
-        .food-highlight {
-            background: #e3f2fd;
-            color: #1976d2;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            display: inline-block;
-            margin: 3px;
-            font-weight: 500;
         }
         
         .price-tag {
@@ -463,38 +387,21 @@
             border: 1px solid #ddd;
         }
         
-        .city-route {
-            background: white;
+        .special-day {
+            border: 3px solid #f44336;
+        }
+        
+        .meal-section {
+            background: #f5f5f5;
             border-radius: 15px;
             padding: 20px;
-            margin: 15px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
         }
         
-        .city-spot {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            margin: 5px 0;
-            background: #f5f5f5;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .city-spot:hover {
-            background: #fff3e0;
-            transform: translateX(5px);
-        }
-        
-        .spot-time {
-            background: #ff9800;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            margin-right: 15px;
-            min-width: 100px;
-            text-align: center;
+        .meal-section h4 {
+            color: #ff6f00;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
         }
         
         .footer {
@@ -514,84 +421,13 @@
             margin-top: 20px;
             font-size: 1.1rem;
         }
-        
-        .special-day {
-            border: 3px solid #f44336;
-        }
-        
-        .meal-section {
-            background: #f5f5f5;
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-        
-        .meal-section h4 {
-            color: #ff6f00;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-        
-        .recommended-dish {
-            background: #ffebee;
-            color: #c62828;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            margin-left: 5px;
-        }
-        
-        .time-warning {
-            background: #f44336;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-            text-align: center;
-            font-weight: bold;
-        }
-        
-        .route-comparison {
-            background: #e3f2fd;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-            border: 2px solid #2196f3;
-        }
-        
-        .comparison-title {
-            color: #1565c0;
-            font-weight: bold;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-        
-        .pro-con-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 15px;
-        }
-        
-        .pro-section, .con-section {
-            padding: 15px;
-            border-radius: 10px;
-        }
-        
-        .pro-section {
-            background: #c8e6c9;
-        }
-        
-        .con-section {
-            background: #ffcdd2;
-        }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>🏔️ 川西稻城亚丁六日游</h1>
-        <p class="subtitle">2024.09.28 - 10.03 | 从天府之国到雪山之巅</p>
-        <p class="subtitle" style="margin-top: 10px;">成都文化 + 雪山圣境 + 摄影天堂</p>
+        <h1>🏔️ 川西格聂南线+稻城亚丁深度游</h1>
+        <p class="subtitle">2024.09.27 - 10.03 | 小众秘境探索之旅</p>
+        <p class="subtitle" style="margin-top: 10px;">格聂神山 + 亚丁三神山 + 木里王国</p>
     </div>
     
     <div class="container">
@@ -599,12 +435,12 @@
             <div class="summary-card">
                 <div class="card-icon">📅</div>
                 <div class="card-title">行程天数</div>
-                <div class="card-value">6天5晚</div>
+                <div class="card-value">7天6晚</div>
             </div>
             <div class="summary-card">
                 <div class="card-icon">🚗</div>
                 <div class="card-title">总里程</div>
-                <div class="card-value">约1800km</div>
+                <div class="card-value">约2200km</div>
             </div>
             <div class="summary-card">
                 <div class="card-icon">🏔️</div>
@@ -612,42 +448,54 @@
                 <div class="card-value">4700m</div>
             </div>
             <div class="summary-card">
-                <div class="card-icon">💰</div>
-                <div class="card-title">预计花费</div>
-                <div class="card-value">¥8600-12700</div>
+                <div class="card-icon">⚠️</div>
+                <div class="card-title">路况难度</div>
+                <div class="card-value">高难度</div>
             </div>
         </div>
         
-        <!-- 路线安排说明 -->
-        <div class="route-comparison">
-            <div class="comparison-title">🎯 路线安排优化说明</div>
-            <div class="pro-con-grid">
-                <div class="pro-section">
-                    <h4 style="color: #2e7d32; margin-bottom: 10px;">✅ 优化后的好处</h4>
+        <!-- 特殊路线说明 -->
+        <div class="special-route-box">
+            <h3 class="special-route-title">🌟 独特路线亮点</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div>
+                    <h4 style="color: #2e7d32; margin-bottom: 10px;">格聂南线</h4>
                     <ul class="info-list">
-                        <li>先短线适应高原，降低高反风险</li>
-                        <li>体力逐步适应，长线成功率更高</li>
-                        <li>住康定海拔低，睡眠质量好</li>
-                        <li>康定到成都路况好，节省1小时</li>
+                        <li>穿越格聂神山秘境</li>
+                        <li>途经冷谷寺、虎皮坝</li>
+                        <li>人少景美的小众路线</li>
                     </ul>
                 </div>
-                <div class="con-section">
-                    <h4 style="color: #c62828; margin-bottom: 10px;">⚠️ 需要注意</h4>
+                <div>
+                    <h4 style="color: #2e7d32; margin-bottom: 10px;">木里大寺</h4>
                     <ul class="info-list">
-                        <li>10月2日需要早起赶路（5:00起床）</li>
-                        <li>当天行程较长（亚丁→康定）</li>
-                        <li>建议轮流驾驶，注意安全</li>
+                        <li>洛克笔下的"神仙居住的地方"</li>
+                        <li>香格里拉的原型地</li>
+                        <li>藏传佛教黄教三大寺之一</li>
                     </ul>
                 </div>
             </div>
+        </div>
+        
+        <!-- 路况警告 -->
+        <div class="difficulty-box">
+            <div class="difficulty-title">
+                ⚠️ 重要提醒：路况挑战
+            </div>
+            <ul class="info-list">
+                <li><strong>格聂南线：</strong>部分路段为土路、碎石路，需要SUV或越野车</li>
+                <li><strong>波密乡→稻城：</strong>山路崎岖，弯道多，驾驶难度大</li>
+                <li><strong>稻城→木里：</strong>路况复杂，部分路段无信号</li>
+                <li><strong>建议：</strong>有高原驾驶经验，最好2人轮流开车</li>
+            </ul>
         </div>
         
         <div class="timeline">
             <!-- Day 0 -->
             <div class="day-card">
                 <div class="day-number">D0</div>
-                <h2 class="day-title">9月28日 - 抵达成都</h2>
-                <p class="day-subtitle">春秋航空 22:10-01:05 | 宿机场酒店</p>
+                <h2 class="day-title">9月27日 - 抵达成都</h2>
+                <p class="day-subtitle">晚班机 21:20-23:40 | 宿机场附近</p>
                 <div style="text-align: center; padding: 20px;">
                     <div class="route-tag">✈️ 深夜抵达</div>
                     <div class="route-tag">🏨 机场酒店</div>
@@ -658,113 +506,91 @@
             <!-- Day 1 -->
             <div class="day-card">
                 <div class="day-number">D1</div>
-                <h2 class="day-title">9月29日 - 成都→新都桥</h2>
-                <p class="day-subtitle">全程350公里 | 翻越折多山 | 摄影天堂</p>
+                <h2 class="day-title">9月28日 - 成都→雅江</h2>
+                <p class="day-subtitle">全程430公里 | 天府大悦城补给 | 夜宿雅江</p>
                 <div class="day-content">
                     <div>
                         <div class="info-section">
-                            <div class="info-title">🚗 行程路线</div>
+                            <div class="info-title">🚗 行程安排</div>
                             <ul class="info-list">
-                                <li><span class="time-critical">08:00</span> 机场出发</li>
-                                <li>11:00 泸定桥（游览45分钟）</li>
-                                <li>16:00 折多山垭口（4298米）</li>
-                                <li>17:30 抵达新都桥</li>
-                                <li>18:00 拍摄日落</li>
+                                <li><span class="time-critical">07:00</span> 机场取车</li>
+                                <li>08:00 天府大悦城（补给物资）</li>
+                                <li>12:00 泸定（午餐）</li>
+                                <li>15:00 康定</li>
+                                <li>17:00 折多山垭口</li>
+                                <li>19:00 抵达雅江县</li>
                             </ul>
                         </div>
                         <div class="info-section">
-                            <div class="info-title">📸 景点亮点</div>
+                            <div class="info-title">🛒 物资准备</div>
                             <ul class="info-list">
-                                <li>泸定桥 - 红军飞夺泸定桥</li>
-                                <li>折多山 - 川藏第一关</li>
-                                <li>新都桥 - 十里长廊摄影</li>
+                                <li>充足的水和干粮</li>
+                                <li>备用汽油（格聂南线加油站少）</li>
+                                <li>保暖衣物</li>
+                                <li>急救包、氧气瓶</li>
                             </ul>
                         </div>
                     </div>
                     <div>
                         <div class="info-section">
                             <div class="info-title">🏨 住宿</div>
-                            <p>新都桥精品客栈 <span class="price-tag">¥400-600</span></p>
-                            <p style="margin-top: 10px; color: #666; font-size: 0.9rem;">海拔3300米，注意保暖</p>
+                            <p>雅江驿都大酒店 <span class="price-tag">¥300-400</span></p>
+                            <p style="margin-top: 10px; color: #666; font-size: 0.9rem;">海拔2640米，适应高原</p>
                         </div>
-                        <div class="meal-section">
-                            <h4>🍜 今日餐厅推荐</h4>
-                            <div class="restaurant-card">
-                                <div class="restaurant-name">
-                                    <span class="meal-type lunch">午餐</span>
-                                    泸定桥头牛肉面馆
-                                </div>
-                                <div class="restaurant-info">📍 泸定桥景区旁</div>
-                                <div class="restaurant-info">🍜 推荐：牛肉面、酸菜面</div>
-                                <div class="restaurant-info">💰 人均：40-60元</div>
-                            </div>
-                            <div class="restaurant-card">
-                                <div class="restaurant-name">
-                                    <span class="meal-type dinner">晚餐</span>
-                                    雅克藏餐厅（新都桥店）
-                                </div>
-                                <div class="restaurant-info">📍 新都桥镇中心</div>
-                                <div class="restaurant-info">🍖 推荐：牦牛肉火锅、酥油茶</div>
-                                <div class="restaurant-info">💰 人均：80-120元</div>
-                            </div>
+                        <div class="info-section">
+                            <div class="info-title">🍜 餐饮</div>
+                            <p>推荐：雅江鱼庄</p>
+                            <p style="color: #666; font-size: 0.9rem;">雅鱼、松茸鸡汤</p>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Day 2 -->
-            <div class="day-card">
-                <div class="day-number">D2</div>
-                <h2 class="day-title">9月30日 - 新都桥→稻城</h2>
-                <p class="day-subtitle">全程360公里 | 翻越海子山 | 稻城白塔</p>
+            <!-- Day 2 - 格聂南线 -->
+            <div class="day-card" style="border: 3px solid #4caf50;">
+                <div class="day-number" style="background: #4caf50;">D2</div>
+                <h2 class="day-title">9月29日 - 雅江→波密乡（格聂南线）</h2>
+                <p class="day-subtitle"><span class="route-highlight">秘境穿越</span> 全程约250公里 | 格聂神山 | 小众路线</p>
+                
+                <div class="warning-box">
+                    <div class="warning-title">
+                        🚗 格聂南线攻略
+                    </div>
+                    <ul class="info-list">
+                        <li><strong>路线：</strong>雅江→理塘→格聂镇→冷谷寺→虎皮坝→波密乡</li>
+                        <li><strong>路况：</strong>理塘后多为土路，需SUV或越野车</li>
+                        <li><strong>时长：</strong>预计8-10小时（含拍照停留）</li>
+                        <li><strong>风景：</strong>格聂神山、肖扎湖、冷谷寺</li>
+                    </ul>
+                </div>
+                
                 <div class="day-content">
                     <div>
                         <div class="info-section">
-                            <div class="info-title">🏔️ 沿途美景</div>
+                            <div class="info-title">🏔️ 行程重点</div>
                             <ul class="info-list">
-                                <li>08:00 新都桥出发</li>
-                                <li>09:30 天路十八弯</li>
-                                <li>11:00 理塘（世界高城）</li>
-                                <li>14:00 海子山（4685米）</li>
-                                <li>16:00 稻城白塔</li>
-                                <li>17:00 抵达稻城县城</li>
-                            </ul>
-                        </div>
-                        <div class="info-section">
-                            <div class="info-title">💡 今日亮点</div>
-                            <ul class="info-list">
-                                <li>海子山古冰帽遗址</li>
-                                <li>兔儿山观景台</li>
-                                <li>稻城白塔转经</li>
+                                <li>07:00 早起出发（路程长）</li>
+                                <li>09:00 理塘补给</li>
+                                <li>11:00 进入格聂南线</li>
+                                <li>13:00 冷谷寺（海拔4100米）</li>
+                                <li>15:00 虎皮坝草原</li>
+                                <li>17:00 抵达波密乡</li>
                             </ul>
                         </div>
                     </div>
                     <div>
                         <div class="info-section">
                             <div class="info-title">🏨 住宿</div>
-                            <p>稻城雪域花园酒店 <span class="price-tag">¥500-700</span></p>
-                            <p style="margin-top: 10px; color: #666; font-size: 0.9rem;">海拔3750米，供氧房可选</p>
+                            <p>波密乡藏家民宿 <span class="price-tag">¥200-300</span></p>
+                            <p style="margin-top: 10px; color: #666; font-size: 0.9rem;">条件简陋，但很有特色</p>
                         </div>
-                        <div class="meal-section">
-                            <h4>🍜 今日餐厅推荐</h4>
-                            <div class="restaurant-card">
-                                <div class="restaurant-name">
-                                    <span class="meal-type lunch">午餐</span>
-                                    理塘高原食府
-                                </div>
-                                <div class="restaurant-info">📍 理塘县城</div>
-                                <div class="restaurant-info">🍖 推荐：松茸炖鸡、青稞饼</div>
-                                <div class="restaurant-info">💰 人均：70-100元</div>
-                            </div>
-                            <div class="restaurant-card">
-                                <div class="restaurant-name">
-                                    <span class="meal-type dinner">晚餐</span>
-                                    稻城印象餐厅
-                                </div>
-                                <div class="restaurant-info">📍 稻城县城中心</div>
-                                <div class="restaurant-info">🍲 推荐：牦牛肉汤锅、野菌火锅</div>
-                                <div class="restaurant-info">💰 人均：100-150元</div>
-                            </div>
+                        <div class="info-section">
+                            <div class="info-title">💡 特别提醒</div>
+                            <ul class="info-list">
+                                <li>手机信号时有时无</li>
+                                <li>晚餐在民宿解决</li>
+                                <li>带好头灯、手电</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -773,95 +599,68 @@
             <!-- Day 3 -->
             <div class="day-card">
                 <div class="day-number">D3</div>
-                <h2 class="day-title">10月1日 - 稻城→亚丁（短线）</h2>
-                <p class="day-subtitle">先适应高原 | 珍珠海短线 | 仙乃日神山</p>
+                <h2 class="day-title">9月30日 - 波密乡→稻城亚丁（短线）</h2>
+                <p class="day-subtitle">全程约180公里 | 进入亚丁景区 | 珍珠海徒步</p>
                 <div class="day-content">
                     <div>
                         <div class="info-section">
-                            <div class="info-title">🌄 上午行程</div>
+                            <div class="info-title">🚗 行程安排</div>
                             <ul class="info-list">
-                                <li>08:00 稻城出发（车程1.5小时）</li>
-                                <li>09:30 抵达亚丁景区</li>
-                                <li>10:00 乘观光车到扎灌崩</li>
-                                <li>10:30 开始珍珠海徒步</li>
+                                <li>07:00 从波密乡出发</li>
+                                <li>09:00 经过桑堆红草地</li>
+                                <li>10:00 稻城白塔</li>
+                                <li>12:00 香格里拉镇午餐</li>
+                                <li>13:30 进入亚丁景区</li>
+                                <li>14:30 珍珠海短线徒步</li>
                             </ul>
                         </div>
                         <div class="info-section">
                             <div class="info-title">🥾 短线徒步</div>
                             <ul class="info-list">
-                                <li>珍珠海往返3小时</li>
-                                <li>海拔4100米，强度适中</li>
-                                <li>仙乃日神山最佳观赏点</li>
-                                <li>下午可在亚丁村休息</li>
+                                <li>扎灌崩→冲古寺→珍珠海</li>
+                                <li>往返约3小时</li>
+                                <li>海拔4100米</li>
+                                <li>可见仙乃日神山倒影</li>
                             </ul>
                         </div>
                     </div>
                     <div>
                         <div class="info-section">
                             <div class="info-title">🏨 住宿</div>
-                            <p>亚丁村藏式民宿 <span class="price-tag">¥800-1200</span></p>
-                            <p style="margin-top: 10px; color: #666; font-size: 0.9rem;">住景区内，方便第二天长线</p>
+                            <p>亚丁村藏式民宿 <span class="price-tag">¥600-900</span></p>
+                            <p style="margin-top: 10px; color: #666; font-size: 0.9rem;">住景区内，方便第二天</p>
                         </div>
-                        <div class="meal-section">
-                            <h4>🍜 今日餐厅推荐</h4>
-                            <div class="restaurant-card">
-                                <div class="restaurant-name">
-                                    <span class="meal-type breakfast">早餐</span>
-                                    酒店餐厅
-                                </div>
-                                <div class="restaurant-info">🍳 吃饱，为徒步储备能量</div>
-                                <div class="restaurant-info">💰 人均：40-60元</div>
-                            </div>
-                            <div class="restaurant-card">
-                                <div class="restaurant-name">
-                                    <span class="meal-type lunch">午餐</span>
-                                    自带干粮
-                                </div>
-                                <div class="restaurant-info">🥐 景区内无餐厅，需自备</div>
-                            </div>
-                            <div class="restaurant-card">
-                                <div class="restaurant-name">
-                                    <span class="meal-type dinner">晚餐</span>
-                                    亚丁村藏家乐
-                                </div>
-                                <div class="restaurant-info">📍 亚丁村内</div>
-                                <div class="restaurant-info">🍲 推荐：牦牛肉汤、酥油茶</div>
-                                <div class="restaurant-info">💰 人均：100-150元</div>
-                            </div>
+                        <div class="info-section">
+                            <div class="info-title">🎫 门票</div>
+                            <ul class="info-list">
+                                <li>景区门票：146元</li>
+                                <li>观光车：120元</li>
+                                <li>建议买2日票</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-                <div class="warning-box">
-                    <div class="warning-title">
-                        💡 为什么先走短线？
-                    </div>
-                    <ul class="info-list">
-                        <li>让身体适应4000米以上海拔</li>
-                        <li>测试自己的高原反应情况</li>
-                        <li>为第二天长线徒步做准备</li>
-                        <li>避免第一天就挑战高强度</li>
-                    </ul>
                 </div>
             </div>
             
-            <!-- Day 4 - 重点日程 -->
+            <!-- Day 4 - 亚丁长线 -->
             <div class="day-card special-day">
                 <div class="day-number" style="background: #f44336;">D4</div>
-                <h2 class="day-title">10月2日 - 亚丁长线→康定</h2>
-                <p class="day-subtitle"><span class="must-do">关键一天！</span> 五色海长线+赶往康定</p>
+                <h2 class="day-title">10月1日 - 亚丁长线→木里大寺</h2>
+                <p class="day-subtitle"><span class="must-do">挑战日！</span> 五色海长线+赶往木里</p>
                 
                 <div class="warning-box">
                     <div class="warning-title">
-                        ⏰ 时间管理极其重要
+                        ⏰ 极限时间管理
                     </div>
                     <ul class="info-list">
-                        <li><strong>05:00</strong> 必须起床</li>
-                        <li><strong>06:30</strong> 第一批乘坐电瓶车</li>
-                        <li><strong>07:30</strong> 开始徒步牛奶海</li>
-                        <li><strong>11:30</strong> 抵达五色海</li>
-                        <li><strong>12:30</strong> 必须开始下山</li>
+                        <li><strong>05:00</strong> 起床准备</li>
+                        <li><strong>06:30</strong> 第一批电瓶车到洛绒牛场</li>
+                        <li><strong>07:30</strong> 开始徒步</li>
+                        <li><strong>11:00</strong> 到达牛奶海</li>
+                        <li><strong>11:30</strong> 冲刺五色海</li>
+                        <li><strong>12:30</strong> 必须下山</li>
                         <li><strong>15:00</strong> 离开景区</li>
-                        <li><strong>21:00</strong> 抵达康定</li>
+                        <li><strong>20:00</strong> 抵达木里大寺</li>
                     </ul>
                 </div>
                 
@@ -870,151 +669,114 @@
                         <div class="info-section">
                             <div class="info-title">🏃 长线攻略</div>
                             <ul class="info-list">
-                                <li>洛绒牛场→牛奶海（3.5小时）</li>
-                                <li>牛奶海→五色海（30分钟）</li>
-                                <li>往返共计14公里</li>
+                                <li>全程14公里，爬升500米</li>
                                 <li>最高海拔4700米</li>
-                                <li>体力要求高，量力而行</li>
+                                <li>体力消耗极大</li>
+                                <li>必带水、巧克力、氧气</li>
                             </ul>
                         </div>
                         <div class="info-section">
-                            <div class="info-title">🚗 赶路计划</div>
+                            <div class="info-title">🚗 稻城→木里</div>
                             <ul class="info-list">
-                                <li>15:00-17:00 亚丁→稻城</li>
-                                <li>17:00-21:00 稻城→康定</li>
-                                <li>全程约350公里</li>
-                                <li>建议2人轮流驾驶</li>
+                                <li>距离约200公里</li>
+                                <li>山路崎岖，预计5小时</li>
+                                <li>途经俄亚乡</li>
+                                <li>注意加油，路上加油站少</li>
                             </ul>
                         </div>
                     </div>
                     <div>
                         <div class="info-section">
                             <div class="info-title">🏨 住宿</div>
-                            <p>康定情歌大酒店 <span class="price-tag">¥400-600</span></p>
-                            <p style="margin-top: 10px; color: #666; font-size: 0.9rem;">海拔2560米，睡眠质量好</p>
+                            <p>木里大寺宾馆 <span class="price-tag">¥300-500</span></p>
+                            <p style="margin-top: 10px; color: #666; font-size: 0.9rem;">条件一般，但离寺庙近</p>
                         </div>
-                        <div class="meal-section">
-                            <h4>🍜 今日餐厅推荐</h4>
-                            <div class="restaurant-card">
-                                <div class="restaurant-name">
-                                    全天自备干粮
-                                </div>
-                                <div class="restaurant-info">🥐 能量棒、巧克力、牛肉干</div>
-                                <div class="restaurant-info">💧 保温杯热水必备</div>
-                            </div>
-                            <div class="restaurant-card">
-                                <div class="restaurant-name">
-                                    <span class="meal-type dinner">晚餐</span>
-                                    康定阿热藏餐
-                                </div>
-                                <div class="restaurant-info">📍 康定市区</div>
-                                <div class="restaurant-info">🍲 推荐：牦牛肉汤锅（补充体力）</div>
-                                <div class="restaurant-info">💰 人均：80-120元</div>
-                            </div>
+                        <div class="info-section">
+                            <div class="info-title">⚠️ 特别提醒</div>
+                            <ul class="info-list">
+                                <li>路况复杂，天黑前必须到</li>
+                                <li>木里县城海拔2700米</li>
+                                <li>可能没有网络信号</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Day 5 - 成都市区游 -->
+            <!-- Day 5 -->
+            <div class="day-card">
+                <div class="day-number">D5</div>
+                <h2 class="day-title">10月2日 - 木里大寺→成都</h2>
+                <p class="day-subtitle">全程约650公里 | 早起赶路 | 一天抵达成都</p>
+                
+                <div class="warning-box">
+                    <div class="warning-title">
+                        🚗 超长距离驾驶
+                    </div>
+                    <ul class="info-list">
+                        <li>全程约12-14小时</li>
+                        <li>建议2人轮流驾驶</li>
+                        <li>路线：木里→盐源→西昌→雅安→成都</li>
+                    </ul>
+                </div>
+                
+                <div class="day-content">
+                    <div>
+                        <div class="info-section">
+                            <div class="info-title">⏰ 时间安排</div>
+                            <ul class="info-list">
+                                <li><span class="time-critical">05:00</span> 起床</li>
+                                <li>06:00 出发（天刚亮）</li>
+                                <li>08:00 参观木里大寺</li>
+                                <li>09:00 正式赶路</li>
+                                <li>13:00 西昌（午餐）</li>
+                                <li>21:00 抵达成都</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="info-section">
+                            <div class="info-title">🏨 住宿</div>
+                            <p>成都太古里附近酒店 <span class="price-tag">¥600-800</span></p>
+                            <p style="margin-top: 10px; color: #666; font-size: 0.9rem;">市中心，方便第二天游玩</p>
+                        </div>
+                        <div class="info-section">
+                            <div class="info-title">🍜 晚餐</div>
+                            <p>小龙坎火锅（太古里店）</p>
+                            <p style="color: #666; font-size: 0.9rem;">庆祝完成艰难旅程！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 6 -->
             <div class="day-card" style="background: #fffde7;">
-                <div class="day-number" style="background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);">D5</div>
-                <h2 class="day-title">10月3日 - 康定→成都市区→返程</h2>
-                <p class="day-subtitle">🏛️ 成都博物馆 + 🍜 成都美食文化体验</p>
-                
-                <!-- 时间轴 -->
-                <div class="city-route">
-                    <div class="city-spot">
-                        <span class="spot-time">07:00-11:00</span>
-                        <div>
-                            <strong>康定→成都</strong> - 早起赶路（约280公里）
+                <div class="day-number" style="background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);">D6</div>
+                <h2 class="day-title">10月3日 - 成都市区游</h2>
+                <p class="day-subtitle">🐼 熊猫基地 + 🍜 美食打卡 + ✈️ 返程</p>
+                <div class="day-content">
+                    <div>
+                        <div class="info-section">
+                            <div class="info-title">🌟 推荐行程</div>
+                            <ul class="info-list">
+                                <li>09:00 熊猫基地</li>
+                                <li>12:00 宽窄巷子（午餐）</li>
+                                <li>14:00 锦里古街</li>
+                                <li>16:00 春熙路购物</li>
+                                <li>18:00 前往机场</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="city-spot" style="background: #e8f5e9;">
-                        <span class="spot-time" style="background: #4caf50;">11:00-13:00</span>
-                        <div>
-                            <strong>成都博物馆</strong> - 天府文化精华 <span class="exhibit-highlight">免费参观</span>
+                    <div>
+                        <div class="info-section">
+                            <div class="info-title">🍜 美食推荐</div>
+                            <ul class="info-list">
+                                <li>龙抄手（宽窄巷子）</li>
+                                <li>陈麻婆豆腐（骡马市）</li>
+                                <li>锦里小吃街</li>
+                                <li>串串香、冒菜</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="city-spot">
-                        <span class="spot-time">13:00-15:00</span>
-                        <div>
-                            <strong>宽窄巷子</strong> - 午餐+逛街（距博物馆步行10分钟）
-                        </div>
-                    </div>
-                    <div class="city-spot">
-                        <span class="spot-time">15:00-17:00</span>
-                        <div>
-                            <strong>锦里古街</strong> - 买特产、品小吃
-                        </div>
-                    </div>
-                    <div class="city-spot">
-                        <span class="spot-time">17:00-20:55</span>
-                        <div>
-                            <strong>前往机场</strong> - 还车、值机、返程
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 成都博物馆专区 -->
-                <div class="museum-section">
-                    <h3 class="museum-title">🏛️ 成都博物馆参观攻略</h3>
-                    <div class="museum-info-card">
-                        <h4 style="color: #2e7d32; margin-bottom: 15px;">基本信息</h4>
-                        <ul class="info-list">
-                            <li><strong>地址：</strong>成都市青羊区小河街1号（天府广场西侧）</li>
-                            <li><strong>门票：</strong>免费（需预约，携带身份证）</li>
-                            <li><strong>开放时间：</strong>周二至周日 9:00-20:30（19:30停止入馆）</li>
-                            <li><strong>预约方式：</strong>"成都博物馆"官方公众号</li>
-                            <li><strong>交通：</strong>地铁1/2号线天府广场站</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="museum-info-card">
-                        <h4 style="color: #2e7d32; margin-bottom: 15px;">必看展厅（2小时路线）</h4>
-                        <div style="margin-bottom: 15px;">
-                            <strong>负一楼：古代成都</strong>
-                            <div style="margin-top: 5px;">
-                                <span class="exhibit-highlight">青铜文明</span>
-                                <span class="exhibit-highlight">汉代画像砖</span>
-                                <span class="exhibit-highlight">说唱俑</span>
-                            </div>
-                        </div>
-                        <div style="margin-bottom: 15px;">
-                            <strong>三楼：近世成都</strong>
-                            <div style="margin-top: 5px;">
-                                <span class="exhibit-highlight">清代皮影</span>
-                                <span class="exhibit-highlight">川剧服饰</span>
-                                <span class="exhibit-highlight">老成都照片</span>
-                            </div>
-                        </div>
-                        <div>
-                            <strong>四楼：民俗展厅</strong>
-                            <div style="margin-top: 5px;">
-                                <span class="exhibit-highlight">茶馆文化</span>
-                                <span class="exhibit-highlight">成都小吃模型</span>
-                                <span class="exhibit-highlight">传统工艺</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 成都美食推荐 -->
-                <div class="food-section">
-                    <h3 class="food-title">🥟 成都美食打卡</h3>
-                    
-                    <div class="restaurant-card">
-                        <div class="restaurant-name">陈麻婆豆腐（骡马市店）</div>
-                        <div class="restaurant-info">📍 距博物馆步行15分钟</div>
-                        <div class="restaurant-info">🌶️ 必点：麻婆豆腐、宫保鸡丁 <span class="recommended-dish">百年老店</span></div>
-                        <div class="restaurant-info">💰 人均：60-80元</div>
-                    </div>
-                    
-                    <div class="restaurant-card">
-                        <div class="restaurant-name">宽窄巷子美食集锦</div>
-                        <div class="restaurant-info">🥟 龙抄手、钟水饺、三大炮</div>
-                        <div class="restaurant-info">🍜 担担面、甜水面、肥肠粉</div>
-                        <div class="restaurant-info">💰 人均：50-80元</div>
                     </div>
                 </div>
             </div>
@@ -1022,75 +784,75 @@
         
         <!-- 费用明细 -->
         <div class="tips-section">
-            <h2 style="text-align: center; margin-bottom: 30px; color: #667eea;">💰 费用预算明细（优化版）</h2>
+            <h2 style="text-align: center; margin-bottom: 30px; color: #667eea;">💰 费用预算明细</h2>
             <div class="tips-grid">
                 <div class="tip-card">
                     <div class="tip-title">🏨 住宿费用</div>
                     <ul class="info-list">
                         <li>D0 机场酒店：200-300元</li>
-                        <li>D1 新都桥：400-600元</li>
-                        <li>D2 稻城县：500-700元</li>
-                        <li>D3 亚丁村：800-1200元</li>
-                        <li>D4 康定：400-600元</li>
-                        <li><strong>合计：2300-3400元</strong></li>
+                        <li>D1 雅江：300-400元</li>
+                        <li>D2 波密乡：200-300元</li>
+                        <li>D3 亚丁村：600-900元</li>
+                        <li>D4 木里：300-500元</li>
+                        <li>D5 成都：600-800元</li>
+                        <li><strong>合计：2200-3200元</strong></li>
                     </ul>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-title">🎫 门票费用</div>
+                    <div class="tip-title">🚗 交通费用</div>
                     <ul class="info-list">
-                        <li>亚丁景区：146元</li>
-                        <li>观光车：120元</li>
-                        <li>电瓶车：80元（往返）</li>
-                        <li>泸定桥：10元</li>
-                        <li>成都博物馆：免费</li>
-                        <li><strong>合计：356元</strong></li>
+                        <li>租车费（SUV）：3500元（6天）</li>
+                        <li>油费：2000元（路程长）</li>
+                        <li>过路费：800元</li>
+                        <li>亚丁景区交通：346元</li>
+                        <li><strong>合计：6646元</strong></li>
                     </ul>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-title">🚗 其他费用</div>
+                    <div class="tip-title">🎫 其他费用</div>
                     <ul class="info-list">
-                        <li>租车+油费：3200-4200元</li>
-                        <li>餐饮费用：2500-4000元</li>
-                        <li>成都美食：300-500元</li>
-                        <li>特产购物：300-800元</li>
-                        <li><strong>总计：8600-12700元</strong></li>
+                        <li>餐饮：3000-4000元</li>
+                        <li>景区门票：200元</li>
+                        <li>应急备用金：1000元</li>
+                        <li>成都购物：500-1000元</li>
+                        <li><strong>总计：13000-15000元</strong></li>
                     </ul>
                 </div>
             </div>
         </div>
         
-        <!-- 实用小贴士 -->
+        <!-- 特别提醒 -->
         <div class="tips-section">
-            <h2 style="text-align: center; margin-bottom: 30px; color: #667eea;">📌 实用小贴士</h2>
+            <h2 style="text-align: center; margin-bottom: 30px; color: #667eea;">⚠️ 重要提醒</h2>
             <div class="tips-grid">
                 <div class="tip-card">
-                    <div class="tip-title">🎒 装备清单</div>
+                    <div class="tip-title">🚗 车辆要求</div>
                     <ul class="info-list">
-                        <li>羽绒服（必备，早晚温差大）</li>
-                        <li>登山鞋、登山杖</li>
-                        <li>防晒霜SPF50+、墨镜</li>
-                        <li>保温杯、能量棒、巧克力</li>
-                        <li>雨衣（山区天气多变）</li>
+                        <li>必须SUV或越野车</li>
+                        <li>检查备胎、工具</li>
+                        <li>准备拖车绳</li>
+                        <li>下载离线地图</li>
+                        <li>备用汽油</li>
                     </ul>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-title">💊 高反预防</div>
+                    <div class="tip-title">📱 通讯准备</div>
                     <ul class="info-list">
-                        <li>提前一周服用红景天</li>
-                        <li>到达高原后多喝水</li>
-                        <li>第一天不要洗澡</li>
-                        <li>备好芬必得、感冒药</li>
-                        <li>氧气瓶（紧急备用）</li>
+                        <li>告知亲友详细行程</li>
+                        <li>租用卫星电话（可选）</li>
+                        <li>下载离线地图</li>
+                        <li>充电宝多带几个</li>
+                        <li>对讲机（多车出行）</li>
                     </ul>
                 </div>
                 <div class="tip-card">
-                    <div class="tip-title">📸 拍照建议</div>
+                    <div class="tip-title">🎒 特殊装备</div>
                     <ul class="info-list">
-                        <li>日出日落是黄金时间</li>
-                        <li>牛奶海最佳拍摄点在东侧</li>
-                        <li>五色海需要好天气</li>
-                        <li>博物馆可拍照（无闪光）</li>
-                        <li>准备充足的电池</li>
+                        <li>防滑链（以防万一）</li>
+                        <li>头灯、手电筒</li>
+                        <li>急救包、常用药</li>
+                        <li>足够的现金</li>
+                        <li>睡袋（应急用）</li>
                     </ul>
                 </div>
             </div>
@@ -1099,13 +861,13 @@
     
     <div class="footer">
         <div class="footer-content">
-            <h2 style="margin-bottom: 20px;">🎉 祝您旅途愉快！</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 10px;">从天府文化到雪山圣境</p>
-            <p style="font-size: 1.2rem;">收获满满的风景与回忆！</p>
+            <h2 style="margin-bottom: 20px;">🎉 祝您旅途平安！</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 10px;">这是一条充满挑战的小众路线</p>
+            <p style="font-size: 1.2rem;">将收获常人难见的绝美风景！</p>
             <div class="contact-info">
-                <p>紧急联系：亚丁景区 0836-6966022</p>
+                <p>紧急救援电话：110 / 122（交通）</p>
                 <p>高反就医：稻城县人民医院 0836-5728120</p>
-                <p>成都博物馆：028-62915593</p>
+                <p>木里县医院：0834-6522442</p>
             </div>
         </div>
     </div>
