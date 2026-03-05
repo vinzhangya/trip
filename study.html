@@ -6,196 +6,253 @@
     <title>张涵·一周作战总表（父母详版）</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --danger: #e11d48;
-            --warning: #d97706;
-            --success: #059669;
-            --bg: #f1f5f9;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-sub: #64748b;
+            /* 核心色板 - 莫兰迪蓝与暖沙色 */
+            --primary-dark: #2c3e50;    /* 深蓝灰，用于标题 */
+            --primary-light: #34495e;   /* 次级文字 */
+            --accent-blue: #5d8aa8;     /* 空军蓝，用于强调 */
+            --accent-warm: #e6b89c;     /* 暖沙色，用于父母任务背景 */
+            --accent-alert: #d35400;    /* 警示色 */
+            
+            --bg-body: #f4f7f6;         /* 整体背景 */
+            --bg-card: #ffffff;         /* 卡片背景 */
+            
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
+            background-color: var(--bg-body);
+            color: var(--primary-dark);
             margin: 0;
             padding: 20px;
             line-height: 1.6;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding-bottom: 40px;
+            padding-bottom: 60px;
         }
 
+        /* 头部设计 */
         header {
             text-align: center;
-            margin-bottom: 35px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 16px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            pointer-events: none;
         }
 
         h1 {
             margin: 0;
-            font-size: 1.8rem;
-            color: var(--text-main);
-            letter-spacing: -0.5px;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .subtitle {
-            color: var(--text-sub);
-            font-size: 0.95rem;
-            margin-top: 8px;
-            font-weight: 500;
+            opacity: 0.9;
+            font-size: 1rem;
+            margin-top: 10px;
+            font-weight: 300;
         }
 
-        .day-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            margin-bottom: 25px;
+        /* 网格布局 */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        /* 每日卡片 */
+        .day-container {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
             overflow: hidden;
-            border-left: 6px solid var(--primary);
+            display: flex;
+            flex-direction: column;
         }
 
-        /* 每天的颜色主题 */
-        .day-mon { border-left-color: var(--danger); }
-        .day-tue { border-left-color: var(--warning); }
-        .day-wed { border-left-color: var(--success); }
-        .day-thu { border-left-color: #4f46e5; }
-        .day-fri { border-left-color: #9333ea; }
-        .day-sat { border-left-color: #db2777; }
-        .day-sun { border-left-color: #0891b2; }
+        @media (min-width: 768px) {
+            .day-container {
+                flex-direction: row; /* 桌面端左右布局 */
+            }
+            .schedule-side {
+                width: 45%;
+                border-right: 1px solid #eee;
+            }
+            .parent-side {
+                width: 55%;
+            }
+        }
 
-        .card-header {
-            padding: 15px 20px;
-            background: #f8fafc;
+        /* 左侧：日程区域 */
+        .schedule-side {
+            padding: 25px;
+            background-color: #fff;
+        }
+
+        .day-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
         }
 
-        .tag {
+        .day-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .day-tag {
             font-size: 0.75rem;
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 20px;
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            color: #64748b;
+            background: #eef2f5;
+            color: var(--accent-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* 时间轴样式 */
+        .timeline-item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            border-left: 2px solid #e0e0e0;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+            border-left: 2px solid transparent; /* 最后一个去掉线 */
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            border: 2px solid #fff;
+        }
+
+        .time-label {
+            font-size: 0.85rem;
+            color: #888;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .activity-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .activity-detail {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        /* 右侧：父母任务区域 */
+        .parent-side {
+            padding: 25px;
+            background-color: #fdfbf7; /* 极淡的暖色背景 */
+            position: relative;
+        }
+        
+        /* 装饰性标签 */
+        .parent-badge {
+            display: inline-block;
+            background: var(--accent-warm);
+            color: #5d4037;
+            padding: 5px 15px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .task-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .task-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e0d4c3;
+        }
+        
+        .task-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .task-title {
+            font-weight: 700;
+            color: #5d4037; /* 深棕色 */
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+
+        .task-desc {
+            font-size: 0.9rem;
+            color: #795548;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            background-color: rgba(211, 84, 0, 0.1);
+            color: var(--accent-alert);
+            padding: 0 4px;
+            border-radius: 3px;
             font-weight: 600;
         }
 
-        .schedule-row {
-            display: flex;
-            border-bottom: 1px solid #f1f5f9;
-        }
-        .schedule-row:last-child { border-bottom: none; }
-
-        .time-col {
-            width: 85px;
-            padding: 15px 10px;
-            background: #f8fafc;
-            color: var(--text-sub);
-            font-weight: 700;
-            font-size: 0.85rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            border-right: 1px solid #f1f5f9;
-            flex-shrink: 0;
-        }
-
-        .content-col {
-            flex: 1;
-            padding: 12px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .activity-title {
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 4px;
-            color: #0f172a;
-        }
-
-        .activity-desc {
-            font-size: 0.85rem;
-            color: var(--text-sub);
-        }
-
-        /* 父母任务板块 - 增强版 */
-        .parent-section {
-            background-color: #fff7ed;
-            padding: 20px;
-            border-top: 1px dashed #fdba74;
-        }
-
-        .parent-title {
-            font-size: 1rem;
-            font-weight: 800;
-            color: #c2410c;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .parent-list {
-            margin: 0;
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .parent-list li {
-            position: relative;
-            padding-left: 18px;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            color: #7c2d12;
-        }
-
-        .parent-list li::before {
-            content: "•";
-            color: #ea580c;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        .parent-list strong {
-            color: #9a3412;
-            font-weight: 700;
-        }
-
-        .highlight-text {
-            background: rgba(255, 255, 255, 0.6);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-style: italic;
-        }
-
+        /* 底部格言 */
         .footer-quote {
             text-align: center;
-            margin-top: 40px;
-            padding: 20px;
+            margin-top: 50px;
+            padding: 30px;
             background: #fff;
-            border-radius: 12px;
-            font-style: italic;
-            color: #64748b;
-            font-size: 0.95rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--accent-blue);
+            border-radius: var(--border-radius);
+            color: var(--primary-light);
+        }
+        
+        .footer-quote h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: var(--accent-blue);
         }
     </style>
 </head>
@@ -203,245 +260,294 @@
 
 <div class="container">
     <header>
-        <h1>张涵·一周作战总表</h1>
-        <div class="subtitle">左侧是她的战场，底部是你们的阵地</div>
+        <h1>张涵 · 一周作战总表</h1>
+        <div class="subtitle">左侧是战场，右侧是后盾</div>
     </header>
 
-    <!-- 周一 -->
-    <div class="day-card day-mon">
-        <div class="card-header">
-            <span>周一 Monday</span>
-            <span class="tag">极速转场 · 节奏适应</span>
-        </div>
-        <div class="schedule-row">
-            <div class="time-col">16:30<br>17:50</div>
-            <div class="content-col">
-                <div class="activity-title">📐 数学思维晚托</div>
-                <div class="activity-desc">地点：校内 | ⚠️ 必须带上泳包</div>
-            </div>
-        </div>
-        <div class="schedule-row">
-            <div class="time-col">18:10<br>19:10</div>
-            <div class="content-col">
-                <div class="activity-title">🏊‍♀️ 游泳训练</div>
-                <div class="activity-desc">地点：校内泳池 | 强度：中</div>
-            </div>
-        </div>
-        <div class="schedule-row">
-            <div class="time-col">19:30<br>21:00</div>
-            <div class="content-col">
-                <div class="activity-title">🏢 机构晚托</div>
-                <div class="activity-desc">完成作业</div>
-            </div>
-        </div>
-        <div class="parent-section">
-            <div class="parent-title">👨‍👩‍👧 父母任务：后勤部长 & 情绪静音</div>
-            <ul class="parent-list">
-                <li><strong>精准投喂：</strong> 17:50 接数学时，准备好“一口吞”的高能量食物（如香蕉、小蛋糕），不要汤汤水水，方便她边走边吃。19:10 接游泳时，准备保温杯装的热食（炒饭/意面），必须是热的。</li>
-                <li><strong>情绪静默期：</strong> 周一刚开学，节奏乱，孩子大概率有“周一综合症”。接到人后，<span class="highlight-text">绝对禁止问“今天考得怎么样”或“作业多不多”</span>。</li>
-                <li><strong>有效沟通：</strong> 只说关心身体的话，例如“游完泳冷不冷？”、“腿酸不酸？”。让她觉得父母是盟友，不是监工。</li>
-            </ul>
-        </div>
-    </div>
+    <div class="grid-layout">
 
-    <!-- 周二 -->
-    <div class="day-card day-tue">
-        <div class="card-header">
-            <span>周二 Tuesday</span>
-            <span class="tag">体能极限 · 意志考验</span>
-        </div>
-        <div class="schedule-row">
-            <div class="time-col">16:50<br>17:50</div>
-            <div class="content-col">
-                <div class="activity-title">🏊‍♀️ 游泳训练</div>
-                <div class="activity-desc">地点：校内 | ⚠️ 提前补充碳水</div>
+        <!-- 周一 -->
+        <div class="day-container">
+            <div class="schedule-side">
+                <div class="day-header">
+                    <span class="day-title">周一 Mon</span>
+                    <span class="day-tag">极速转场</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">16:30 - 17:50</div>
+                    <div class="activity-name">📐 数学思维晚托</div>
+                    <div class="activity-detail">校内 | ⚠️ 带泳包</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">18:10 - 19:10</div>
+                    <div class="activity-name">🏊‍♀️ 游泳训练</div>
+                    <div class="activity-detail">校内泳池</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">19:30 - 21:00</div>
+                    <div class="activity-name">🏢 机构晚托</div>
+                    <div class="activity-detail">完成作业</div>
+                </div>
+            </div>
+            <div class="parent-side">
+                <div class="parent-badge">👨‍👩‍👧 父母角色：后勤部长</div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <span class="task-title">⚡️ 精准投喂策略</span>
+                        <div class="task-desc">17:50 接数学时给"一口吞"高能食物（香蕉/蛋糕）；19:10 接游泳时必须给<strong>热食</strong>（保温杯装炒饭/意面）。</div>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-title">🚫 情绪静默期</span>
+                        <div class="task-desc">周一综合症高发期。接到人后，<span class="highlight">绝对禁止问成绩或作业</span>。只关心身体："冷不冷？""累不累？"</div>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="schedule-row">
-            <div class="time-col">18:00<br>19:30</div>
-            <div class="content-col">
-                <div class="activity-title">📖 智慧阅读</div>
-                <div class="activity-desc">地点：校内 | ⚠️ 间隙必须吃晚饭</div>
-            </div>
-        </div>
-        <div class="schedule-row">
-            <div class="time-col">20:00<br>21:00</div>
-            <div class="content-col">
-                <div class="activity-title">🏢 机构晚托</div>
-                <div class="activity-desc">写作业/复习</div>
-            </div>
-        </div>
-        <div class="parent-section">
-            <div class="parent-title">👨‍👩‍👧 父母任务：情绪按摩师 & 物理放松</div>
-            <ul class="parent-list">
-                <li><strong>接驾仪式：</strong> 21:00 接回家时，车里可以准备一条热毛巾给她擦擦脸，或者准备一杯温热的牛奶/可可。</li>
-                <li><strong>无条件包容：</strong> 这是全周最累的一天。如果她回家发脾气、扔书包、哭闹，请记住：<span class="highlight-text">这是生理性疲劳，不是态度问题。</span></li>
-                <li><strong>闭嘴拥抱：</strong> 不要讲大道理，不要批评她不懂事。抱抱她，帮她捏捏肩膀，说一句“今天真的辛苦了，爸爸/妈妈看着都心疼”。</li>
-            </ul>
-        </div>
-    </div>
 
-    <!-- 周三 -->
-    <div class="day-card day-wed">
-        <div class="card-header">
-            <span>周三 Wednesday</span>
-            <span class="tag">父母介入 · 隐形检查</span>
-        </div>
-        <div class="schedule-row">
-            <div class="time-col">16:00<br>17:30</div>
-            <div class="content-col">
-                <div class="activity-title">🏫 校内晚托</div>
-                <div class="activity-desc">完成部分作业</div>
+        <!-- 周二 -->
+        <div class="day-container">
+            <div class="schedule-side">
+                <div class="day-header">
+                    <span class="day-title">周二 Tue</span>
+                    <span class="day-tag">体能极限</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">16:50 - 17:50</div>
+                    <div class="activity-name">🏊‍♀️ 游泳训练</div>
+                    <div class="activity-detail">校内 | 提前补碳水</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">18:00 - 19:30</div>
+                    <div class="activity-name">📖 智慧阅读</div>
+                    <div class="activity-detail">校内 | 间隙吃晚饭</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">20:00 - 21:00</div>
+                    <div class="activity-name">🏢 机构晚托</div>
+                    <div class="activity-detail">写作业/复习</div>
+                </div>
+            </div>
+            <div class="parent-side">
+                <div class="parent-badge">💆‍♂️ 父母角色：情绪按摩师</div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <span class="task-title">🛁 物理放松服务</span>
+                        <div class="task-desc">21:00 接回家时，车内备好<strong>热毛巾</strong>擦脸，或一杯温热可可。</div>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-title">❤️ 无条件包容</span>
+                        <div class="task-desc">全周最累的一天。若孩子发脾气，<span class="highlight">这是生理性疲劳</span>。闭嘴，拥抱，捏肩，说一句"辛苦了"。</div>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="schedule-row">
-            <div class="time-col">18:00</div>
-            <div class="content-col">
-                <div class="activity-title">🏠 早回家</div>
-                <div class="activity-desc">难得的早归时光</div>
-            </div>
-        </div>
-        <div class="parent-section">
-            <div class="parent-title">⚡️ 父母任务：周中体检（关键！）</div>
-            <ul class="parent-list">
-                <li><strong>隐形检查：</strong> 不要当着她的面翻书包。趁她洗澡或吃水果放松时，快速翻阅周一、周二的作业本。</li>
-                <li><strong>诊断重点：</strong> 
-                    1. <strong>看红叉：</strong> 是计算粗心（不用管，提醒即可）还是概念不懂（记录下来，周末讲）？
-                    2. <strong>看字迹：</strong> 字迹潦草说明心浮气躁，需要温和提醒“慢一点”。
-                </li>
-                <li><strong>温柔试探：</strong> 睡觉前闲聊时问一句：“这两天数学有没有特别难的题？需不需要周末爸爸给你开个小灶？”</li>
-            </ul>
-        </div>
-    </div>
 
-    <!-- 周四 -->
-    <div class="day-card day-thu">
-        <div class="card-header">
-            <span>周四 Thursday</span>
-            <span class="tag">浙大奔袭 · 陪伴时光</span>
-        </div>
-        <div class="schedule-row">
-            <div class="time-col">17:30<br>19:00</div>
-            <div class="content-col">
-                <div class="activity-title">🏊‍♀️ 浙大游泳</div>
-                <div class="activity-desc">地点：浙大泳池 | 强度：大</div>
+        <!-- 周三 -->
+        <div class="day-container">
+            <div class="schedule-side">
+                <div class="day-header">
+                    <span class="day-title">周三 Wed</span>
+                    <span class="day-tag">隐形检查</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">16:00 - 17:30</div>
+                    <div class="activity-name">🏫 校内晚托</div>
+                    <div class="activity-detail">完成部分作业</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">18:00</div>
+                    <div class="activity-name">🏠 早回家</div>
+                    <div class="activity-detail">难得的早归时光</div>
+                </div>
+            </div>
+            <div class="parent-side">
+                <div class="parent-badge">🕵️‍♀️ 父母角色：侦探（周中体检）</div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <span class="task-title">🔍 隐形检查法</span>
+                        <div class="task-desc">趁她洗澡时翻看周一二的作业。<strong>看红叉</strong>（区分粗心/不懂），<strong>看字迹</strong>（判断心态）。</div>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-title">💬 温柔试探</span>
+                        <div class="task-desc">睡前闲聊："这两天数学有没有特别难的题？需不需要周末爸爸给你开个小灶？"</div>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="schedule-row">
-            <div class="time-col">19:30<br>21:00</div>
-            <div class="content-col">
-                <div class="activity-title">🏢 机构晚托</div>
-                <div class="activity-desc">补作业</div>
-            </div>
-        </div>
-        <div class="parent-section">
-            <div class="parent-title">👨‍👩‍👧 父母任务：司机兼陪聊 & 物资预警</div>
-            <ul class="parent-list">
-                <li><strong>车上时光：</strong> 去浙大的路程较远。如果她想睡，就保持安静；如果她精神尚可，播放《凯叔讲历史》或英语音频（磨耳朵），或者聊聊学校的八卦，不要聊学习。</li>
-                <li><strong>物资确认：</strong> 明天（周五）是家教接，父母不在场。今晚必须确认：<span class="highlight-text">明天的作业本、试卷是否都在书包里？</span> 避免明天家教接了人却没东西写。</li>
-            </ul>
-        </div>
-    </div>
 
-    <!-- 周五 -->
-    <div class="day-card day-fri">
-        <div class="card-header">
-            <span>周五 Friday</span>
-            <span class="tag">家教接管 · 远程遥控</span>
-        </div>
-        <div class="schedule-row">
-            <div class="time-col">15:00</div>
-            <div class="content-col">
-                <div class="activity-title">👋 家教接放学</div>
-                <div class="activity-desc">带去浙大附近</div>
+        <!-- 周四 -->
+        <div class="day-container">
+            <div class="schedule-side">
+                <div class="day-header">
+                    <span class="day-title">周四 Thu</span>
+                    <span class="day-tag">浙大奔袭</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">17:30 - 19:00</div>
+                    <div class="activity-name">🏊‍♀️ 浙大游泳</div>
+                    <div class="activity-detail">浙大泳池 | 大强度</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">19:30 - 21:00</div>
+                    <div class="activity-name">🏢 机构晚托</div>
+                    <div class="activity-detail">补作业</div>
+                </div>
+            </div>
+            <div class="parent-side">
+                <div class="parent-badge">🚗 父母角色：司机兼陪聊</div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <span class="task-title">🎧 车内氛围组</span>
+                        <div class="task-desc">路途较远。想睡则静音；醒着则放故事/英语磨耳朵，或聊八卦。<strong>禁止聊学习。</strong></div>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-title">🎒 物资红色预警</span>
+                        <div class="task-desc">明晚是家教接。今晚必须确认：<span class="highlight">作业本、试卷是否都在书包里？</span></div>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="schedule-row">
-            <div class="time-col">15:30<br>16:30</div>
-            <div class="content-col">
-                <div class="activity-title">⚡️ 黄金自习1小时</div>
-                <div class="activity-desc">监管人：家教 | 目标：消灭校内作业</div>
-            </div>
-        </div>
-        <div class="schedule-row">
-            <div class="time-col">17:00<br>19:00</div>
-            <div class="content-col">
-                <div class="activity-title">🏊‍♀️ 浙大长距离</div>
-                <div class="activity-desc">本周最后一练</div>
-            </div>
-        </div>
-        <div class="parent-section">
-            <div class="parent-title">📱 父母任务：远程遥控 & 极度奖励</div>
-            <ul class="parent-list">
-                <li><strong>16:30 查岗：</strong> 微信联系家教，要求发一张作业完成情况的照片。如果完成度不好，不要发火，记在心里，周六再说。</li>
-                <li><strong>19:00 见面：</strong> 见面第一句话必须是夸奖！“听说你今天作业全搞定了，太牛了！”</li>
-                <li><strong>彻底放松：</strong> 周五晚上是法定“无学习日”。吃顿好的（火锅/烤肉），允许看会儿电视/玩会儿平板。让紧绷的弦松下来。</li>
-            </ul>
-        </div>
-    </div>
 
-    <!-- 周六 -->
-    <div class="day-card day-sat">
-        <div class="card-header">
-            <span>周六 Saturday</span>
-            <span class="tag">深度参与 · 查漏补缺</span>
-        </div>
-        <div class="schedule-row">
-            <div class="time-col">09:00<br>11:00</div>
-            <div class="content-col">
-                <div class="activity-title">🔥 攻坚克难时间</div>
-                <div class="activity-desc">地点：家里书桌 | 父母全程陪伴</div>
+        <!-- 周五 -->
+        <div class="day-container">
+            <div class="schedule-side">
+                <div class="day-header">
+                    <span class="day-title">周五 Fri</span>
+                    <span class="day-tag">远程遥控</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">15:00</div>
+                    <div class="activity-name">👋 家教接放学</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">15:30 - 16:30</div>
+                    <div class="activity-name">⚡️ 黄金自习1小时</div>
+                    <div class="activity-detail">监管：家教</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">17:00 - 19:00</div>
+                    <div class="activity-name">🏊‍♀️ 浙大长距离</div>
+                </div>
+            </div>
+            <div class="parent-side">
+                <div class="parent-badge">📱 父母角色：遥控指挥官</div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <span class="task-title">📸 16:30 查岗</span>
+                        <div class="task-desc">让家教发作业完成照片。完成度不好先记账，周六再算，别发火。</div>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-title">🎉 极度奖励</span>
+                        <div class="task-desc">19:00 见面第一句必须夸奖！晚上吃顿好的，允许看电视，<span class="highlight">彻底松弦</span>。</div>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="schedule-row">
-            <div class="time-col">下午</div>
-            <div class="content-col">
-                <div class="activity-title">🎡 自由活动/户外</div>
-                <div class="activity-desc">彻底放松，去公园/博物馆</div>
-            </div>
-        </div>
-        <div class="parent-section">
-            <div class="parent-title">🎓 父母任务：做回“老师”</div>
-            <ul class="parent-list">
-                <li><strong>错题清零：</strong> 拿出周三偷看到的、周五家教反馈的错题。不要批评“怎么又错了”，而是说“这道题很有意思，我们来研究一下陷阱在哪里”。</li>
-                <li><strong>费曼学习法：</strong> 让她当小老师。“这道题爸爸有点没看懂，你能不能讲给我听听？”——如果她能讲通，才是真懂。</li>
-                <li><strong>拒绝题海：</strong> 只针对弱项练3-5道精题。一旦搞懂，立即停止，不要因为她做得快就加量，<span class="highlight-text">这会破坏她的信任感。</span></li>
-            </ul>
-        </div>
-    </div>
 
-    <!-- 周日 -->
-    <div class="day-card day-sun">
-        <div class="card-header">
-            <span>周日 Sunday</span>
-            <span class="tag">整备蓄力 · 展望下周</span>
-        </div>
-        <div class="schedule-row">
-            <div class="time-col">上午</div>
-            <div class="content-col">
-                <div class="activity-title">📖 英语/阅读</div>
-                <div class="activity-desc">轻松一点的学习内容，保持语感</div>
+        <!-- 周六 -->
+        <div class="day-container">
+            <div class="schedule-side">
+                <div class="day-header">
+                    <span class="day-title">周六 Sat</span>
+                    <span class="day-tag">充电+泳训</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">睡到 10:30 😴</div>
+                    <div class="activity-name">🛌 自然醒·补觉时间</div>
+                    <div class="activity-detail">一周辛苦了，让身体充分恢复</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">10:30 - 12:00</div>
+                    <div class="activity-name">🔥 攻坚克难</div>
+                    <div class="activity-detail">父母全程陪伴 | 错题精练</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">下午</div>
+                    <div class="activity-name">🎡 自由活动</div>
+                    <div class="activity-detail">放松休息，为晚上游泳蓄力</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">17:00 - 18:30</div>
+                    <div class="activity-name">🏊‍♀️ 游泳训练</div>
+                    <div class="activity-detail">周末泳训 | 注意提前吃点东西</div>
+                </div>
+            </div>
+            <div class="parent-side">
+                <div class="parent-badge">🎓 父母角色：导师 & 后勤</div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <span class="task-title">😴 补觉神圣不可侵犯</span>
+                        <div class="task-desc">周六日早上睡到 10:30，<span class="highlight">不许提前叫醒</span>。睡眠是一周高强度运转后最好的恢复手段。</div>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-title">💡 费曼学习法</span>
+                        <div class="task-desc">10:30 起床后，针对周中错题让她当小老师讲给你听。<strong>只练3-5道精题</strong>，懂了就停，拒绝题海。</div>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-title">🍙 游泳前补给</span>
+                        <div class="task-desc">16:00 左右准备易消化高能食物（饭团/面包/香蕉）。<span class="highlight">空腹游泳绝对禁止</span>，但也别吃太撑。</div>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="schedule-row">
-            <div class="time-col">晚上</div>
-            <div class="content-col">
-                <div class="activity-title">🎒 书包整备</div>
-                <div class="activity-desc">准备下周物资</div>
+
+        <!-- 周日 -->
+        <div class="day-container">
+            <div class="schedule-side">
+                <div class="day-header">
+                    <span class="day-title">周日 Sun</span>
+                    <span class="day-tag">收心备战</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">睡到 10:30 😴</div>
+                    <div class="activity-name">🛌 自然醒·补觉时间</div>
+                    <div class="activity-detail">最后的充电时光</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">10:30 - 12:00</div>
+                    <div class="activity-name">📝 查漏补缺</div>
+                    <div class="activity-detail">收尾未完成作业 / 预习新课</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">下午</div>
+                    <div class="activity-name">🎡 自由活动</div>
+                    <div class="activity-detail">亲子时光 / 户外散步</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">17:00 - 18:30</div>
+                    <div class="activity-name">🏊‍♀️ 游泳训练</div>
+                    <div class="activity-detail">周末泳训 | 强度适中，别太拼</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-label">晚上</div>
+                    <div class="activity-name">🎒 书包整备 & 收心</div>
+                    <div class="activity-detail">检查物资，早睡早起</div>
+                </div>
+            </div>
+            <div class="parent-side">
+                <div class="parent-badge">🛡️ 父母角色：参谋 & 港湾</div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <span class="task-title">😴 继续保护睡眠</span>
+                        <div class="task-desc">周日同样睡到 10:30。<strong>两天充足补觉</strong>才能扛住下周的高压节奏。</div>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-title">🍙 游泳前补给（同周六）</span>
+                        <div class="task-desc">16:00 左右准备轻食。游泳后给热食暖胃，保温杯带上。</div>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-title">🛡️ 战略收心</span>
+                        <div class="task-desc">游泳回来后，一起检查物资（泳镜防雾、红领巾、作业本）。聊聊下周期待的事，<span class="highlight">带着期待入睡</span>。</div>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="parent-section">
-            <div class="parent-title">👨‍👩‍👧 父母任务：战略展望 & 收心</div>
-            <ul class="parent-list">
-                <li><strong>物资终检：</strong> 带着孩子一起检查：泳镜防雾剂涂了吗？泳衣干了吗？下周的作业本签字了吗？红领巾在哪里？</li>
-                <li><strong>心理建设：</strong> 20:30 准时上床。聊聊下周值得期待的事情（比如周三能早回家，周五吃什么），而不是下周的考试。帮助她带着期待而不是恐惧入睡。</li>
-            </ul>
-        </div>
+
     </div>
 
     <div class="footer-quote">
-        <strong>家庭教育格言：</strong><br>
-        平时做后勤（少说话，多做事），周末做参谋（找问题，给方法），永远做港湾（无条件接纳）。
+        <h3>家庭教育格言</h3>
+        <p>平时做后勤（少说话，多做事），周末做参谋（找问题，给方法），永远做港湾（无条件接纳）。</p>
     </div>
 </div>
 
