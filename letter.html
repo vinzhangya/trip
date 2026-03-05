@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给涵涵的一封信：我们的秘密行动</title>
+    <style>
+        :root {
+            --primary-color: #0369a1; /* Deep Ocean Blue */
+            --secondary-color: #0ea5e9; /* Light Blue */
+            --accent-color: #f97316; /* Orange for energy */
+            --mom-color: #db2777; /* Strong Pink for Mom */
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding-bottom: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+            padding: 20px 0;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        .intro-box {
+            background: #fff;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 25px;
+            border-left: 3px solid #cbd5e1;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 25px;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            left: -33px; /* Align with timeline line */
+            top: 28px;
+            width: 14px;
+            height: 14px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px var(--secondary-color);
+        }
+
+        .card h3 {
+            margin: 0 0 12px 0;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 1rem;
+            color: #475569;
+        }
+
+        .detail-tag {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        /* Mom's Card Styling */
+        .card.mom h3 { color: var(--mom-color); }
+        .card.mom::before { 
+            background: var(--mom-color); 
+            box-shadow: 0 0 0 2px var(--mom-color);
+        }
+        .card.mom .detail-tag {
+            background: #fce7f3;
+            color: #be185d;
+        }
+
+        /* Special Card Styling */
+        .card.special {
+            background: linear-gradient(to bottom right, #fff7ed, #fff);
+            border: 2px solid var(--accent-color);
+        }
+        .card.special::before {
+            background: var(--accent-color);
+            box-shadow: 0 0 0 2px var(--accent-color);
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer p {
+            font-size: 1.1rem;
+            color: #334155;
+        }
+
+        .signature {
+            margin-top: 25px;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🏊‍♂️ 给涵涵的秘密信</h1>
+        <div class="subtitle">为了你的周二游泳课，全家人的“特别行动”</div>
+    </header>
+
+    <div class="intro-box">
+        <p>涵涵，爸爸整理了一下最近的安排，突然发现：为了让你在周二能顺利跳进泳池，我们全家加上老师和教练，竟然默默完成了 <strong>8 个具体的任务</strong>。</p>
+    </div>
+
+    <div class="timeline">
+        <!-- 1. Dad's Calculation -->
+        <div class="card">
+            <h3>⏱️ 爸爸的“极限计算”</h3>
+            <span class="detail-tag">任务：抢时间</span>
+            <p>周二放学是4:30，游泳课5:00开始。中间只有30分钟，要出校门、换衣服、还要赶路。爸爸拿着地图算了好几遍，把路线<strong>精确到了每一分钟</strong>，就是为了确信：只要我们配合好，这事儿能成！</p>
+        </div>
+
+        <!-- 2. Mom & Dad Base -->
+        <div class="card">
+            <h3>🏘️ 爸妈联手“扫街”</h3>
+            <span class="detail-tag">任务：找据点</span>
+            <p>为了让你游泳前有个地方能安安心心写会儿作业，<strong>爸爸和妈妈</strong>把学校周围的托管班挨个跑了一遍。我们看了灯光亮不亮、环境吵不吵、离学校近不近，最后才选定了这个最完美的“中转站”。</p>
+        </div>
+
+        <!-- 3. Mom's Strategy -->
+        <div class="card mom">
+            <h3>💡 妈妈的“深度分析”</h3>
+            <span class="detail-tag">任务：出主意</span>
+            <p>遇到困难时，爸爸有时会急，是<strong>妈妈</strong>冷静地拉着爸爸坐下来商量：“作业做不完怎么办？”“太累了怎么办？”<br>
+            妈妈帮爸爸理清了所有可能遇到的问题，并想好了解决办法。没有妈妈在背后的<strong>运筹帷幄</strong>，这个计划根本执行不下去。</p>
+        </div>
+
+        <!-- 4. Sister -->
+        <div class="card">
+            <h3>🕵️‍♀️ 妹妹的“实地考察”</h3>
+            <span class="detail-tag">任务：当试坐员</span>
+            <p>那个晚托班到底舒不舒服？妹妹亲自去当了“体验官”。她坐在那儿试了试桌椅高度，看了看周围的小朋友，然后跑回来跟我们说：“哥哥肯定会喜欢的！”妹妹替你把了第一道关。</p>
+        </div>
+
+        <!-- 5. Grandma -->
+        <div class="card">
+            <h3>🍜 奶奶的“深夜灶台”</h3>
+            <span class="detail-tag">任务：后勤保障</span>
+            <p>周二游完泳回家肯定很晚了，奶奶说：“别让孩子吃冷饭。”她接下了最辛苦的任务——不管多晚，只要你进门，桌上一定有一碗<strong>热腾腾、刚出锅</strong>的饭菜等着你。</p>
+        </div>
+
+        <!-- 6. Teacher Wu -->
+        <div class="card">
+            <h3>🏫 吴老师的“特别破例”</h3>
+            <span class="detail-tag">任务：爸爸去谈判</span>
+            <p>周二下午是雷打不动的阅读课，学校规定<strong>严禁请假</strong>。爸爸硬着头皮专门去学校找吴老师谈心，诚恳地说了你的游泳梦想。吴老师被感动了，为你开了全班唯一的“离校通行证”。</p>
+        </div>
+
+        <!-- 7. Coach Wu -->
+        <div class="card">
+            <h3>🏊‍♂️ 吴教练的“特权通道”</h3>
+            <span class="detail-tag">任务：教练开绿灯</span>
+            <p>正规训练是不允许迟到早退的。但吴教练说：“涵涵是个好苗子。”他特批你可以晚到一会儿，甚至允许你早走几分钟。这种<strong>“VIP待遇”</strong>，是教练对你的偏爱。</p>
+        </div>
+
+        <!-- 8. Hanhan's Effort -->
+        <div class="card special">
+            <h3>🥇 最核心的原因：你的寒假</h3>
+            <span class="detail-tag">任务：赢得尊重</span>
+            <p>为什么大家愿意为你破例？<br>
+            因为寒假里，哪怕是大过年，吴教练都在给你开小灶。你没喊苦，没喊累，实打实地练了出来。<br>
+            <span class="highlight">正是因为你寒假流的汗水，才换来了现在所有人的支持！</span></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>涵涵，你看，这 8 个环节环环相扣。</p>
+        <p>爸爸在前面冲锋，妈妈在后面谋划，全家人都在为你铺路。</p>
+        <p style="margin-top:20px; font-weight:bold; color: var(--accent-color); font-size: 1.3rem;">现在，路通了，水热了。</p>
+        <p>去游吧，像条小鱼一样，游出你自己的精彩！</p>
+        
+        <div class="signature">
+            —— 爱你的爸爸
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
