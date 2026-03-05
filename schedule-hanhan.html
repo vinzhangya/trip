@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张涵的超级一周冒险地图 🗺️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: #fef6ff;
+            background-image:
+                radial-gradient(circle at 5% 15%, rgba(255,182,193,0.15) 0%, transparent 40%),
+                radial-gradient(circle at 95% 85%, rgba(135,206,250,0.15) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(255,255,150,0.08) 0%, transparent 50%);
+            color: #333;
+            padding: 16px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding-bottom: 40px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            text-align: center;
+            padding: 30px 20px 40px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 30%, #a18cd1 70%, #fbc2eb 100%);
+            border-radius: 24px;
+            color: #fff;
+            margin-bottom: 28px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(200, 100, 255, 0.2);
+        }
+
+        header .stars {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        header .stars span {
+            position: absolute;
+            font-size: 1.2rem;
+            animation: twinkle 3s ease-in-out infinite;
+            opacity: 0.4;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 0.7; transform: scale(1.2); }
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-sub {
+            font-size: 0.95rem;
+            margin-top: 8px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #fff 0%, #ffe0ec 100%);
+            margin: 0 auto 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== LEGEND ===== */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 24px;
+            padding: 16px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: #f9f5ff;
+        }
+
+        .legend-icon {
+            font-size: 1rem;
+        }
+
+        /* ===== DAY CARD ===== */
+        .day-card {
+            margin-bottom: 22px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+            transition: transform 0.2s;
+        }
+
+        .day-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .day-top {
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            font-weight: 900;
+            font-size: 1.15rem;
+            position: relative;
+        }
+
+        .day-top .day-emoji {
+            font-size: 1.6rem;
+            animation: wiggle 3s ease-in-out infinite;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        .day-top .difficulty {
+            margin-left: auto;
+            font-size: 0.72rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.3);
+            font-weight: 700;
+        }
+
+        /* 每天颜色 */
+        .mon .day-top { background: linear-gradient(135deg, #ff6b9d, #ff8fab); }
+        .tue .day-top { background: linear-gradient(135deg, #ff922b, #ffa94d); }
+        .wed .day-top { background: linear-gradient(135deg, #51cf66, #69db7c); }
+        .thu .day-top { background: linear-gradient(135deg, #20c997, #38d9a9); }
+        .fri .day-top { background: linear-gradient(135deg, #339af0, #4dabf7); }
+        .sat .day-top { background: linear-gradient(135deg, #ae3ec9, #cc5de8); }
+        .sun .day-top { background: linear-gradient(135deg, #e64980, #f06595); }
+
+        .day-body {
+            background: #fff;
+            padding: 16px 18px;
+        }
+
+        /* ===== BLOCK ===== */
+        .block {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px dashed #f0e6ff;
+        }
+
+        .block:last-child {
+            border-bottom: none;
+            padding-bottom: 4px;
+        }
+
+        .block-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .block-icon.swim { background: linear-gradient(135deg, #74c0fc, #4dabf7); }
+        .block-icon.math { background: linear-gradient(135deg, #ffd43b, #fab005); }
+        .block-icon.read { background: linear-gradient(135deg, #69db7c, #51cf66); }
+        .block-icon.homework { background: linear-gradient(135deg, #b197fc, #9775fa); }
+        .block-icon.school { background: linear-gradient(135deg, #ffa8a8, #ff8787); }
+        .block-icon.free { background: linear-gradient(135deg, #fcc2d7, #f06595); }
+        .block-icon.sleep { background: linear-gradient(135deg, #d0bfff, #b197fc); }
+        .block-icon.pack { background: linear-gradient(135deg, #96f2d7, #63e6be); }
+        .block-icon.study { background: linear-gradient(135deg, #ffd8a8, #ffc078); }
+
+        .block-info {
+            flex: 1;
+        }
+
+        .block-time {
+            font-size: 0.75rem;
+            color: #aaa;
+            font-weight: 700;
+        }
+
+        .block-name {
+            font-size: 1rem;
+            font-weight: 900;
+            color: #333;
+            margin-top: 1px;
+        }
+
+        .block-tip {
+            font-size: 0.82rem;
+            color: #888;
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .block-tip .tip-tag {
+            display: inline-block;
+            background: #fff3bf;
+            color: #e67700;
+            font-size: 0.7rem;
+            padding: 2px 7px;
+            border-radius: 6px;
+            font-weight: 700;
+        }
+
+        /* ===== REMEMBER BOX ===== */
+        .remember-box {
+            margin-top: 10px;
+            padding: 12px 14px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .mon .remember-box { background: #fff0f3; color: #c92a5b; }
+        .tue .remember-box { background: #fff4e6; color: #d9480f; }
+        .wed .remember-box { background: #f0fff4; color: #2b8a3e; }
+        .thu .remember-box { background: #e6fcf5; color: #087f5b; }
+        .fri .remember-box { background: #e7f5ff; color: #1971c2; }
+        .sat .remember-box { background: #f3f0ff; color: #7048e8; }
+        .sun .remember-box { background: #fff0f6; color: #c2255c; }
+
+        .remember-box .rb-icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* ===== ENERGY BAR ===== */
+        .energy-bar-wrap {
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #999;
+        }
+
+        .energy-bar {
+            flex: 1;
+            height: 10px;
+            background: #f1f3f5;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .energy-fill {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.5s;
+        }
+
+        .energy-fill.low { background: linear-gradient(90deg, #69db7c, #b2f2bb); }
+        .energy-fill.mid { background: linear-gradient(90deg, #ffd43b, #ffe066); }
+        .energy-fill.high { background: linear-gradient(90deg, #ff8787, #ffa8a8); }
+        .energy-fill.max { background: linear-gradient(90deg, #ff6b6b, #fa5252); }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 28px 20px;
+            background: linear-gradient(135deg, #fff 0%, #fef3ff 50%, #fce4ec 100%);
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(200,100,255,0.08);
+        }
+
+        .footer .big-emoji {
+            font-size: 2.5rem;
+            animation: heartbeat 1.5s ease infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        .footer h3 {
+            font-size: 1.1rem;
+            font-weight: 900;
+            margin-top: 8px;
+            background: linear-gradient(135deg, #ff6b9d, #c44dff, #4dabf7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 8px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 400px) {
+            header h1 { font-size: 1.4rem; }
+            .block-icon { width: 36px; height: 36px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="stars">
+            <span style="top:10%;left:8%;animation-delay:0s">⭐</span>
+            <span style="top:20%;left:85%;animation-delay:0.5s">✨</span>
+            <span style="top:60%;left:15%;animation-delay:1s">🌟</span>
+            <span style="top:70%;left:78%;animation-delay:1.5s">⭐</span>
+            <span style="top:40%;left:50%;animation-delay:2s">✨</span>
+            <span style="top:80%;left:40%;animation-delay:0.8s">🌟</span>
+        </div>
+        <div class="avatar">🦈</div>
+        <h1>张涵的超级一周</h1>
+        <div class="header-sub">每天都在变强 💪 加油鲨鱼宝贝！</div>
+    </header>
+
+    <div class="legend">
+        <div class="legend-item"><span class="legend-icon">🏊‍♀️</span>游泳</div>
+        <div class="legend-item"><span class="legend-icon">📐</span>数学</div>
+        <div class="legend-item"><span class="legend-icon">📖</span>阅读</div>
+        <div class="legend-item"><span class="legend-icon">✏️</span>写作业</div>
+        <div class="legend-item"><span class="legend-icon">🎡</span>自由玩耍</div>
+        <div class="legend-item"><span class="legend-icon">😴</span>睡觉</div>
+    </div>
+
+    <!-- ===== 周一 ===== -->
+    <div class="day-card mon">
+        <div class="day-top">
+            <span class="day-emoji">🌸</span>
+            <span>周一</span>
+            <span class="difficulty">⚡⚡⚡ 忙碌</span>
+        </div>
+        <div class="day-body">
+            <div class="block">
+                <div class="block-icon math">📐</div>
+                <div class="block-info">
+                    <div class="block-time">16:30 → 17:50</div>
+                    <div class="block-name">数学思维晚托</div>
+                    <div class="block-tip">在学校上课，不用跑远</div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-icon swim">🏊‍♀️</div>
+                <div class="block-info">
+                    <div class="block-time">18:10 → 19:10</div>
+                    <div class="block-name">游泳训练</div>
+                    <div class="block-tip">学校泳池 <span class="tip-tag">中间吃点东西！</span></div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-icon homework">✏️</div>
+                <div class="block-info">
+                    <div class="block-time">19:30 → 21:00</div>
+                    <div class="block-name">机构写作业</div>
+                    <div class="block-tip">把今天的作业搞定💪</div>
+                </div>
+            </div>
+            <div class="remember-box">
+                <span class="rb-icon">🎒</span>
+                <span>早上出门记得带泳包（泳衣+泳镜+毛巾）！</span>
+            </div>
+            <div class="energy-bar-wrap">
+                ⚡ 辛苦指数
+                <div class="energy-bar"><div class="energy-fill high" style="width:75%"></div></div>
+                75%
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 周二 ===== -->
+    <div class="day-card tue">
+        <div class="day-top">
+            <span class="day-emoji">🧡</span>
+            <span>周二</span>
+            <span class="difficulty">⚡⚡⚡ 充实</span>
+        </div>
+        <div class="day-body">
+            <div class="block">
+                <div class="block-icon swim">🏊‍♀️</div>
+                <div class="block-info">
+                    <div class="block-time">16:50 → 17:50</div>
+                    <div class="block-name">游泳训练</div>
+                    <div class="block-tip">学校泳池 <span class="tip-tag">游之前吃点碳水！</span></div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-icon read">📖</div>
+                <div class="block-info">
+                    <div class="block-time">18:00 → 19:30</div>
+                    <div class="block-name">智慧阅读</div>
+                    <div class="block-tip">中间可以吃晚饭哦🍙</div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-icon homework">✏️</div>
+                <div class="block-info">
+                    <div class="block-time">20:00 → 21:00</div>
+                    <div class="block-name">机构写作业</div>
+                    <div class="block-tip">写完就可以回家休息啦～</div>
+                </div>
+            </div>
+            <div class="remember-box">
+                <span class="rb-icon">🍙</span>
+                <span>今天课多，记得中间好好吃饭补充能量，回家洗个热水澡舒舒服服的！</span>
+            </div>
+            <div class="energy-bar-wrap">
+                ⚡ 辛苦指数
+                <div class="energy-bar"><div class="energy-fill high" style="width:75%"></div></div>
+                75%
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 周三 ===== -->
+    <div class="day-card wed">
+        <div class="day-top">
+            <span class="day-emoji">🍀</span>
+            <span>周三</span>
+            <span class="difficulty">⚡ 轻松～</span>
+        </div>
+        <div class="day-body">
+            <div class="block">
+                <div class="block-icon school">🏫</div>
+                <div class="block-info">
+                    <div class="block-time">16:00 → 17:30</div>
+                    <div class="block-name">校内晚托</div>
+                    <div class="block-tip">在学校把能写的先写了</div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-icon free">🏠</div>
+                <div class="block-info">
+                    <div class="block-time">18:00 回家！</div>
+                    <div class="block-name">早早回家 🎉</div>
+                    <div class="block-tip">整周最早到家的一天！享受吧！</div>
+                </div>
+            </div>
+            <div class="remember-box">
+                <span class="rb-icon">🌈</span>
+                <span>今天最轻松！回家后可以做自己喜欢的事，开心就好～</span>
+            </div>
+            <div class="energy-bar-wrap">
+                ⚡ 辛苦指数
+                <div class="energy-bar"><div class="energy-fill low" style="width:30%"></div></div>
+                30%
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 周四 ===== -->
+    <div class="day-card thu">
+        <div class="day-top">
+            <span class="day-emoji">🌊</span>
+            <span>周四</span>
+            <span class="difficulty">⚡⚡⚡ 赶路日</span>
+        </div>
+        <div class="day-body">
+            <div class="block">
+                <div class="block-icon swim">🏊‍♀️</div>
+                <div class="block-info">
+                    <div class="block-time">17:30 → 19:00</div>
+                    <div class="block-name">浙大游泳（大训练！）</div>
+                    <div class="block-tip">要去浙大泳池 <span class="tip-tag">路上可以补觉</span></div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-icon homework">✏️</div>
+                <div class="block-info">
+                    <div class="block-time">19:30 → 21:00</div>
+                    <div class="block-name">机构写作业</div>
+                    <div class="block-tip">赶紧把作业清掉～</div>
+                </div>
+            </div>
+            <div class="remember-box">
+                <span class="rb-icon">📋</span>
+                <span>明天家教要来接你放学！今晚检查一下书包：作业本和试卷都带了吗？</span>
+            </div>
+            <div class="energy-bar-wrap">
+                ⚡ 辛苦指数
+                <div class="energy-bar"><div class="energy-fill high" style="width:70%"></div></div>
+                70%
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 周五 ===== -->
+    <div class="day-card fri">
+        <div class="day-top">
+            <span class="day-emoji">🎉</span>
+            <span>周五</span>
+            <span class="difficulty">⚡⚡ 自由在望</span>
+        </div>
+        <div class="day-body">
+            <div class="block">
+                <div class="block-icon school">👋</div>
+                <div class="block-info">
+                    <div class="block-time">15:00</div>
+                    <div class="block-name">家教来接放学</div>
+                    <div class="block-tip">今天放学最早！</div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-icon study">⚡</div>
+                <div class="block-info">
+                    <div class="block-time">15:30 → 16:30</div>
+                    <div class="block-name">黄金1小时自习</div>
+                    <div class="block-tip">集中精神，写完就去游泳！<span class="tip-tag">效率MAX！</span></div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-icon swim">🏊‍♀️</div>
+                <div class="block-info">
+                    <div class="block-time">17:00 → 19:00</div>
+                    <div class="block-name">浙大长距离游泳</div>
+                    <div class="block-tip">本周最后一次工作日泳训，冲！</div>
+                </div>
+            </div>
+            <div class="remember-box">
+                <span class="rb-icon">🎊</span>
+                <span>游完泳回来就是周末啦！晚上可以看电视、吃好吃的，尽情放松！</span>
+            </div>
+            <div class="energy-bar-wrap">
+                ⚡ 辛苦指数
+                <div class="energy-bar"><div class="energy-fill mid" style="width:55%"></div></div>
+                55%
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 周六 ===== -->
+    <div class="day-card sat">
+        <div class="day-top">
+            <span class="day-emoji">💜</span>
+            <span>周六</span>
+            <span class="difficulty">⚡⚡ 充电日</span>
+        </div>
+        <div class="day-body">
+            <div class="block">
+                <div class="block-icon sleep">😴</div>
+                <div class="block-info">
+                    <div class="block-time">→ 睡到 10:30</div>
+                    <div class="block-name">睡到自然醒！</div>
+                    <div class="block-tip">补觉是你应得的奖励 🛌</div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-icon study">🔥</div>
+                <div class="block-info">
+                    <div class="block-time">10:30 → 12:00</div>
+                    <div class="block-name">攻坚时间（和爸妈一起）</div>
+                    <div class="block-tip">只挑3-5道难题搞懂，不刷题海 <span class="tip-tag">质量 > 数量</span></div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-icon free">🎡</div>
+                <div class="block-info">
+                    <div class="block-time">下午自由时间</div>
+                    <div class="block-name">随便玩！</div>
+                    <div class="block-tip">想干嘛干嘛，开心最重要～</div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-icon swim">🏊‍♀️</div>
+                <div class="block-info">
+                    <div class="block-time">17:00 → 18:30</div>
+                    <div class="block-name">周末游泳训练</div>
+                    <div class="block-tip"><span class="tip-tag">16:00 吃点东西垫肚子！</span></div>
+                </div>
+            </div>
+            <div class="remember-box">
+                <span class="rb-icon">🍌</span>
+                <span>游泳前1小时吃点香蕉或面包，别空肚子下水哦！</span>
+            </div>
+            <div class="energy-bar-wrap">
+                ⚡ 辛苦指数
+                <div class="energy-bar"><div class="energy-fill mid" style="width:45%"></div></div>
+                45%
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 周日 ===== -->
+    <div class="day-card sun">
+        <div class="day-top">
+            <span class="day-emoji">🌺</span>
+            <span>周日</span>
+            <span class="difficulty">⚡⚡ 收心日</span>
+        </div>
+        <div class="day-body">
+            <div class="block">
+                <div class="block-icon sleep">😴</div>
+                <div class="block-info">
+                    <div class="block-time">→ 睡到 10:30</div>
+                    <div class="block-name">继续睡到自然醒！</div>
+                    <div class="block-tip">最后的懒觉机会，珍惜！</div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-icon homework">📝</div>
+                <div class="block-info">
+                    <div class="block-time">10:30 → 12:00</div>
+                    <div class="block-name">收尾作业 / 预习</div>
+                    <div class="block-tip">没写完的作业赶紧清掉～</div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-icon free">🎡</div>
+                <div class="block-info">
+                    <div class="block-time">下午自由时间</div>
+                    <div class="block-name">亲子时光 / 出去逛逛</div>
+                    <div class="block-tip">和爸妈一起做点开心的事～</div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-icon swim">🏊‍♀️</div>
+                <div class="block-info">
+                    <div class="block-time">17:00 → 18:30</div>
+                    <div class="block-name">周末游泳训练</div>
+                    <div class="block-tip">强度别太猛，保留体力给下周</div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-icon pack">🎒</div>
+                <div class="block-info">
+                    <div class="block-time">晚上</div>
+                    <div class="block-name">整理书包 & 早睡</div>
+                    <div class="block-tip">检查清单：课本✅ 作业本✅ 红领巾✅ 泳包✅</div>
+                </div>
+            </div>
+            <div class="remember-box">
+                <span class="rb-icon">🌙</span>
+                <span>早点睡！想想下周有什么好期待的事，带着好心情入睡吧～</span>
+            </div>
+            <div class="energy-bar-wrap">
+                ⚡ 辛苦指数
+                <div class="energy-bar"><div class="energy-fill mid" style="width:50%"></div></div>
+                50%
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="footer">
+        <div class="big-emoji">🦈</div>
+        <h3>你是最强鲨鱼宝贝！</h3>
+        <p>每一天都在变强，每一次训练都在积攒力量。<br>累的时候想想：周三可以早回家，周五晚上可以看电视！💪</p>
+    </div>
+
+</div>
+
+</body>
+</html>
