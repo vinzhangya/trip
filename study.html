@@ -23,7 +23,7 @@
     padding: 20px;
     min-height: 100vh;
   }
-  .header { text-align: center; padding: 40px 20px 30px; }
+  .header { text-align: center; padding: 40px 20px 20px; }
   .header h1 {
     font-family: 'ZCOOL KuaiLe', cursive;
     font-size: 2.4em;
@@ -42,7 +42,7 @@
   }
   .stats-bar {
     display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
-    margin: 20px auto 30px; max-width: 900px;
+    margin: 20px auto 24px; max-width: 900px;
   }
   .stat-item {
     background: white; border-radius: 14px; padding: 14px 22px;
@@ -50,16 +50,44 @@
   }
   .stat-item .num { font-family: 'ZCOOL KuaiLe', cursive; font-size: 1.8em; line-height: 1; }
   .stat-item .label { font-size: 0.73em; color: var(--muted); margin-top: 4px; }
-  .insight-banner {
+
+  /* ===== 六本书理念卡片 ===== */
+  .books-section {
     max-width: 900px; margin: 0 auto 30px;
-    background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
-    border-left: 4px solid #FFB74D; border-radius: 0 14px 14px 0;
-    padding: 18px 24px; font-size: 0.86em; line-height: 1.9;
   }
-  .insight-banner .book-tag {
-    display: inline-block; background: #FFB74D; color: white;
-    padding: 2px 10px; border-radius: 10px; font-size: 0.78em; font-weight: 500; margin-right: 4px;
+  .books-section h2 {
+    font-family: 'ZCOOL KuaiLe', cursive; font-size: 1.2em;
+    text-align: center; margin-bottom: 16px; color: #5C6BC0;
   }
+  .books-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;
+  }
+  @media (max-width: 700px) {
+    .books-grid { grid-template-columns: 1fr; }
+  }
+  .book-card {
+    border-radius: 14px; padding: 16px 18px;
+    font-size: 0.82em; line-height: 1.7;
+    position: relative; overflow: hidden;
+  }
+  .book-card .book-name {
+    font-weight: 700; font-size: 0.88em; margin-bottom: 6px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .book-card .book-action {
+    font-weight: 600; margin-top: 6px;
+  }
+  .book-card .book-where {
+    font-size: 0.78em; color: rgba(0,0,0,0.5); margin-top: 4px;
+  }
+  .bc-spark { background: linear-gradient(135deg, #E3F2FD, #BBDEFB); }
+  .bc-clock { background: linear-gradient(135deg, #FFF3E0, #FFE0B2); }
+  .bc-holt { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); }
+  .bc-totto { background: linear-gradient(135deg, #FFF8E1, #FFECB3); }
+  .bc-emile { background: linear-gradient(135deg, #F3E5F5, #E1BEE7); }
+  .bc-7habits { background: linear-gradient(135deg, #E0F2F1, #B2DFDB); }
+
+  /* ===== Day Cards ===== */
   .week-grid { max-width: 940px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
   .day-card {
     background: white; border-radius: var(--card-radius);
@@ -80,7 +108,6 @@
     .day-body { grid-template-columns: 1fr; }
     .schedule-col { border-right: none !important; border-bottom: 1px solid #f0ebe5; }
     .header h1 { font-size: 1.8em; }
-    .stats-bar { gap: 10px; }
     .stat-item { min-width: 90px; padding: 10px 14px; }
     .stat-item .num { font-size: 1.4em; }
   }
@@ -125,16 +152,29 @@
     font-weight: 600; margin-left: 6px; vertical-align: middle;
   }
   .parent-tip {
-    margin-bottom: 12px; font-size: 0.84em; line-height: 1.8;
-    padding-left: 8px; border-left: 2px solid #e0e0e0;
+    margin-bottom: 14px; font-size: 0.84em; line-height: 1.8;
+    padding-left: 10px; border-left: 2px solid #e0e0e0;
   }
   .parent-tip strong { display: block; margin-bottom: 2px; }
+  /* Book source tags inside parent tips */
+  .src {
+    display: inline-block; font-size: 0.7em; padding: 1px 7px;
+    border-radius: 8px; font-weight: 600; vertical-align: middle; margin-left: 4px;
+  }
+  .src-spark { background: #BBDEFB; color: #1565C0; }
+  .src-clock { background: #FFE0B2; color: #E65100; }
+  .src-holt { background: #C8E6C9; color: #2E7D32; }
+  .src-totto { background: #FFECB3; color: #F57F17; }
+  .src-emile { background: #E1BEE7; color: #7B1FA2; }
+  .src-7h { background: #B2DFDB; color: #00695C; }
+
   .sleep-bar {
     display: flex; align-items: center; gap: 8px;
     background: #EDE7F6; border-radius: 10px; padding: 8px 14px;
     margin-top: 10px; font-size: 0.8em;
   }
   .sleep-bar .hours { font-weight: 700; color: #5C6BC0; }
+
   .improvements {
     max-width: 900px; margin: 40px auto 20px; background: white;
     border-radius: var(--card-radius); box-shadow: var(--shadow); padding: 30px;
@@ -146,16 +186,18 @@
   .improve-item .before { font-size: 0.8em; color: #e57373; text-decoration: line-through; margin-bottom: 4px; }
   .improve-item .after { font-size: 0.9em; font-weight: 600; color: #4CAF50; }
   .improve-item .reason { font-size: 0.78em; color: var(--muted); margin-top: 6px; }
+
   .motto {
     max-width: 900px; margin: 30px auto 40px; text-align: center; padding: 30px;
     background: linear-gradient(135deg, #E8EAF6, #F3E5F5, #FFF3E0);
     border-radius: var(--card-radius);
   }
-  .motto p { font-family: 'ZCOOL KuaiLe', cursive; font-size: 1.2em; color: #5C6BC0; line-height: 2; }
+  .motto p { font-family: 'ZCOOL KuaiLe', cursive; font-size: 1.15em; color: #5C6BC0; line-height: 2.2; }
   .motto .small {
     font-family: 'Noto Sans SC', sans-serif; font-size: 0.78em;
-    color: var(--muted); margin-top: 8px; font-weight: 300;
+    color: var(--muted); margin-top: 10px; font-weight: 300; line-height: 1.8;
   }
+
   .bg-mon { background: linear-gradient(135deg, #FF8A65, #FF7043); }
   .bg-tue { background: linear-gradient(135deg, #42A5F5, #1E88E5); }
   .bg-wed { background: linear-gradient(135deg, #66BB6A, #43A047); }
@@ -169,7 +211,7 @@
 
 <div class="header">
   <h1>🌈 张涵 · 一周作战总表 🚀</h1>
-  <div class="subtitle">游泳运动员专训版 · 基于经典教育理念优化 · 父母详版</div>
+  <div class="subtitle">游泳运动员专训版 · 六本经典教育著作深度融合 · 父母详版</div>
   <div class="badge">🏊‍♀️ 泳龄四年 · 每周6练 · 学习×训练×留白</div>
 </div>
 
@@ -181,15 +223,52 @@
   <div class="stat-item"><div class="num" style="color:#FF8A65">0次</div><div class="label">机构晚托</div></div>
 </div>
 
-<div class="insight-banner">
-  <span class="book-tag">📖 运动改造大脑</span> <strong>泳训后30分钟是大脑黄金窗口</strong> → 周四、周五游泳后直接进入作业，效率最高<br>
-  <span class="book-tag">📖 儿童时间管理训练手册</span> <strong>把家长的期望转化为孩子的目标</strong> → 周三整晚归还给涵涵，自主支配<br>
-  <span class="book-tag">📖 孩子是如何学习的</span> <strong>自发的探索比被安排更有效</strong> → 去掉所有机构晚托，作业回归家庭
+<!-- ===== 六本书理念地图 ===== -->
+<div class="books-section">
+  <h2>📚 六本书 × 一张表 — 每条建议都有出处</h2>
+  <div class="books-grid">
+    <div class="book-card bc-spark">
+      <div class="book-name">🧠 《运动改造大脑》</div>
+      运动后30分钟内大脑注意力巅峰，是学习的黄金窗口。
+      <div class="book-action">→ 周四、周五泳后直接做难题</div>
+      <div class="book-where">标记：<span class="src src-spark">Spark</span></div>
+    </div>
+    <div class="book-card bc-clock">
+      <div class="book-name">⏰ 《儿童时间管理训练手册》</div>
+      把家长的期望转化为孩子的目标。奖励机制是时间管理的核心驱动力。
+      <div class="book-action">→ 周五冲刺换"干净周末"奖励</div>
+      <div class="book-where">标记：<span class="src src-clock">时间管理</span></div>
+    </div>
+    <div class="book-card bc-holt">
+      <div class="book-name">🌱 《孩子是如何学习的》</div>
+      孩子通过自发探索学习最有效。过度安排和监督适得其反。
+      <div class="book-action">→ 作业时间不坐旁边盯，不逐题检查</div>
+      <div class="book-where">标记：<span class="src src-holt">Holt</span></div>
+    </div>
+    <div class="book-card bc-totto">
+      <div class="book-name">🌸 《窗边的小豆豆》</div>
+      巴学园让孩子从自己最喜欢的科目开始学。选择权=内驱力。
+      <div class="book-action">→ 作业顺序由涵涵自己决定</div>
+      <div class="book-where">标记：<span class="src src-totto">小豆豆</span></div>
+    </div>
+    <div class="book-card bc-emile">
+      <div class="book-name">🌿 《爱弥儿》</div>
+      12岁前身体先于智识。运动和感官体验本身就是"学习"，不是学习的附属。
+      <div class="book-action">→ 泳训价值 ≥ 课本，涵涵在泳池学到的不比课堂少</div>
+      <div class="book-where">标记：<span class="src src-emile">爱弥儿</span></div>
+    </div>
+    <div class="book-card bc-7h">
+      <div class="book-name">💎 《高效能人士的七个习惯》</div>
+      以终为始：带着自己的目标开启一周。要事第一：自己判断什么最重要。
+      <div class="book-action">→ 周日收心时涵涵自己定"本周一件事"</div>
+      <div class="book-where">标记：<span class="src src-7h">七个习惯</span></div>
+    </div>
+  </div>
 </div>
 
 <div class="week-grid">
 
-  <!-- ====== 周一 ====== -->
+  <!-- ===================== 周一 ===================== -->
   <div class="day-card">
     <div class="day-header bg-mon">
       <span class="day-name">🌸 周一 Mon</span>
@@ -204,7 +283,7 @@
         </div>
         <div class="time-block">
           <div class="time">18:10-19:10</div><div class="icon">🏊‍♀️</div>
-          <div class="content"><div class="title">游泳训练 <span class="swim-badge">泳训①</span></div><div class="desc">校内泳池 | 17:50接时给高能食物（香蕉/蛋糕）</div></div>
+          <div class="content"><div class="title">游泳训练 <span class="swim-badge">泳训①</span></div><div class="desc">校内泳池 | 17:50接时给高能食物</div></div>
         </div>
         <div class="time-block">
           <div class="time">19:30-20:00</div><div class="icon">🍲</div>
@@ -212,7 +291,7 @@
         </div>
         <div class="time-block">
           <div class="time">20:00-21:00</div><div class="icon">📝</div>
-          <div class="content golden-window"><div class="title">在家做作业 <span class="golden-badge">⚡ 泳后黄金窗口</span></div><div class="desc">游泳后大脑仍然活跃，趁热做作业</div></div>
+          <div class="content golden-window"><div class="title">在家做作业 <span class="golden-badge">⚡ 泳后黄金窗口</span></div><div class="desc">涵涵自己选先做哪科，家长不坐旁边盯</div></div>
         </div>
         <div class="time-block">
           <div class="time">21:00-22:00</div><div class="icon">🛁</div>
@@ -222,14 +301,31 @@
       </div>
       <div class="parent-col">
         <div class="col-title">👨‍👩‍👧 父母角色：后勤部长</div>
-        <div class="parent-tip"><strong>⚡ 精准投喂策略</strong>17:50 接数学时给"一口吞"高能食物；19:30到家必须给热食。运动员的胃等不了。</div>
-        <div class="parent-tip"><strong>🚫 情绪静默期</strong>周一综合症高发。接到人后不问成绩、不催作业。只关心身体："冷不冷？累不累？"</div>
-        <div class="parent-tip"><strong>📝 作业只做1小时</strong>20:00-21:00 硬性截止。做不完的留给周三或周四。运动员的恢复比作业重要。</div>
+        <div class="parent-tip">
+          <strong>⚡ 精准投喂策略</strong>
+          17:50 接数学时给"一口吞"高能食物（香蕉/蛋糕）；19:30到家必须给热食。运动员的胃等不了。
+        </div>
+        <div class="parent-tip">
+          <strong>🚫 情绪静默期</strong>
+          周一综合症高发。接到人后不问成绩、不催作业。只关心身体："冷不冷？""累不累？"
+        </div>
+        <div class="parent-tip">
+          <strong>🌸 作业顺序她说了算 <span class="src src-totto">小豆豆</span></strong>
+          巴学园的做法：从自己喜欢的科目开始做。不规定"先数学后语文"。让涵涵自己决定今晚先做什么，这份选择权就是内驱力的种子。
+        </div>
+        <div class="parent-tip">
+          <strong>🌱 不坐旁边盯 <span class="src src-holt">Holt</span></strong>
+          John Holt 的核心洞察：孩子在被监督时会把注意力分给"家长的反应"，而不是题目本身。给她一个安静的空间，21:00 统一检查结果就好。
+        </div>
+        <div class="parent-tip">
+          <strong>📝 做不完的不熬夜</strong>
+          20:00-21:00 硬性截止。做不完留给周三或周四。运动员的恢复比作业重要。
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- ====== 周二 ====== -->
+  <!-- ===================== 周二 ===================== -->
   <div class="day-card">
     <div class="day-header bg-tue">
       <span class="day-name">🔥 周二 Tue</span>
@@ -252,7 +348,7 @@
         </div>
         <div class="time-block">
           <div class="time">20:00-21:00</div><div class="icon">📝</div>
-          <div class="content"><div class="title">在家做作业</div><div class="desc">全周最累的一天，只处理必做项</div></div>
+          <div class="content"><div class="title">在家做作业</div><div class="desc">全周最累的一天，只做必做项</div></div>
         </div>
         <div class="time-block">
           <div class="time">21:00-22:00</div><div class="icon">🛁</div>
@@ -262,14 +358,27 @@
       </div>
       <div class="parent-col">
         <div class="col-title">👨‍👩‍👧 父母角色：情绪按摩师</div>
-        <div class="parent-tip"><strong>🛁 物理放松服务</strong>到家备好热毛巾擦脸，或一杯温热可可。游泳+阅读连轴转，身体需要温暖信号。</div>
-        <div class="parent-tip"><strong>❤️ 无条件包容</strong>全周最累的一天。若孩子发脾气是生理性疲劳。闭嘴，拥抱，捏肩，说"辛苦了"。</div>
-        <div class="parent-tip"><strong>📝 作业降级处理</strong>今天不是高效作业日。只做简单任务，难题留给周四泳训后做，效率翻倍。</div>
+        <div class="parent-tip">
+          <strong>🛁 物理放松服务</strong>
+          到家备好热毛巾擦脸，或一杯温热可可。游泳+阅读连轴转，身体需要温暖信号。
+        </div>
+        <div class="parent-tip">
+          <strong>❤️ 无条件包容</strong>
+          全周最累的一天。若孩子发脾气是生理性疲劳。闭嘴，拥抱，捏肩，说"辛苦了"。
+        </div>
+        <div class="parent-tip">
+          <strong>🌿 今天的泳训本身就是学习 <span class="src src-emile">爱弥儿</span></strong>
+          卢梭说，12岁前身体发展优先于书本。涵涵在泳池里锻炼的意志力、对身体的掌控力、面对疲劳时的坚持——这些"课本"教不了。今天作业少做一点，没有关系。
+        </div>
+        <div class="parent-tip">
+          <strong>📝 作业降级处理 <span class="src src-clock">时间管理</span></strong>
+          今天不是高效作业日。只做简单任务，难题留给周四泳训后做，同样是1小时，效率翻倍。
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- ====== 周三 ====== -->
+  <!-- ===================== 周三 ===================== -->
   <div class="day-card">
     <div class="day-header bg-wed">
       <span class="day-name">🍀 周三 Wed</span>
@@ -298,18 +407,31 @@
       </div>
       <div class="parent-col">
         <div class="col-title">👨‍👩‍👧 父母角色：侦探 + 守护者</div>
-        <div class="parent-tip"><strong>🌿 留白神圣不可侵犯</strong>全周唯一没有泳训的夜晚。2.5小时完全归涵涵。不干预、不建议、不评价。这是给自驱力浇水的时间。</div>
-        <div class="parent-tip"><strong>🔍 隐形检查法</strong>趁她自由活动时翻看周一二作业。<b>看红叉</b>（区分粗心/不懂），<b>看字迹</b>（判断心态和疲劳程度）。</div>
-        <div class="parent-tip"><strong>💬 睡前温柔试探</strong>"这两天有没有特别难的题？需不需要周末爸爸开个小灶？"</div>
+        <div class="parent-tip">
+          <strong>🌱 留白 = 自发探索 <span class="src src-holt">Holt</span></strong>
+          John Holt 说：孩子最深刻的学习发生在没有人安排的时候。涵涵在这2.5小时里选择做的事——哪怕是发呆——都是她在学习"做自己"。不干预、不建议、不评价。
+        </div>
+        <div class="parent-tip">
+          <strong>🌸 如果她选择看书… <span class="src src-totto">小豆豆</span></strong>
+          不要问"看的什么书""有没有用"。巴学园的小林校长从不评判孩子的选择。让她享受阅读本身的快乐。
+        </div>
+        <div class="parent-tip">
+          <strong>🔍 隐形检查法</strong>
+          趁她自由活动时翻看周一二作业。<b>看红叉</b>（区分粗心/不懂），<b>看字迹</b>（判断心态和疲劳程度）。
+        </div>
+        <div class="parent-tip">
+          <strong>💬 睡前温柔试探</strong>
+          "这两天有没有特别难的题？需不需要周末爸爸开个小灶？"
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- ====== 周四 ====== -->
+  <!-- ===================== 周四 ===================== -->
   <div class="day-card">
     <div class="day-header bg-thu">
       <span class="day-name">🌊 周四 Thu</span>
-      <span class="day-tag">泳训→高效作业日</span>
+      <span class="day-tag">泳训→全周最强战力</span>
     </div>
     <div class="day-body">
       <div class="schedule-col">
@@ -328,28 +450,41 @@
         </div>
         <div class="time-block">
           <div class="time">19:30-21:00</div><div class="icon">📝</div>
-          <div class="content golden-window"><div class="title">深度作业时间 <span class="golden-badge">⚡ 泳后黄金窗口</span></div><div class="desc">本周最难的题放在这里！大脑刚被运动激活，专注力巅峰</div></div>
+          <div class="content golden-window"><div class="title">深度作业 <span class="golden-badge">⚡ 泳后黄金窗口 · 全周最强</span></div><div class="desc">本周最难的题放这里！涵涵自己排优先级，先做"大石头"</div></div>
         </div>
         <div class="time-block">
           <div class="time">21:00-22:00</div><div class="icon">🛁</div>
-          <div class="content"><div class="title">洗漱 · 亲子闲聊</div><div class="desc">确认明天书包物资，家教接放学</div></div>
+          <div class="content"><div class="title">洗漱 · 亲子闲聊</div><div class="desc">确认明天书包物资</div></div>
         </div>
         <div class="sleep-bar">🌙 22:00 熄灯 → 6:30 起床 = <span class="hours">8.5 小时</span></div>
       </div>
       <div class="parent-col">
         <div class="col-title">👨‍👩‍👧 父母角色：效率助推器</div>
-        <div class="parent-tip"><strong>⚡ 黄金窗口 · 全周最强战力</strong>《运动改造大脑》核心发现：运动后大脑注意力最集中。周二攒下的难题、本周错题，全部放在今晚19:30攻克。这是涵涵全周学习效率最高的1.5小时。</div>
-        <div class="parent-tip"><strong>🍲 热食第一要务</strong>游泳消耗巨大。到家第一件事吃热饭，边吃可聊天放松，不催作业。吃饱了自然进入状态。</div>
-        <div class="parent-tip"><strong>🎒 物资红色预警</strong>明天家教接放学。今晚必须确认：作业本、试卷是否都在书包里？</div>
+        <div class="parent-tip">
+          <strong>🧠 泳后黄金窗口 <span class="src src-spark">Spark</span></strong>
+          《运动改造大脑》核心发现：运动后大脑注意力巅峰。周二攒下的难题、本周错题，全部放在今晚19:30攻克。这是涵涵全周学习效率最高的1.5小时。
+        </div>
+        <div class="parent-tip">
+          <strong>💎 要事第一 · 她来排序 <span class="src src-7h">七个习惯</span></strong>
+          19:30 坐下来之前问一句："今晚你觉得哪个最重要？先搞定它。"让涵涵自己判断什么是"大石头"，培养要事优先的思维习惯。不要替她决定先做哪科。
+        </div>
+        <div class="parent-tip">
+          <strong>🌱 信任她的节奏 <span class="src src-holt">Holt</span></strong>
+          她可能中途要喝口水、发会儿呆、换一科再做——这不是"分心"，是大脑在自然地切换和消化。不催。
+        </div>
+        <div class="parent-tip">
+          <strong>🎒 物资红色预警</strong>
+          明天家教接放学。今晚必须确认：作业本、试卷是否都在书包里？
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- ====== 周五 ====== -->
+  <!-- ===================== 周五 ===================== -->
   <div class="day-card">
     <div class="day-header bg-fri">
       <span class="day-name">🎉 周五 Fri</span>
-      <span class="day-tag">泳训 + 收尾作业 · 迎接周末</span>
+      <span class="day-tag">泳训 + 冲刺清零 · 迎接周末</span>
     </div>
     <div class="day-body">
       <div class="schedule-col">
@@ -368,24 +503,33 @@
         </div>
         <div class="time-block">
           <div class="time">19:00-21:00</div><div class="icon">📝</div>
-          <div class="content golden-window"><div class="title">做作业 · 收尾本周 <span class="golden-badge">⚡ 周末前冲刺</span></div><div class="desc">目标：把周末作业全部清完，换一个干净的周末</div></div>
+          <div class="content golden-window"><div class="title">做作业 · 本周清零 <span class="golden-badge">⚡ 周末前冲刺</span></div><div class="desc">目标：周末作业全部清完，换一个干净的周末</div></div>
         </div>
         <div class="time-block">
           <div class="time">21:00 之后</div><div class="icon">🎮</div>
-          <div class="content free-time"><div class="title">周五奖励 <span class="free-badge">松弦</span></div><div class="desc">看电视 / 玩一会儿…一周辛苦了，开心就好</div></div>
+          <div class="content free-time"><div class="title">周五奖励 <span class="free-badge">彻底松弦</span></div><div class="desc">看电视 / 玩一会儿…一周辛苦了，开心就好</div></div>
         </div>
         <div class="sleep-bar">🌙 可以稍晚 → 周六自然醒 = <span class="hours">补觉模式开启 😴</span></div>
       </div>
       <div class="parent-col">
         <div class="col-title">👨‍👩‍👧 父母角色：庆功委员会</div>
-        <div class="parent-tip"><strong>🎯 周五冲刺目标</strong>19:00-21:00 的 2 小时争取把本周作业全部清完。目标：让周末完全没有"欠债"心理负担。</div>
-        <div class="parent-tip"><strong>🎉 极度奖励</strong>作业做完后是真正的奖励。《儿童时间管理训练手册》核心：奖励机制是时间管理的驱动力。</div>
-        <div class="parent-tip"><strong>🌿 彻底松弦</strong>21:00之后不聊学习、不聊训练、不聊下周计划。今晚只负责开心。</div>
+        <div class="parent-tip">
+          <strong>⏰ 冲刺清零机制 <span class="src src-clock">时间管理</span></strong>
+          《儿童时间管理训练手册》的"豆豆星星表"原理：完成任务→兑换奖励。周五的逻辑就是"清完作业 = 解锁干净周末"。让涵涵自己倒推："要拿到这个周末，今晚得搞定什么？"
+        </div>
+        <div class="parent-tip">
+          <strong>🌿 涵涵今天在泳池里的1小时 = 一节体育课 + 一节意志力课 <span class="src src-emile">爱弥儿</span></strong>
+          别觉得下午"只是游泳没学习"。卢梭说身体是心智的根基。涵涵的游泳训练正在建造这个根基。
+        </div>
+        <div class="parent-tip">
+          <strong>🎉 极度奖励</strong>
+          作业做完后是真正的奖励。21:00后不聊学习、不聊训练、不聊下周计划。今晚只负责开心。
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- ====== 周六 ====== -->
+  <!-- ===================== 周六 ===================== -->
   <div class="day-card">
     <div class="day-header bg-sat">
       <span class="day-name">💜 周六 Sat</span>
@@ -421,15 +565,27 @@
       </div>
       <div class="parent-col">
         <div class="col-title">👨‍👩‍👧 父母角色：导师 & 后勤</div>
-        <div class="parent-tip"><strong>😴 补觉神圣不可侵犯</strong>不许提前叫醒。工作日每天8.5小时，周末必须补回来。运动员的恢复 = 下一周的竞技状态。</div>
-        <div class="parent-tip"><strong>🏃‍♀️ 先动再学（核心策略）</strong>《运动改造大脑》：先做20分钟轻运动再学习，错题讲解效率大幅提升。这20分钟不是浪费，是给大脑"开机"。</div>
-        <div class="parent-tip"><strong>💡 费曼法 · 只练精题</strong>让她当小老师讲给你听。只练3-5道，懂了就停。拒绝题海，保护学习热情。</div>
-        <div class="parent-tip"><strong>🍙 泳前补给</strong>16:00 准备易消化高能食物。空腹游泳绝对禁止，但也别吃太撑。</div>
+        <div class="parent-tip">
+          <strong>😴 补觉神圣不可侵犯 <span class="src src-spark">Spark</span></strong>
+          运动员的恢复 = 下一周的竞技状态。工作日每天8.5小时，周末必须补回来。不许提前叫醒。
+        </div>
+        <div class="parent-tip">
+          <strong>🏃‍♀️ 先动再学 <span class="src src-spark">Spark</span></strong>
+          《运动改造大脑》核心策略：先做20分钟轻运动再学习，大脑"开机"后错题讲解效率大幅提升。
+        </div>
+        <div class="parent-tip">
+          <strong>💡 费曼法 · 只练精题 <span class="src src-clock">时间管理</span></strong>
+          让她当小老师讲给你听。只练3-5道，懂了就停。拒绝题海，保护学习热情。
+        </div>
+        <div class="parent-tip">
+          <strong>🌸 她讲对了要真心赞叹 <span class="src src-totto">小豆豆</span></strong>
+          小林校长对每个孩子说的那句话："你真是一个好孩子。"——涵涵讲完一道题，请发自内心地说："你讲得比老师还清楚。"这比做对10道题更重要。
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- ====== 周日 ====== -->
+  <!-- ===================== 周日 ===================== -->
   <div class="day-card">
     <div class="day-header bg-sun">
       <span class="day-name">🌺 周日 Sun</span>
@@ -460,66 +616,79 @@
         </div>
         <div class="time-block">
           <div class="time">晚上</div><div class="icon">🎒</div>
-          <div class="content"><div class="title">书包整备 · 收心</div><div class="desc">泳镜防雾/红领巾/作业本 · 聊聊下周期待的事</div></div>
+          <div class="content"><div class="title">书包整备 · 收心仪式</div><div class="desc">检查物资 + "涵涵的本周一件事"</div></div>
         </div>
         <div class="sleep-bar">🌙 21:30 早睡 → 6:30 起床 = <span class="hours">9 小时 · 满电开启新一周</span></div>
       </div>
       <div class="parent-col">
         <div class="col-title">👨‍👩‍👧 父母角色：参谋 & 港湾</div>
-        <div class="parent-tip"><strong>🌳 户外 ≠ 训练</strong>游泳对涵涵来说是"工作"。周日下午选非竞技户外活动，让身心在"玩"的状态中恢复。</div>
-        <div class="parent-tip"><strong>🛡️ 战略收心</strong>泳训回来后一起检查物资。聊聊下周期待的事，带着正向情绪入睡。</div>
-        <div class="parent-tip"><strong>😴 周日早睡是底线</strong>周一表现好不好，取决于周日睡得好不好。21:30 是硬性底线。</div>
+        <div class="parent-tip">
+          <strong>🌳 户外 ≠ 训练 <span class="src src-emile">爱弥儿</span></strong>
+          游泳对涵涵来说已经是"工作"。周日下午的户外活动选非竞技项目。卢梭说，在自然中奔跑、观察、触摸，本身就是最好的教育。不需要目的，享受就好。
+        </div>
+        <div class="parent-tip">
+          <strong>💎 以终为始 · 收心仪式 <span class="src src-7h">七个习惯</span></strong>
+          泳训回来后，除了检查物资（泳镜/红领巾/作业本），加一个仪式：<br>
+          问涵涵 👉 <b>"下周你最想完成的一件事是什么？"</b><br>
+          可以是学习的（"搞懂分数应用题"），可以是泳训的（"蝶泳换气更顺"），也可以是生活的（"和小雨约一次周末"）——什么都行。写在便签纸上贴在她的书桌。带着自己的目标入睡，而不是被安排的任务。
+        </div>
+        <div class="parent-tip">
+          <strong>🌱 回顾也由她主导 <span class="src src-holt">Holt</span></strong>
+          如果涵涵愿意聊这一周，就听她说。如果不想聊，就不聊。John Holt 说：强制的反思不会产生真正的思考。
+        </div>
+        <div class="parent-tip">
+          <strong>😴 周日早睡是底线</strong>
+          周一表现好不好，取决于周日睡得好不好。21:30 硬性底线。
+        </div>
       </div>
     </div>
   </div>
 
 </div>
 
-<!-- 优化亮点 -->
+<!-- ===================== 优化亮点 ===================== -->
 <div class="improvements">
-  <h2>📊 本版优化亮点</h2>
+  <h2>📊 六本书落地全览</h2>
   <div class="improve-grid">
     <div class="improve-item">
-      <div class="before">❌ 机构晚托 3 次/周</div>
-      <div class="after">✅ 全部取消，作业回归家庭</div>
-      <div class="reason">在家做作业环境更安静，效率更高；减少转场奔波，节省体力给泳训</div>
+      <div class="after">🧠 《运动改造大脑》</div>
+      <div class="reason">周一/二/四/五泳后标注"黄金窗口"，周四定为全周最强学习时段；周六先热身再学习。运动不是学习的对立面，是学习的发动机。</div>
     </div>
     <div class="improve-item">
-      <div class="before">❌ 涵涵几乎没有自主时间</div>
-      <div class="after">✅ 周三 19:30-22:00 完整留白 2.5h</div>
-      <div class="reason">全周唯一无泳训夜晚，整晚归涵涵支配。留白是自驱力生长的土壤</div>
+      <div class="after">⏰ 《儿童时间管理训练手册》</div>
+      <div class="reason">周五"冲刺清零→奖励"机制；周二难题留到周四做（任务评估与排序）；费曼法精练替代题海战术。</div>
     </div>
     <div class="improve-item">
-      <div class="before">❌ 难题随机分布在每天</div>
-      <div class="after">✅ 难题集中在周四泳训后黄金窗口</div>
-      <div class="reason">《运动改造大脑》：运动后大脑注意力巅峰。周四 19:30 是全周最强战力时段</div>
+      <div class="after">🌱 《孩子是如何学习的》</div>
+      <div class="reason">所有作业时段标注"不坐旁边盯"；周三留白不干预不建议；周四允许她中途切换科目和节奏；周日回顾由她主导。</div>
     </div>
     <div class="improve-item">
-      <div class="before">❌ 周六直接起床做错题</div>
-      <div class="after">✅ 先户外热身 20min 再攻坚</div>
-      <div class="reason">轻运动激活大脑后，费曼学习法的效果更佳</div>
+      <div class="after">🌸 《窗边的小豆豆》</div>
+      <div class="reason">作业顺序由涵涵自己决定（巴学园的"自选起点"）；周三自由时间不评判她的选择；周六讲对题后给予真心赞叹。</div>
     </div>
     <div class="improve-item">
-      <div class="before">❌ 周五作业时间不固定</div>
-      <div class="after">✅ 19:00-21:00 冲刺清完周末作业</div>
-      <div class="reason">目标：周末零作业债，让涵涵带着"干净"的心态享受周末</div>
+      <div class="after">🌿 《爱弥儿》</div>
+      <div class="reason">每次泳训标注"运动员编号"，强调泳训本身的教育价值；周二父母提醒"泳池里学到的不比课本少"；周日户外活动 = 卢梭式自然教育。</div>
     </div>
     <div class="improve-item">
-      <div class="before">❌ 周日下午活动定义模糊</div>
-      <div class="after">✅ 明确为"户外非竞技亲子活动"</div>
-      <div class="reason">游泳是"工作"，周日下午要的是"玩" — 区分训练型运动和享受型运动</div>
+      <div class="after">💎 《高效能人士的七个习惯》</div>
+      <div class="reason">周四作业前涵涵自己排"要事优先级"（要事第一）；周日收心仪式"本周一件事"写便签（以终为始）；目标由她自己定义，不是家长指派。</div>
     </div>
   </div>
 </div>
 
-<!-- 格言 -->
+<!-- ===================== 格言 ===================== -->
 <div class="motto">
   <p>
     平时做后勤（少说话，多做事）<br>
     周末做参谋（找问题，给方法）<br>
     永远做港湾（无条件接纳）
   </p>
-  <div class="small">运动员的孩子更需要一条：守住周三的留白 — 那是涵涵给自己充电的夜晚 🌱</div>
+  <div class="small">
+    📖 六本书浓缩成一句话：<br>
+    让她动起来（Spark），给她方法（时间管理），然后退后一步（Holt），<br>
+    让她自己选（小豆豆），相信身体的力量（爱弥儿），带着自己的目标上路（七个习惯）。
+  </div>
 </div>
 
 </body>
