@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌈 张雯 · 一周作战总表 🚀</title>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFF8F5;
+    --card-r: 18px;
+    --shadow: 0 4px 24px rgba(0,0,0,0.06);
+    --text: #2D2D2D;
+    --muted: #999;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    padding: 16px;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 15% 25%, rgba(255,183,197,0.15) 0%, transparent 50%),
+      radial-gradient(circle at 85% 75%, rgba(179,229,252,0.15) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(255,245,157,0.1) 0%, transparent 60%);
+  }
+
+  .hero { text-align: center; padding: 36px 16px 20px; }
+  .hero .wave { font-size: 3em; line-height: 1; }
+  .hero h1 {
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 2.4em;
+    background: linear-gradient(135deg, #FF80AB, #FFB74D, #81C784, #CE93D8, #FF80AB);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gShift 4s ease infinite;
+    margin: 8px 0;
+  }
+  @keyframes gShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+  .hero .tagline { font-family:'ZCOOL KuaiLe',cursive; font-size:1em; color:#999; }
+  .hero .badge {
+    display: inline-block; margin-top: 12px;
+    background: linear-gradient(135deg, #F48FB1, #CE93D8);
+    color: white; padding: 6px 18px; border-radius: 20px;
+    font-size: 0.8em; font-weight: 500; letter-spacing: 1px;
+  }
+
+  /* ID Card */
+  .id-card {
+    max-width: 520px; margin: 0 auto 24px;
+    background: white; border-radius: var(--card-r);
+    box-shadow: var(--shadow); padding: 24px 28px;
+    display: flex; align-items: center; gap: 20px;
+  }
+  .id-card .avatar { font-size: 4em; flex-shrink: 0; }
+  .id-card .info { flex: 1; }
+  .id-card .info .name { font-family:'ZCOOL KuaiLe',cursive; font-size:1.5em; color:#F48FB1; }
+  .id-card .info .tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+  .id-card .info .tags span { font-size:0.78em; padding:3px 12px; border-radius:20px; font-weight:500; }
+  .tag-swim { background:#E3F2FD; color:#1565C0; }
+  .tag-age { background:#FFF3E0; color:#E65100; }
+  .tag-go { background:#E8F5E9; color:#2E7D32; }
+  .tag-art { background:#F3E5F5; color:#7B1FA2; }
+  .tag-skate { background:#E0F7FA; color:#00838F; }
+
+  /* Stats */
+  .stats {
+    max-width: 600px; margin: 0 auto 24px;
+    display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
+  }
+  .stat {
+    background: white; border-radius: 14px; padding: 12px 20px;
+    box-shadow: var(--shadow); text-align: center; min-width: 100px;
+  }
+  .stat .num { font-family:'ZCOOL KuaiLe',cursive; font-size:1.6em; line-height:1; }
+  .stat .label { font-size:0.7em; color:var(--muted); margin-top:4px; }
+
+  /* Day Cards */
+  .days { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+  .day {
+    background: white; border-radius: var(--card-r);
+    box-shadow: var(--shadow); overflow: hidden;
+  }
+  .day-top {
+    padding: 14px 22px; color: white;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .day-top .dname { font-family:'ZCOOL KuaiLe',cursive; font-size:1.4em; }
+  .day-top .dtag {
+    background: rgba(255,255,255,0.3); padding:3px 14px;
+    border-radius: 12px; font-size:0.76em; font-weight:500;
+  }
+  .day-content { padding: 18px 22px; }
+
+  .item { display:flex; gap:10px; margin-bottom:12px; align-items:flex-start; }
+  .item .t { font-size:0.78em; color:#aaa; min-width:88px; padding-top:2px; font-weight:500; white-space:nowrap; }
+  .item .ic { font-size:1.3em; min-width:26px; text-align:center; }
+  .item .c { flex:1; }
+  .item .c .main { font-weight:600; font-size:0.95em; }
+  .item .c .sub { font-size:0.8em; color:#aaa; margin-top:1px; }
+
+  .hl-swim {
+    background: linear-gradient(90deg, #E3F2FD, transparent);
+    border-left: 3px solid #42A5F5; padding:5px 10px;
+    border-radius: 0 8px 8px 0; margin:-3px -6px;
+  }
+  .hl-free {
+    background: linear-gradient(90deg, #E8F5E9, transparent);
+    border-left: 3px solid #81C784; padding:5px 10px;
+    border-radius: 0 8px 8px 0; margin:-3px -6px;
+  }
+  .hl-class {
+    background: linear-gradient(90deg, #F3E5F5, transparent);
+    border-left: 3px solid #CE93D8; padding:5px 10px;
+    border-radius: 0 8px 8px 0; margin:-3px -6px;
+  }
+  .hl-gold {
+    background: linear-gradient(90deg, #FFF8E1, transparent);
+    border-left: 3px solid #FFD54F; padding:5px 10px;
+    border-radius: 0 8px 8px 0; margin:-3px -6px;
+  }
+
+  .badge-s {
+    display:inline-block; padding:1px 8px; border-radius:8px;
+    font-size:0.65em; font-weight:600; margin-left:5px; vertical-align:middle;
+  }
+  .bs-swim { background:#42A5F5; color:white; }
+  .bs-free { background:#81C784; color:white; }
+  .bs-class { background:#CE93D8; color:white; }
+  .bs-skate { background:#26C6DA; color:white; }
+  .bs-go { background:#8D6E63; color:white; }
+  .bs-art { background:#FF8A65; color:white; }
+  .bs-study { background:#FFB74D; color:white; }
+
+  .tip {
+    background:#F5F5F0; border-radius:14px; padding:12px 16px;
+    margin-top:10px; font-size:0.85em; line-height:1.7; position:relative;
+  }
+  .tip::before { content:'💡'; position:absolute; top:-10px; left:14px; font-size:1.2em; }
+  .tip .tip-title { font-weight:700; margin-bottom:2px; padding-left:4px; }
+
+  .parent-note {
+    background:#FFF8E1; border-radius:14px; padding:12px 16px;
+    margin-top:8px; font-size:0.82em; line-height:1.7;
+    border-left: 3px solid #FFB74D;
+  }
+  .parent-note .pn-label {
+    font-size:0.72em; font-weight:700; color:#F9A825;
+    text-transform:uppercase; letter-spacing:1px; margin-bottom:3px;
+  }
+
+  .sleep-line {
+    display:flex; align-items:center; gap:6px;
+    background:#EDE7F6; border-radius:10px; padding:7px 14px;
+    margin-top:10px; font-size:0.8em;
+  }
+  .sleep-line b { color:#5C6BC0; }
+
+  /* Powers */
+  .powers {
+    max-width: 640px; margin: 28px auto 20px;
+    background: white; border-radius: var(--card-r);
+    box-shadow: var(--shadow); padding: 24px;
+  }
+  .powers h2 { font-family:'ZCOOL KuaiLe',cursive; font-size:1.2em; text-align:center; margin-bottom:14px; }
+  .power-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  @media (max-width:500px) { .power-grid{grid-template-columns:1fr;} }
+  .power-item { border-radius:14px; padding:14px 16px; text-align:center; }
+  .power-item .picon { font-size:2em; margin-bottom:4px; }
+  .power-item .pname { font-family:'ZCOOL KuaiLe',cursive; font-size:0.92em; margin-bottom:4px; }
+  .power-item .pdesc { font-size:0.76em; color:#888; }
+  .pw1 { background: linear-gradient(135deg, #E3F2FD, #BBDEFB); }
+  .pw2 { background: linear-gradient(135deg, #F3E5F5, #E1BEE7); }
+  .pw3 { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); }
+  .pw4 { background: linear-gradient(135deg, #FFF3E0, #FFE0B2); }
+
+  .footer {
+    max-width: 640px; margin: 24px auto 40px;
+    text-align: center; padding: 28px;
+    background: linear-gradient(135deg, #FCE4EC, #F3E5F5, #E8EAF6, #E0F7FA);
+    border-radius: var(--card-r);
+  }
+  .footer p { font-family:'ZCOOL KuaiLe',cursive; font-size:1.2em; color:#AD1457; line-height:2; }
+  .footer .small { font-family:'Noto Sans SC',sans-serif; font-size:0.78em; color:#bbb; margin-top:8px; font-weight:300; }
+
+  .bg-mon { background: linear-gradient(135deg, #FF8A65, #FF7043); }
+  .bg-tue { background: linear-gradient(135deg, #42A5F5, #1E88E5); }
+  .bg-wed { background: linear-gradient(135deg, #66BB6A, #43A047); }
+  .bg-thu { background: linear-gradient(135deg, #AB47BC, #8E24AA); }
+  .bg-fri { background: linear-gradient(135deg, #FFA726, #FB8C00); }
+  .bg-sat { background: linear-gradient(135deg, #EC407A, #D81B60); }
+  .bg-sun { background: linear-gradient(135deg, #26C6DA, #00ACC1); }
+
+  @media (max-width:500px) {
+    .hero h1{font-size:2em;}
+    .id-card{flex-direction:column;text-align:center;}
+    .id-card .info .tags{justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wave">🧜‍♀️</div>
+  <h1>雯雯的超级一周</h1>
+  <div class="tagline">小小运动家的快乐日程 · 雯雯专属版</div>
+  <div class="badge">🏊‍♀️ 游泳 · 🎨 画画 · ♟️ 围棋 · ⛸️ 轮滑 · 全能小公主</div>
+</div>
+
+<div class="id-card">
+  <div class="avatar">👧</div>
+  <div class="info">
+    <div class="name">张雯 · 雯雯</div>
+    <div class="tags">
+      <span class="tag-swim">🏊‍♀️ 游泳</span>
+      <span class="tag-age">🎒 大班</span>
+      <span class="tag-go">♟️ 围棋</span>
+      <span class="tag-art">🎨 画画</span>
+      <span class="tag-skate">⛸️ 轮滑</span>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="num" style="color:#42A5F5">4次</div><div class="label">每周游泳</div></div>
+  <div class="stat"><div class="num" style="color:#CE93D8">1次</div><div class="label">画画</div></div>
+  <div class="stat"><div class="num" style="color:#8D6E63">1次</div><div class="label">围棋</div></div>
+  <div class="stat"><div class="num" style="color:#26C6DA">1次</div><div class="label">轮滑</div></div>
+  <div class="stat"><div class="num" style="color:#FFB74D">1次</div><div class="label">素质提升</div></div>
+</div>
+
+<div class="days">
+
+  <!-- ===== 周一 ===== -->
+  <div class="day">
+    <div class="day-top bg-mon">
+      <span class="dname">🌸 周一</span>
+      <span class="dtag">游泳日</span>
+    </div>
+    <div class="day-content">
+      <div class="item">
+        <div class="t">11:40</div><div class="ic">🚗</div>
+        <div class="c"><div class="main">接雯雯放学</div><div class="sub">幼儿园接回家</div></div>
+      </div>
+      <div class="item">
+        <div class="t">11:50-12:30</div><div class="ic">🍲</div>
+        <div class="c"><div class="main">午饭</div><div class="sub">好好吃，下午要游泳啦</div></div>
+      </div>
+      <div class="item">
+        <div class="t">12:30-14:30</div><div class="ic">😴</div>
+        <div class="c"><div class="main">午觉 / 自由玩耍</div><div class="sub">休息好才有力气游泳</div></div>
+      </div>
+      <div class="item">
+        <div class="t">15:00-16:30</div><div class="ic">🏊‍♀️</div>
+        <div class="c hl-swim"><div class="main">游泳训练 <span class="badge-s bs-swim">泳训①</span></div><div class="sub">加油鸭！💪</div></div>
+      </div>
+      <div class="item">
+        <div class="t">~17:00</div><div class="ic">🏠</div>
+        <div class="c"><div class="main">回家 · 自由活动</div><div class="sub">玩一玩、休息休息</div></div>
+      </div>
+      <div class="item">
+        <div class="t">18:00-19:00</div><div class="ic">🍲</div>
+        <div class="c"><div class="main">晚饭</div></div>
+      </div>
+      <div class="item">
+        <div class="t">19:00-20:30</div><div class="ic">🌈</div>
+        <div class="c hl-free"><div class="main">自由时间！<span class="badge-s bs-free">想干什么干什么</span></div><div class="sub">玩玩具 / 画画 / 看绘本 / 和姐姐玩</div></div>
+      </div>
+      <div class="sleep-line">🌙 20:30 洗澡 → 21:00 故事时间 → <b>21:30 关灯睡觉</b></div>
+
+      <div class="parent-note">
+        <div class="pn-label">👨‍👩‍👧 父母备注</div>
+        11:40 接园后注意午饭不要太晚，保证 12:30 前吃完，给午觉留够时间。游泳前 14:30 左右给一个小零食（香蕉/饼干）垫肚子。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 周二 ===== -->
+  <div class="day">
+    <div class="day-top bg-tue">
+      <span class="dname">🔥 周二</span>
+      <span class="dtag">游泳日</span>
+    </div>
+    <div class="day-content">
+      <div class="item">
+        <div class="t">11:40</div><div class="ic">🚗</div>
+        <div class="c"><div class="main">接雯雯放学</div></div>
+      </div>
+      <div class="item">
+        <div class="t">11:50-12:30</div><div class="ic">🍲</div>
+        <div class="c"><div class="main">午饭</div></div>
+      </div>
+      <div class="item">
+        <div class="t">12:30-14:30</div><div class="ic">😴</div>
+        <div class="c"><div class="main">午觉 / 自由玩耍</div></div>
+      </div>
+      <div class="item">
+        <div class="t">15:00-16:30</div><div class="ic">🏊‍♀️</div>
+        <div class="c hl-swim"><div class="main">游泳训练 <span class="badge-s bs-swim">泳训②</span></div><div class="sub">冲冲冲！</div></div>
+      </div>
+      <div class="item">
+        <div class="t">~17:00</div><div class="ic">🏠</div>
+        <div class="c"><div class="main">回家 · 自由活动</div></div>
+      </div>
+      <div class="item">
+        <div class="t">18:00-19:00</div><div class="ic">🍲</div>
+        <div class="c"><div class="main">晚饭</div></div>
+      </div>
+      <div class="item">
+        <div class="t">19:00-20:30</div><div class="ic">🌈</div>
+        <div class="c hl-free"><div class="main">自由时间！<span class="badge-s bs-free">开心玩</span></div><div class="sub">和姐姐一起做手工？还是自己看书？你来定！</div></div>
+      </div>
+      <div class="sleep-line">🌙 20:30 洗澡 → 21:00 故事时间 → <b>21:30 关灯睡觉</b></div>
+
+      <div class="parent-note">
+        <div class="pn-label">👨‍👩‍👧 父母备注</div>
+        周二和周一节奏一样。注意周二晚上姐姐也到家了（~19:30），两个人凑一起会很兴奋，20:30 要准时收住进入洗漱流程。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 周三 ===== -->
+  <div class="day">
+    <div class="day-top bg-wed">
+      <span class="dname">🍀 周三</span>
+      <span class="dtag">⭐ 轻松日 · 幼儿园晚托</span>
+    </div>
+    <div class="day-content">
+      <div class="item">
+        <div class="t">全天</div><div class="ic">🏫</div>
+        <div class="c"><div class="main">幼儿园正常上课</div><div class="sub">今天不用早接！在幼儿园和小朋友开心玩一天</div></div>
+      </div>
+      <div class="item">
+        <div class="t">16:00-17:00</div><div class="ic">🏫</div>
+        <div class="c hl-class"><div class="main">幼儿园晚托 <span class="badge-s bs-class">晚托</span></div><div class="sub">在幼儿园多玩一会儿</div></div>
+      </div>
+      <div class="item">
+        <div class="t">~17:15</div><div class="ic">🚗</div>
+        <div class="c"><div class="main">接回家</div></div>
+      </div>
+      <div class="item">
+        <div class="t">17:30-18:30</div><div class="ic">🌈</div>
+        <div class="c hl-free"><div class="main">自由活动 <span class="badge-s bs-free">轻松轻松</span></div><div class="sub">全周最轻松的一天！没有课外班，想玩什么就玩什么</div></div>
+      </div>
+      <div class="item">
+        <div class="t">18:30-19:15</div><div class="ic">🍲</div>
+        <div class="c"><div class="main">晚饭</div><div class="sub">一家人从容吃饭 🎉</div></div>
+      </div>
+      <div class="item">
+        <div class="t">19:15-20:30</div><div class="ic">🌈</div>
+        <div class="c hl-free"><div class="main">继续玩！<span class="badge-s bs-free">黄金自由时间</span></div><div class="sub">今天姐姐也在家！可以一起玩Switch小厨房、做手工、画画…</div></div>
+      </div>
+      <div class="sleep-line">🌙 20:30 洗澡 → 21:00 故事时间 → <b>21:30 关灯睡觉</b></div>
+
+      <div class="tip">
+        <div class="tip-title">周三是雯雯和姐姐的日子</div>
+        今天姐姐也是轻松日（没有游泳），两个人终于可以一起玩了！这是全周唯一一个姐妹都在家、都没有课外班的夜晚，好好珍惜 ❤️
+      </div>
+
+      <div class="parent-note">
+        <div class="pn-label">👨‍👩‍👧 父母备注</div>
+        周三是姐妹俩唯一能完整一起玩的晚上。爸爸20:00到家陪涵涵玩Switch，雯雯可以加入一起玩，也可以自己画画——随她们自己决定。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 周四 ===== -->
+  <div class="day">
+    <div class="day-top bg-thu">
+      <span class="dname">🌊 周四</span>
+      <span class="dtag">游泳 + 画画 · 艺术日</span>
+    </div>
+    <div class="day-content">
+      <div class="item">
+        <div class="t">11:40</div><div class="ic">🚗</div>
+        <div class="c"><div class="main">接雯雯放学</div></div>
+      </div>
+      <div class="item">
+        <div class="t">11:50-12:30</div><div class="ic">🍲</div>
+        <div class="c"><div class="main">午饭</div></div>
+      </div>
+      <div class="item">
+        <div class="t">12:30-14:30</div><div class="ic">😴</div>
+        <div class="c"><div class="main">午觉 / 自由玩耍</div></div>
+      </div>
+      <div class="item">
+        <div class="t">15:00-16:30</div><div class="ic">🏊‍♀️</div>
+        <div class="c hl-swim"><div class="main">游泳训练 <span class="badge-s bs-swim">泳训③</span></div></div>
+      </div>
+      <div class="item">
+        <div class="t">~16:45</div><div class="ic">🍙</div>
+        <div class="c"><div class="main">补充一下能量</div><div class="sub">游完泳肚子饿了，吃点小零食垫垫</div></div>
+      </div>
+      <div class="item">
+        <div class="t">18:00-19:30</div><div class="ic">🎨</div>
+        <div class="c hl-class"><div class="main">画画课 <span class="badge-s bs-art">🎨 创造力时间</span></div><div class="sub">游完泳再画画——身体动完了，现在换大脑来创造！</div></div>
+      </div>
+      <div class="item">
+        <div class="t">~19:45</div><div class="ic">🍲</div>
+        <div class="c"><div class="main">回家 · 晚饭</div><div class="sub">今天辛苦了，好好吃</div></div>
+      </div>
+      <div class="sleep-line">🌙 20:30 洗澡 → 21:00 故事时间 → <b>21:30 关灯睡觉</b></div>
+
+      <div class="tip">
+        <div class="tip-title">游泳 + 画画 = 超级组合</div>
+        你知道吗？游泳用的是身体，画画用的是创造力——它们用的是大脑不同的部分。所以你游完泳之后画画，大脑反而更有灵感哦！很多画家都喜欢先运动再画画。你也是小画家！🎨
+      </div>
+
+      <div class="parent-note">
+        <div class="pn-label">👨‍👩‍👧 父母备注</div>
+        周四是雯雯最充实的一天（游泳+画画）。16:30 游泳结束到18:00 画画之间有1.5小时，需要安排转场+吃点东西。注意画画课到19:30，回家吃完饭可能快20:00了，要加快洗漱节奏保证 21:30 睡觉。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 周五 ===== -->
+  <div class="day">
+    <div class="day-top bg-fri">
+      <span class="dname">🎉 周五</span>
+      <span class="dtag">游泳 + 围棋 · 最拼的一天</span>
+    </div>
+    <div class="day-content">
+      <div class="item">
+        <div class="t">11:40</div><div class="ic">🚗</div>
+        <div class="c"><div class="main">接雯雯放学</div></div>
+      </div>
+      <div class="item">
+        <div class="t">11:50-12:30</div><div class="ic">🍲</div>
+        <div class="c"><div class="main">午饭</div></div>
+      </div>
+      <div class="item">
+        <div class="t">12:30-14:30</div><div class="ic">😴</div>
+        <div class="c"><div class="main">午觉 / 自由玩耍</div></div>
+      </div>
+      <div class="item">
+        <div class="t">15:00-16:00</div><div class="ic">🏊‍♀️</div>
+        <div class="c hl-swim"><div class="main">游泳训练 <span class="badge-s bs-swim">泳训④</span></div><div class="sub">今天游1小时，比平时少一点</div></div>
+      </div>
+      <div class="item">
+        <div class="t">16:15-17:45</div><div class="ic">♟️</div>
+        <div class="c hl-class"><div class="main">围棋课 <span class="badge-s bs-go">♟️ 动脑时间</span></div><div class="sub">游完泳大脑超级清醒！正好下棋最需要清醒的脑子</div></div>
+      </div>
+      <div class="item">
+        <div class="t">~19:00</div><div class="ic">🍲</div>
+        <div class="c"><div class="main">回家 · 晚饭</div><div class="sub">一周最后一天的课外班结束了！🎉</div></div>
+      </div>
+      <div class="item">
+        <div class="t">19:30-20:30</div><div class="ic">🎮</div>
+        <div class="c hl-free"><div class="main">周五奖励时间！<span class="badge-s bs-free">松弦</span></div><div class="sub">看动画 / 玩玩具 / 画画… 一周辛苦了，开心就好！</div></div>
+      </div>
+      <div class="sleep-line">🌙 20:30 洗澡 → 21:00 可以稍晚一点 → <b>明天不用早起！</b></div>
+
+      <div class="tip">
+        <div class="tip-title">游泳 + 围棋 = 身体聪明 + 脑子聪明</div>
+        今天是全周最拼的一天！先游泳练身体，再下围棋练脑子。你知道吗？全世界最厉害的围棋手都很注重运动，因为身体好了脑子才转得快。你今天就是又练身体又练脑子，双倍厉害！💪🧠
+      </div>
+
+      <div class="parent-note">
+        <div class="pn-label">👨‍👩‍👧 父母备注</div>
+        周五是雯雯最累的一天（游泳1h + 围棋1.5h）。16:00 游泳结束到 16:15 围棋只有15分钟，需要提前准备好换洗衣服和零食。围棋课很长，中间如果有休息时间记得让她吃点东西。晚上到家后不要再安排任何任务，纯放松。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 周六 ===== -->
+  <div class="day">
+    <div class="day-top bg-sat">
+      <span class="dname">💜 周六</span>
+      <span class="dtag">素质提升日</span>
+    </div>
+    <div class="day-content">
+      <div class="item">
+        <div class="t">~8:00</div><div class="ic">🍳</div>
+        <div class="c"><div class="main">起床 · 吃早餐</div><div class="sub">今天有课，要早起哦</div></div>
+      </div>
+      <div class="item">
+        <div class="t">8:30-11:45</div><div class="ic">📚</div>
+        <div class="c hl-gold"><div class="main">素质提升（幼小衔接）<span class="badge-s bs-study">📚 小学预备</span></div><div class="sub">为上小学做准备！学一些大孩子的本领</div></div>
+      </div>
+      <div class="item">
+        <div class="t">12:00-13:00</div><div class="ic">🍲</div>
+        <div class="c"><div class="main">午饭</div></div>
+      </div>
+      <div class="item">
+        <div class="t">下午</div><div class="ic">🌈</div>
+        <div class="c hl-free"><div class="main">自由活动！<span class="badge-s bs-free">整个下午都是你的</span></div><div class="sub">和姐姐一起玩 / 去公园 / 画画 / 做手工… 开心就好！</div></div>
+      </div>
+      <div class="sleep-line">🌙 正常洗漱 → <b>21:30 关灯睡觉</b></div>
+
+      <div class="tip">
+        <div class="tip-title">上午学习，下午尽情玩</div>
+        上午在素质提升课里学了大孩子的本领，下午就用来玩、用来探索！你学到的东西会在玩的时候悄悄变成你自己的本事 🌱
+      </div>
+
+      <div class="parent-note">
+        <div class="pn-label">👨‍👩‍👧 父母备注</div>
+        周六是雯雯唯一需要早起的周末日。8:00 起床意味着前一晚必须 21:00 前入睡。素质提升课 3 小时比较长，11:45 结束后可能又饿又累，准备好午饭让她一到家就能吃。下午是全家亲子时间，姐姐也在家。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 周日 ===== -->
+  <div class="day">
+    <div class="day-top bg-sun">
+      <span class="dname">🌺 周日</span>
+      <span class="dtag">轮滑日 · 快乐收尾</span>
+    </div>
+    <div class="day-content">
+      <div class="item">
+        <div class="t">自然醒</div><div class="ic">😴</div>
+        <div class="c"><div class="main">睡到自然醒！</div><div class="sub">昨天早起了，今天多睡一会儿</div></div>
+      </div>
+      <div class="item">
+        <div class="t">上午</div><div class="ic">🌈</div>
+        <div class="c hl-free"><div class="main">自由活动 <span class="badge-s bs-free">慢慢来</span></div><div class="sub">姐姐在上漫画课，你可以自己画画、玩玩具、看绘本</div></div>
+      </div>
+      <div class="item">
+        <div class="t">12:00-13:00</div><div class="ic">🍲</div>
+        <div class="c"><div class="main">午饭</div></div>
+      </div>
+      <div class="item">
+        <div class="t">14:30-15:30</div><div class="ic">⛸️</div>
+        <div class="c hl-class"><div class="main">轮滑课！<span class="badge-s bs-skate">⛸️ 飞起来！</span></div><div class="sub">戴好头盔和护具，冲冲冲！</div></div>
+      </div>
+      <div class="item">
+        <div class="t">下午</div><div class="ic">🌳</div>
+        <div class="c hl-free"><div class="main">户外亲子活动 <span class="badge-s bs-free">全家一起玩</span></div><div class="sub">和爸爸妈妈姐姐一起去公园/骑车/散步</div></div>
+      </div>
+      <div class="item">
+        <div class="t">晚上</div><div class="ic">🎒</div>
+        <div class="c"><div class="main">准备明天的东西</div><div class="sub">书包、衣服、水壶…明天又是新的一周！</div></div>
+      </div>
+      <div class="sleep-line">🌙 20:30 洗澡 → 21:00 故事时间 → <b>21:00 早点睡，明天精神满满！</b></div>
+
+      <div class="tip">
+        <div class="tip-title">轮滑的秘密</div>
+        轮滑练的是平衡感——站稳了才能滑得快。你知道吗？平衡感好的人，游泳也会更厉害哦！因为在水里也需要保持身体平衡。所以你学轮滑，其实也在偷偷帮游泳加分！⛸️🏊‍♀️
+      </div>
+
+      <div class="parent-note">
+        <div class="pn-label">👨‍👩‍👧 父母备注</div>
+        周日是全家节奏最轻松的一天。轮滑课只有1小时，下午可以和姐姐的户外亲子活动合并——比如轮滑课结束后直接去公园，姐姐泳训前一起玩。注意周日晚上要早睡（21:00），因为周一11:40要接园，但前一晚的睡眠质量决定了周一整天的状态。
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== 四个超能力 ===== -->
+<div class="powers">
+  <h2>🦸‍♀️ 雯雯的四大超能力</h2>
+  <div class="power-grid">
+    <div class="power-item pw1">
+      <div class="picon">🏊‍♀️</div>
+      <div class="pname">水里的小鱼</div>
+      <div class="pdesc">一周游4次！你在水里就像小鱼一样自由自在</div>
+    </div>
+    <div class="power-item pw2">
+      <div class="picon">🎨</div>
+      <div class="pname">创造力小画家</div>
+      <div class="pdesc">画画让你的想象力飞起来，什么都能画出来！</div>
+    </div>
+    <div class="power-item pw3">
+      <div class="picon">♟️</div>
+      <div class="pname">围棋小棋手</div>
+      <div class="pdesc">下围棋就是在训练大脑，每一步都在让脑子变聪明</div>
+    </div>
+    <div class="power-item pw4">
+      <div class="picon">⛸️</div>
+      <div class="pname">轮滑小飞侠</div>
+      <div class="pdesc">平衡感越来越好，滑得越来越快，像飞一样！</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>
+    游泳让我勇敢 🏊‍♀️<br>
+    画画让我有想象力 🎨<br>
+    围棋让我会动脑 ♟️<br>
+    轮滑让我飞起来 ⛸️
+  </p>
+  <div class="small">雯雯，你什么都想学、什么都敢试，这就是最厉害的超能力！💪</div>
+</div>
+
+</body>
+</html>
