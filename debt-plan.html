@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -13,503 +14,283 @@
     padding: 16px;
     line-height: 1.7;
   }
-  .container { max-width: 900px; margin: 0 auto; }
+  .container { max-width: 960px; margin: 0 auto; }
 
-  /* Header */
+  /* ── Header ── */
   .page-header {
     text-align: center;
     padding: 32px 20px 24px;
     margin-bottom: 28px;
     border-bottom: 1px solid #1e293b;
   }
-  .page-header h1 {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #f8fafc;
-    margin-bottom: 8px;
-  }
-  .page-header .subtitle {
-    color: #64748b;
-    font-size: 0.85rem;
-  }
-  .page-header .meta {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    margin-top: 16px;
-    flex-wrap: wrap;
-  }
-  .meta-item {
-    text-align: center;
-  }
-  .meta-item .val {
-    font-size: 1.4rem;
-    font-weight: 700;
-  }
-  .meta-item .lbl {
-    font-size: 0.72rem;
-    color: #64748b;
-  }
+  .page-header h1 { font-size: 1.8rem; font-weight: 800; color: #f8fafc; margin-bottom: 6px; }
+  .page-header .subtitle { color: #64748b; font-size: 0.85rem; }
+  .page-header .meta { display: flex; justify-content: center; gap: 24px; margin-top: 16px; flex-wrap: wrap; }
+  .meta-item .val { font-size: 1.35rem; font-weight: 700; }
+  .meta-item .lbl { font-size: 0.72rem; color: #64748b; }
 
-  /* Situation Cards */
-  .situation-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-bottom: 32px;
-  }
-  @media(min-width:600px){
-    .situation-grid { grid-template-columns: repeat(4, 1fr); }
-  }
-  .sit-card {
-    background: #1e293b;
-    border-radius: 12px;
-    padding: 14px;
-    text-align: center;
-    border: 1px solid #334155;
-  }
-  .sit-card .s-label { font-size: 0.72rem; color: #64748b; margin-bottom: 4px; }
-  .sit-card .s-val { font-size: 1.2rem; font-weight: 700; }
-  .sit-card .s-unit { font-size: 0.7rem; color: #64748b; }
+  /* ── Situation Cards ── */
+  .situation-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin-bottom: 32px; }
+  @media(min-width:600px){ .situation-grid { grid-template-columns: repeat(4,1fr); } }
+  .sit-card { background:#1e293b; border-radius:12px; padding:14px; text-align:center; border:1px solid #334155; }
+  .sit-card .s-label { font-size:.72rem; color:#64748b; margin-bottom:4px; }
+  .sit-card .s-val { font-size:1.2rem; font-weight:700; }
+  .sit-card .s-unit { font-size:.7rem; color:#64748b; }
 
-  /* Phase Section */
-  .phase {
-    margin-bottom: 36px;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid #334155;
-  }
-  .phase-header {
-    padding: 18px 22px;
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-  }
-  .phase-num {
-    font-size: 2rem;
-    font-weight: 900;
-    opacity: 0.25;
-    line-height: 1;
-    flex-shrink: 0;
-  }
-  .phase-header-text {}
-  .phase-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #f8fafc;
-    margin-bottom: 2px;
-  }
-  .phase-subtitle { font-size: 0.8rem; color: #94a3b8; }
-
-  .phase-p1 .phase-header { background: linear-gradient(135deg, #1e3a5f, #1a2a4a); border-bottom: 1px solid #2d4a7a; }
-  .phase-p2 .phase-header { background: linear-gradient(135deg, #1a3a2a, #162d20); border-bottom: 1px solid #2d5a3a; }
-  .phase-p3 .phase-header { background: linear-gradient(135deg, #3b1f1f, #2d1818); border-bottom: 1px solid #5a2d2d; }
-  .phase-p4 .phase-header { background: linear-gradient(135deg, #2d2641, #211d32); border-bottom: 1px solid #4a3d6a; }
-
-  .phase-body { background: #0f172a; }
-
-  /* Book Card */
-  .book-card {
-    padding: 20px 22px;
+  /* ── Section Title ── */
+  .section-title {
+    font-size: 1.05rem; font-weight: 800; color: #f8fafc;
+    margin-bottom: 16px; padding-bottom: 10px;
     border-bottom: 1px solid #1e293b;
-  }
-  .book-card:last-child { border-bottom: none; }
-
-  .book-meta {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 14px;
-  }
-  .book-icon {
-    width: 44px;
-    height: 56px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    flex-shrink: 0;
-    font-weight: 700;
-  }
-  .book-info { flex: 1; }
-  .book-title {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #f1f5f9;
-    margin-bottom: 2px;
-  }
-  .book-author { font-size: 0.75rem; color: #64748b; }
-  .book-tag {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    margin-top: 4px;
+    display: flex; align-items: center; gap: 8px;
   }
 
-  /* Quote Block */
-  .quote-block {
-    background: #1e293b;
-    border-radius: 10px;
-    padding: 14px 16px;
-    margin: 10px 0;
-    position: relative;
-    border-left: 3px solid;
-  }
-  .quote-label {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-    opacity: 0.7;
-  }
-  .quote-text {
-    font-size: 0.85rem;
-    color: #cbd5e1;
-    line-height: 1.8;
-    font-style: italic;
-  }
+  /* ── Strategy Cards ── */
+  .strategy-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 32px; }
+  @media(min-width:700px){ .strategy-grid { grid-template-columns: repeat(2,1fr); } }
 
-  /* Apply Block */
-  .apply-block {
-    background: #0f1f35;
-    border-radius: 10px;
-    padding: 14px 16px;
-    margin: 10px 0;
-    border-left: 3px solid #3b82f6;
+  .strategy-card {
+    border-radius: 14px; border: 1px solid #334155;
+    overflow: hidden; position: relative;
   }
-  .apply-label {
-    font-size: 0.68rem;
-    font-weight: 700;
-    color: #60a5fa;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .apply-text {
-    font-size: 0.83rem;
-    color: #94a3b8;
-    line-height: 1.7;
-  }
+  .strategy-card.recommended { border-color: #3b82f6; box-shadow: 0 0 0 1px #3b82f633; }
+  .strategy-card.caution { border-color: #f59e0b55; }
+  .strategy-card.risky { border-color: #ef444455; }
 
-  /* Table inside book card */
-  .mini-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.78rem;
-    margin-top: 8px;
-    border-radius: 8px;
-    overflow: hidden;
+  .strategy-badge {
+    position: absolute; top: 12px; right: 12px;
+    font-size: 0.65rem; font-weight: 700; padding: 3px 8px;
+    border-radius: 20px; letter-spacing: 0.3px;
   }
-  .mini-table th {
-    background: #1e293b;
-    color: #64748b;
-    padding: 7px 10px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.72rem;
-  }
-  .mini-table td {
-    padding: 8px 10px;
-    border-bottom: 1px solid #1e293b;
-    color: #cbd5e1;
-  }
-  .mini-table tr:last-child td { border-bottom: none; }
-  .mini-table tr:hover td { background: #1e293b; }
+  .badge-best { background:#1e3a5f; color:#60a5fa; }
+  .badge-ok { background:#1a3a2a; color:#4ade80; }
+  .badge-hard { background:#3b1f1f; color:#f87171; }
+  .badge-least { background:#2d2641; color:#c084fc; }
 
-  /* Color schemes per phase */
-  .phase-p1 .book-icon { background: #1e3a5f; color: #60a5fa; }
-  .phase-p1 .quote-block { border-color: #3b82f6; }
-  .phase-p1 .quote-label { color: #60a5fa; }
-  .phase-p1 .book-tag { background: #1e3a5f; color: #60a5fa; }
+  .strategy-header { padding: 16px 18px 12px; }
+  .strategy-name { font-size: 0.95rem; font-weight: 700; color: #f1f5f9; margin-bottom: 4px; }
+  .strategy-desc { font-size: 0.75rem; color: #64748b; line-height: 1.5; }
 
-  .phase-p2 .book-icon { background: #1a3a2a; color: #4ade80; }
-  .phase-p2 .quote-block { border-color: #22c55e; }
-  .phase-p2 .quote-label { color: #4ade80; }
-  .phase-p2 .apply-block { border-color: #22c55e; }
-  .phase-p2 .apply-label { color: #4ade80; }
-  .phase-p2 .book-tag { background: #1a3a2a; color: #4ade80; }
+  .strategy-body { padding: 0 18px 16px; }
 
-  .phase-p3 .book-icon { background: #3b1f1f; color: #f87171; }
-  .phase-p3 .quote-block { border-color: #ef4444; }
-  .phase-p3 .quote-label { color: #f87171; }
-  .phase-p3 .apply-block { border-color: #ef4444; }
-  .phase-p3 .apply-label { color: #f87171; }
-  .phase-p3 .book-tag { background: #3b1f1f; color: #f87171; }
-
-  .phase-p4 .book-icon { background: #2d2641; color: #c084fc; }
-  .phase-p4 .quote-block { border-color: #a855f7; }
-  .phase-p4 .quote-label { color: #c084fc; }
-  .phase-p4 .apply-block { border-color: #a855f7; }
-  .phase-p4 .apply-label { color: #c084fc; }
-  .phase-p4 .book-tag { background: #2d2641; color: #c084fc; }
-
-  /* Timeline */
-  .timeline-section {
-    margin-bottom: 32px;
-    background: #1e293b;
-    border-radius: 16px;
-    border: 1px solid #334155;
-    overflow: hidden;
-  }
-  .timeline-header {
-    padding: 18px 22px;
-    background: linear-gradient(135deg, #1e293b, #0f172a);
-    border-bottom: 1px solid #334155;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #f8fafc;
-  }
-  .timeline-body { padding: 20px 22px; }
-  .tl-item {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 20px;
-    position: relative;
-  }
-  .tl-item:not(:last-child)::before {
-    content: '';
-    position: absolute;
-    left: 9px;
-    top: 24px;
-    bottom: -8px;
-    width: 2px;
-    background: #334155;
-  }
-  .tl-dot {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.6rem;
-    font-weight: 700;
-    color: #fff;
-  }
-  .dot-red { background: #ef4444; box-shadow: 0 0 8px #ef444488; }
-  .dot-orange { background: #f59e0b; }
-  .dot-blue { background: #3b82f6; }
-  .dot-green { background: #22c55e; }
-  .dot-purple { background: #a855f7; }
-
-  .tl-content { flex: 1; }
-  .tl-date {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: #94a3b8;
-    margin-bottom: 2px;
-  }
-  .tl-title {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #f1f5f9;
-    margin-bottom: 4px;
-  }
-  .tl-detail { font-size: 0.78rem; color: #64748b; line-height: 1.6; }
-  .tl-amount {
-    font-size: 0.85rem;
-    font-weight: 700;
-    margin-top: 4px;
-  }
-
-  /* Cash flow comparison */
-  .cashflow-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-bottom: 32px;
-  }
-  @media(min-width:600px){
-    .cashflow-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-  .cf-card {
-    background: #1e293b;
-    border-radius: 12px;
-    border: 1px solid #334155;
-    padding: 16px;
-    text-align: center;
-  }
-  .cf-card .cf-period {
-    font-size: 0.72rem;
-    color: #64748b;
-    margin-bottom: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
+  .cf-timeline { margin: 12px 0; }
   .cf-row {
-    display: flex;
-    justify-content: space-between;
+    display: flex; align-items: center; gap: 8px;
+    padding: 5px 0; border-bottom: 1px solid #0f172a;
     font-size: 0.78rem;
-    padding: 4px 0;
-    border-bottom: 1px solid #0f172a;
   }
   .cf-row:last-child { border-bottom: none; }
-  .cf-row .cf-key { color: #64748b; }
-  .cf-row .cf-pos { color: #4ade80; font-weight: 600; }
-  .cf-row .cf-neg { color: #f87171; font-weight: 600; }
-  .cf-row .cf-neu { color: #fbbf24; font-weight: 600; }
-  .cf-result {
-    margin-top: 10px;
-    padding: 8px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 700;
+  .cf-period { color: #64748b; width: 110px; flex-shrink: 0; font-size: 0.72rem; }
+  .cf-bar-wrap { flex: 1; }
+  .cf-bar {
+    height: 18px; border-radius: 4px; display: flex;
+    align-items: center; padding: 0 8px;
+    font-size: 0.68rem; font-weight: 700; color: #fff;
+    min-width: 60px; white-space: nowrap;
   }
-  .cf-result.red { background: #7f1d1d33; color: #f87171; }
-  .cf-result.yellow { background: #78350f33; color: #fbbf24; }
-  .cf-result.green { background: #14532d33; color: #4ade80; }
+  .bar-red { background: #dc2626; }
+  .bar-orange { background: #d97706; }
+  .bar-yellow { background: #ca8a04; }
+  .bar-green { background: #16a34a; }
+  .bar-blue { background: #2563eb; }
 
-  /* Summary Wall */
-  .summary-wall {
-    background: #1e293b;
-    border-radius: 16px;
-    border: 1px solid #334155;
-    padding: 24px;
-    margin-bottom: 24px;
+  .strategy-key-risks {
+    background: #1e293b; border-radius: 8px;
+    padding: 10px 12px; margin-top: 10px;
+    font-size: 0.75rem; color: #94a3b8; line-height: 1.7;
   }
-  .summary-wall h2 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #f8fafc;
-    margin-bottom: 18px;
+  .strategy-key-risks strong { color: #f1f5f9; }
+
+  .verdict-row {
+    display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap;
+  }
+  .verdict-chip {
+    font-size: 0.68rem; font-weight: 600; padding: 3px 9px;
+    border-radius: 20px;
+  }
+  .chip-green { background: #14532d; color: #86efac; }
+  .chip-red { background: #7f1d1d; color: #fca5a5; }
+  .chip-yellow { background: #78350f; color: #fcd34d; }
+
+  /* ── Delay-sell detail section ── */
+  .detail-section {
+    background: #1e293b; border-radius: 16px;
+    border: 1px solid #334155; margin-bottom: 32px;
+    overflow: hidden;
+  }
+  .detail-header {
+    padding: 16px 22px; background: linear-gradient(135deg,#1e3a5f,#0f172a);
+    border-bottom: 1px solid #334155;
+    font-size: 1rem; font-weight: 700; color: #f8fafc;
+  }
+  .detail-body { padding: 20px 22px; }
+
+  .month-flow-grid {
+    display: grid; grid-template-columns: 1fr;
+    gap: 10px; margin-bottom: 16px;
+  }
+  @media(min-width:600px){ .month-flow-grid { grid-template-columns: repeat(3,1fr); } }
+
+  .mf-card {
+    background: #0f172a; border-radius: 10px;
+    border: 1px solid #334155; padding: 14px;
+  }
+  .mf-card .mf-period { font-size: 0.68rem; color: #64748b; font-weight:700; text-transform:uppercase; letter-spacing:.5px; margin-bottom:8px; }
+  .mf-row { display:flex; justify-content:space-between; font-size:.75rem; padding:3px 0; }
+  .mf-row .mk { color:#64748b; }
+  .mf-row .mp { color:#4ade80; font-weight:600; }
+  .mf-row .mn { color:#f87171; font-weight:600; }
+  .mf-result { margin-top:8px; padding:6px 10px; border-radius:6px; font-size:.85rem; font-weight:700; text-align:center; }
+  .mf-result.red { background:#7f1d1d33; color:#f87171; }
+  .mf-result.yellow { background:#78350f33; color:#fbbf24; }
+  .mf-result.green { background:#14532d33; color:#4ade80; }
+
+  .risk-list { margin: 14px 0; }
+  .risk-item {
+    display: flex; gap: 10px; padding: 10px 0;
+    border-bottom: 1px solid #0f172a; align-items: flex-start;
+  }
+  .risk-item:last-child { border-bottom: none; }
+  .risk-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; margin-top:6px; }
+  .risk-content { flex:1; }
+  .risk-title { font-size:.83rem; font-weight:700; color:#f1f5f9; margin-bottom:2px; }
+  .risk-desc { font-size:.75rem; color:#64748b; line-height:1.6; }
+
+  /* ── Condition Table ── */
+  .cond-table { width:100%; border-collapse:collapse; font-size:.78rem; margin:10px 0; }
+  .cond-table th { background:#0f172a; color:#64748b; padding:7px 10px; text-align:left; font-weight:600; font-size:.72rem; }
+  .cond-table td { padding:8px 10px; border-bottom:1px solid #0f172a; color:#cbd5e1; }
+  .cond-table tr:last-child td { border-bottom:none; }
+  .cond-table tr:hover td { background:#0f172a; }
+
+  /* ── Timeline ── */
+  .timeline-section { margin-bottom:32px; background:#1e293b; border-radius:16px; border:1px solid #334155; overflow:hidden; }
+  .timeline-header { padding:16px 22px; background:linear-gradient(135deg,#1e293b,#0f172a); border-bottom:1px solid #334155; font-size:1rem; font-weight:700; color:#f8fafc; }
+  .timeline-body { padding:20px 22px; }
+  .tl-item { display:flex; gap:16px; margin-bottom:20px; position:relative; }
+  .tl-item:not(:last-child)::before { content:''; position:absolute; left:9px; top:24px; bottom:-8px; width:2px; background:#334155; }
+  .tl-dot { width:20px; height:20px; border-radius:50%; flex-shrink:0; margin-top:2px; display:flex; align-items:center; justify-content:center; font-size:.6rem; font-weight:700; color:#fff; }
+  .dot-red { background:#ef4444; box-shadow:0 0 8px #ef444488; }
+  .dot-orange { background:#f59e0b; }
+  .dot-blue { background:#3b82f6; }
+  .dot-green { background:#22c55e; }
+  .dot-purple { background:#a855f7; }
+  .tl-content { flex:1; }
+  .tl-date { font-size:.78rem; font-weight:700; color:#94a3b8; margin-bottom:2px; }
+  .tl-title { font-size:.9rem; font-weight:700; color:#f1f5f9; margin-bottom:4px; }
+  .tl-detail { font-size:.78rem; color:#64748b; line-height:1.6; }
+  .tl-amount { font-size:.85rem; font-weight:700; margin-top:4px; }
+
+  /* ── Phase Section (books) ── */
+  .phase { margin-bottom:36px; border-radius:16px; overflow:hidden; border:1px solid #334155; }
+  .phase-header { padding:18px 22px; display:flex; align-items:flex-start; gap:14px; }
+  .phase-num { font-size:2rem; font-weight:900; opacity:.25; line-height:1; flex-shrink:0; }
+  .phase-title { font-size:1.1rem; font-weight:700; color:#f8fafc; margin-bottom:2px; }
+  .phase-subtitle { font-size:.8rem; color:#94a3b8; }
+  .phase-p1 .phase-header { background:linear-gradient(135deg,#1e3a5f,#1a2a4a); border-bottom:1px solid #2d4a7a; }
+  .phase-p2 .phase-header { background:linear-gradient(135deg,#1a3a2a,#162d20); border-bottom:1px solid #2d5a3a; }
+  .phase-p3 .phase-header { background:linear-gradient(135deg,#3b1f1f,#2d1818); border-bottom:1px solid #5a2d2d; }
+  .phase-p4 .phase-header { background:linear-gradient(135deg,#2d2641,#211d32); border-bottom:1px solid #4a3d6a; }
+  .phase-body { background:#0f172a; }
+
+  /* ── Book Card ── */
+  .book-card { padding:20px 22px; border-bottom:1px solid #1e293b; }
+  .book-card:last-child { border-bottom:none; }
+  .book-meta { display:flex; align-items:flex-start; gap:14px; margin-bottom:14px; }
+  .book-icon { width:44px; height:56px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; font-weight:700; }
+  .book-info { flex:1; }
+  .book-title { font-size:.95rem; font-weight:700; color:#f1f5f9; margin-bottom:2px; }
+  .book-author { font-size:.75rem; color:#64748b; }
+  .book-tag { display:inline-block; padding:2px 8px; border-radius:20px; font-size:.7rem; font-weight:600; margin-top:4px; }
+  .quote-block { background:#1e293b; border-radius:10px; padding:14px 16px; margin:10px 0; border-left:3px solid; }
+  .quote-label { font-size:.68rem; font-weight:700; letter-spacing:.5px; text-transform:uppercase; margin-bottom:6px; opacity:.7; }
+  .quote-text { font-size:.85rem; color:#cbd5e1; line-height:1.8; font-style:italic; }
+  .apply-block { background:#0f1f35; border-radius:10px; padding:14px 16px; margin:10px 0; border-left:3px solid #3b82f6; }
+  .apply-label { font-size:.68rem; font-weight:700; color:#60a5fa; letter-spacing:.5px; text-transform:uppercase; margin-bottom:8px; }
+  .apply-text { font-size:.83rem; color:#94a3b8; line-height:1.7; }
+  .phase-p1 .book-icon { background:#1e3a5f; color:#60a5fa; }
+  .phase-p1 .quote-block { border-color:#3b82f6; }
+  .phase-p1 .quote-label { color:#60a5fa; }
+  .phase-p1 .book-tag { background:#1e3a5f; color:#60a5fa; }
+  .phase-p2 .book-icon { background:#1a3a2a; color:#4ade80; }
+  .phase-p2 .quote-block { border-color:#22c55e; }
+  .phase-p2 .quote-label { color:#4ade80; }
+  .phase-p2 .apply-block { border-color:#22c55e; }
+  .phase-p2 .apply-label { color:#4ade80; }
+  .phase-p2 .book-tag { background:#1a3a2a; color:#4ade80; }
+  .phase-p3 .book-icon { background:#3b1f1f; color:#f87171; }
+  .phase-p3 .quote-block { border-color:#ef4444; }
+  .phase-p3 .quote-label { color:#f87171; }
+  .phase-p3 .apply-block { border-color:#ef4444; }
+  .phase-p3 .apply-label { color:#f87171; }
+  .phase-p3 .book-tag { background:#3b1f1f; color:#f87171; }
+  .phase-p4 .book-icon { background:#2d2641; color:#c084fc; }
+  .phase-p4 .quote-block { border-color:#a855f7; }
+  .phase-p4 .quote-label { color:#c084fc; }
+  .phase-p4 .apply-block { border-color:#a855f7; }
+  .phase-p4 .apply-label { color:#c084fc; }
+  .phase-p4 .book-tag { background:#2d2641; color:#c084fc; }
+
+  /* ── Mini Table ── */
+  .mini-table { width:100%; border-collapse:collapse; font-size:.78rem; margin-top:8px; border-radius:8px; overflow:hidden; }
+  .mini-table th { background:#1e293b; color:#64748b; padding:7px 10px; text-align:left; font-weight:600; font-size:.72rem; }
+  .mini-table td { padding:8px 10px; border-bottom:1px solid #1e293b; color:#cbd5e1; }
+  .mini-table tr:last-child td { border-bottom:none; }
+  .mini-table tr:hover td { background:#1e293b; }
+
+  /* ── Code block ── */
+  .code-block { background:#1e293b; border-radius:10px; padding:14px 16px; margin:10px 0; font-family:"SF Mono","Fira Code",monospace; font-size:.78rem; color:#94a3b8; line-height:1.9; overflow-x:auto; border:1px solid #334155; }
+  .c-green { color:#4ade80; } .c-red { color:#f87171; } .c-yellow { color:#fbbf24; }
+  .c-blue { color:#60a5fa; } .c-comment { color:#475569; } .c-label { color:#c084fc; }
+
+  /* ── Summary / Checklist ── */
+  .summary-wall { background:#1e293b; border-radius:16px; border:1px solid #334155; padding:24px; margin-bottom:24px; }
+  .summary-wall h2 { font-size:1rem; font-weight:700; color:#f8fafc; margin-bottom:18px; text-align:center; }
+  .summary-item { display:flex; gap:12px; padding:12px 0; border-bottom:1px solid #0f172a; align-items:flex-start; }
+  .summary-item:last-child { border-bottom:none; }
+  .summary-book { font-size:.78rem; font-weight:700; color:#94a3b8; width:130px; flex-shrink:0; }
+  .summary-lesson { font-size:.82rem; color:#cbd5e1; line-height:1.6; }
+
+  .checklist-section { background:#1e293b; border-radius:16px; border:1px solid #334155; padding:20px 22px; margin-bottom:24px; }
+  .checklist-section h2 { font-size:1rem; font-weight:700; color:#f8fafc; margin-bottom:16px; }
+  .check-group { margin-bottom:16px; }
+  .check-group-title { font-size:.72rem; color:#64748b; font-weight:700; text-transform:uppercase; letter-spacing:.5px; margin-bottom:8px; }
+  .check-item { display:flex; align-items:flex-start; gap:10px; padding:7px 0; border-bottom:1px solid #0f172a; font-size:.82rem; color:#cbd5e1; }
+  .check-item:last-child { border-bottom:none; }
+  .check-box { width:18px; height:18px; border:2px solid #334155; border-radius:4px; flex-shrink:0; margin-top:1px; }
+  .urgency-tag { display:inline-block; padding:1px 7px; border-radius:20px; font-size:.68rem; font-weight:700; margin-left:6px; }
+  .tag-red { background:#dc2626; color:#fff; }
+  .tag-orange { background:#d97706; color:#fff; }
+  .tag-blue { background:#2563eb; color:#fff; }
+  .tag-green { background:#166534; color:#bbf7d0; }
+
+  /* ── Footer ── */
+  .footer-note { padding:14px 16px; background:#1a1a2e; border-radius:10px; border:1px solid #334155; font-size:.75rem; color:#475569; line-height:1.8; margin-bottom:20px; }
+
+  /* ── Colors ── */
+  .color-red{color:#f87171} .color-orange{color:#fb923c} .color-yellow{color:#fbbf24}
+  .color-green{color:#4ade80} .color-blue{color:#60a5fa} .color-purple{color:#c084fc}
+
+  /* ── Highlight Box ── */
+  .highlight-box { background:#0f2540; border:1px solid #1e4a7a; border-radius:10px; padding:12px 14px; margin:10px 0; font-size:.82rem; color:#93c5fd; line-height:1.7; }
+
+  /* ── Warning Box ── */
+  .warning-box { background:#2d1515; border:1px solid #7f1d1d; border-radius:10px; padding:12px 14px; margin:10px 0; font-size:.82rem; color:#fca5a5; line-height:1.7; }
+
+  /* ── Decision Banner ── */
+  .decision-banner {
+    background: linear-gradient(135deg, #1e3a5f, #1a2540);
+    border: 1px solid #3b82f6;
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
     text-align: center;
   }
-  .summary-item {
-    display: flex;
-    gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid #0f172a;
-    align-items: flex-start;
-  }
-  .summary-item:last-child { border-bottom: none; }
-  .summary-book { font-size: 0.78rem; font-weight: 700; color: #94a3b8; width: 130px; flex-shrink: 0; }
-  .summary-lesson { font-size: 0.82rem; color: #cbd5e1; line-height: 1.6; }
-  .summary-lesson strong { color: #f1f5f9; }
+  .decision-banner .db-title { font-size:1rem; font-weight:700; color:#f8fafc; margin-bottom:8px; }
+  .decision-banner .db-body { font-size:.83rem; color:#93c5fd; line-height:1.7; }
 
-  /* Action checklist */
-  .checklist-section {
-    background: #1e293b;
-    border-radius: 16px;
-    border: 1px solid #334155;
-    padding: 20px 22px;
-    margin-bottom: 24px;
-  }
-  .checklist-section h2 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #f8fafc;
-    margin-bottom: 16px;
-  }
-  .check-group { margin-bottom: 16px; }
-  .check-group-title {
-    font-size: 0.72rem;
-    color: #64748b;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-  }
-  .check-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 7px 0;
-    border-bottom: 1px solid #0f172a;
-    font-size: 0.82rem;
-    color: #cbd5e1;
-  }
-  .check-item:last-child { border-bottom: none; }
-  .check-box {
-    width: 18px;
-    height: 18px;
-    border: 2px solid #334155;
-    border-radius: 4px;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .urgency-tag {
-    display: inline-block;
-    padding: 1px 7px;
-    border-radius: 20px;
-    font-size: 0.68rem;
-    font-weight: 700;
-    margin-left: 6px;
-  }
-  .tag-red { background: #dc2626; color: #fff; }
-  .tag-orange { background: #d97706; color: #fff; }
-  .tag-blue { background: #2563eb; color: #fff; }
-  .tag-green { background: #166534; color: #bbf7d0; }
-
-  /* Footer */
-  .footer-note {
-    padding: 14px 16px;
-    background: #1a1a2e;
-    border-radius: 10px;
-    border: 1px solid #334155;
-    font-size: 0.75rem;
-    color: #475569;
-    line-height: 1.8;
-  }
-
-  /* Misc */
-  .color-red { color: #f87171; }
-  .color-orange { color: #fb923c; }
-  .color-yellow { color: #fbbf24; }
-  .color-green { color: #4ade80; }
-  .color-blue { color: #60a5fa; }
-  .color-purple { color: #c084fc; }
-
-  .divider {
-    height: 1px;
-    background: #1e293b;
-    margin: 8px 0;
-  }
-
-  .highlight-box {
-    background: #0f2540;
-    border: 1px solid #1e4a7a;
-    border-radius: 10px;
-    padding: 12px 14px;
-    margin: 10px 0;
-    font-size: 0.82rem;
-    color: #93c5fd;
-    line-height: 1.7;
-  }
-
-  code {
-    font-family: "SF Mono", "Fira Code", monospace;
-    background: #1e293b;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.78rem;
-    color: #7dd3fc;
-  }
-
-  .code-block {
-    background: #1e293b;
-    border-radius: 10px;
-    padding: 14px 16px;
-    margin: 10px 0;
-    font-family: "SF Mono", "Fira Code", monospace;
-    font-size: 0.78rem;
-    color: #94a3b8;
-    line-height: 1.9;
-    overflow-x: auto;
-    border: 1px solid #334155;
-  }
-  .code-block .c-green { color: #4ade80; }
-  .code-block .c-red { color: #f87171; }
-  .code-block .c-yellow { color: #fbbf24; }
-  .code-block .c-blue { color: #60a5fa; }
-  .code-block .c-comment { color: #475569; }
-  .code-block .c-label { color: #c084fc; }
+  /* ── Divider ── */
+  .section-divider { height:1px; background:#1e293b; margin:32px 0; }
 </style>
 </head>
 <body>
@@ -518,77 +299,637 @@
   <!-- Header -->
   <div class="page-header">
     <h1>📚 家庭债务重组全方案</h1>
-    <div class="subtitle">607万债务 × 10本书智慧 · 专属执行手册 · 2026年3月</div>
+    <div class="subtitle">607万债务 · 5个方案全对比 · 10本书智慧 · 2026年3月</div>
     <div class="meta">
-      <div class="meta-item">
-        <div class="val color-red">607万</div>
-        <div class="lbl">当前总债务</div>
-      </div>
-      <div class="meta-item">
-        <div class="val color-orange">377万</div>
-        <div class="lbl">卖房到手</div>
-      </div>
-      <div class="meta-item">
-        <div class="val color-yellow">146万</div>
-        <div class="lbl">卖房后需还清</div>
-      </div>
-      <div class="meta-item">
-        <div class="val color-green">~2.9万</div>
-        <div class="lbl">卖房后月结余</div>
-      </div>
+      <div class="meta-item"><div class="val color-red">607万</div><div class="lbl">总债务</div></div>
+      <div class="meta-item"><div class="val color-orange">93,539</div><div class="lbl">月供峰值（元）</div></div>
+      <div class="meta-item"><div class="val color-yellow">57,271</div><div class="lbl">家庭月收入（元）</div></div>
+      <div class="meta-item"><div class="val color-blue">387万</div><div class="lbl">建行那套净值</div></div>
     </div>
   </div>
 
-  <!-- Situation Summary -->
+  <!-- Situation Cards -->
   <div class="situation-grid">
     <div class="sit-card">
-      <div class="s-label">月收入（家庭）</div>
-      <div class="s-val color-green">57,271</div>
-      <div class="s-unit">元/月</div>
+      <div class="s-label">建行那套</div>
+      <div class="s-val color-blue">510万</div>
+      <div class="s-unit">市值 · 净值387万</div>
     </div>
     <div class="sit-card">
-      <div class="s-label">当前月供峰值</div>
-      <div class="s-val color-red">93,539</div>
-      <div class="s-unit">元/月</div>
+      <div class="s-label">兴业那套</div>
+      <div class="s-val color-purple">460万</div>
+      <div class="s-unit">市值 · 净值121万</div>
     </div>
     <div class="sit-card">
-      <div class="s-label">建行那套净值</div>
-      <div class="s-val color-blue">387万</div>
-      <div class="s-unit">510万 − 123万</div>
+      <div class="s-label">卖建行到手</div>
+      <div class="s-val color-green">377万</div>
+      <div class="s-unit">税费仅约10万（杭州政策）</div>
     </div>
     <div class="sit-card">
-      <div class="s-label">卖房后月供</div>
-      <div class="s-val color-green">17,853</div>
-      <div class="s-unit">仅兴业房贷</div>
+      <div class="s-label">非房贷债务</div>
+      <div class="s-val color-red">146万</div>
+      <div class="s-unit">需要清偿</div>
     </div>
   </div>
 
-  <!-- Cash Flow Comparison -->
-  <div class="cashflow-grid">
-    <div class="cf-card">
-      <div class="cf-period">📍 现在（峰值）</div>
-      <div class="cf-row"><span class="cf-key">月收入</span><span class="cf-pos">+57,271</span></div>
-      <div class="cf-row"><span class="cf-key">月供</span><span class="cf-neg">−93,539</span></div>
-      <div class="cf-row"><span class="cf-key">生活支出</span><span class="cf-neg">−15,000</span></div>
-      <div class="cf-result red">月缺口 −51,268元</div>
+  <!-- ══════════════════════════════════ -->
+  <!--       方案对比                      -->
+  <!-- ══════════════════════════════════ -->
+
+  <div class="section-title">🗺️ 三个方案全景对比</div>
+
+  <div class="strategy-grid">
+
+    <!-- 方案A -->
+    <div class="strategy-card recommended">
+      <span class="strategy-badge badge-best">⭐ 推荐</span>
+      <div class="strategy-header">
+        <div class="strategy-name">方案A · 半年后卖建行，住兴业</div>
+        <div class="strategy-desc">先装修搬入兴业，9月前完成挂牌，到账约377万，一次性清除所有非房贷债务</div>
+      </div>
+      <div class="strategy-body">
+        <div class="cf-timeline">
+          <div class="cf-row">
+            <span class="cf-period">现在–9月（过渡期）</span>
+            <div class="cf-bar-wrap"><div class="cf-bar bar-red" style="width:90%">月缺口 −3.9万（约6个月）</div></div>
+          </div>
+          <div class="cf-row">
+            <span class="cf-period">9月（到账）</span>
+            <div class="cf-bar-wrap"><div class="cf-bar bar-blue" style="width:60%">到手约377万，清债146万</div></div>
+          </div>
+          <div class="cf-row">
+            <span class="cf-period">10月起（长期）</span>
+            <div class="cf-bar-wrap"><div class="cf-bar bar-green" style="width:80%">月结余 +2.9万 ✅</div></div>
+          </div>
+        </div>
+        <div class="verdict-row">
+          <span class="verdict-chip chip-green">月结余最高</span>
+          <span class="verdict-chip chip-green">操作最简单</span>
+          <span class="verdict-chip chip-green">风险最低</span>
+          <span class="verdict-chip chip-red">需老婆同意</span>
+        </div>
+        <div class="strategy-key-risks">
+          <strong>关键节点：</strong>建行快贷（50万先息后本）到期约在8月，需在到期前完成售房资金到账或完成续贷；9月前挂牌成交即可规避断裂风险。从云谷送孩子上绿城育华仅需20分钟。
+        </div>
+      </div>
     </div>
-    <div class="cf-card">
-      <div class="cf-period">📍 5月（借呗还清后）</div>
-      <div class="cf-row"><span class="cf-key">月收入</span><span class="cf-pos">+57,271</span></div>
-      <div class="cf-row"><span class="cf-key">月供</span><span class="cf-neg">−59,539</span></div>
-      <div class="cf-row"><span class="cf-key">生活支出</span><span class="cf-neg">−15,000</span></div>
-      <div class="cf-result yellow">月缺口 −17,268元</div>
+
+    <!-- 方案B -->
+    <div class="strategy-card">
+      <span class="strategy-badge badge-ok">可行</span>
+      <div class="strategy-header">
+        <div class="strategy-name">方案B · 租建行·住兴业 + 经营贷</div>
+        <div class="strategy-desc">用建行净值申请经营贷270万，置换高息债务，同时出租建行</div>
+      </div>
+      <div class="strategy-body">
+        <div class="cf-timeline">
+          <div class="cf-row">
+            <span class="cf-period">经营贷到账后</span>
+            <div class="cf-bar-wrap"><div class="cf-bar bar-green" style="width:55%">月结余 +1.2万 ✅</div></div>
+          </div>
+          <div class="cf-row">
+            <span class="cf-period">2027年4月起</span>
+            <div class="cf-bar-wrap"><div class="cf-bar bar-green" style="width:70%">月结余 +2.8万 ✅</div></div>
+          </div>
+        </div>
+        <div class="verdict-row">
+          <span class="verdict-chip chip-green">保留两套房</span>
+          <span class="verdict-chip chip-yellow">需营业执照</span>
+          <span class="verdict-chip chip-red">总负债增加</span>
+        </div>
+        <div class="strategy-key-risks">
+          <strong>前提：</strong>名下需有营业执照，银行审批看流水和负债率，当前负债率偏高，审批有不确定性。
+        </div>
+      </div>
     </div>
-    <div class="cf-card">
-      <div class="cf-period">🎯 7月后（卖房完成）</div>
-      <div class="cf-row"><span class="cf-key">月收入</span><span class="cf-pos">+57,271</span></div>
-      <div class="cf-row"><span class="cf-key">兴业房贷</span><span class="cf-neg">−17,853</span></div>
-      <div class="cf-row"><span class="cf-key">生活支出</span><span class="cf-neg">−15,000</span></div>
-      <div class="cf-result green">月结余 +24,418元 ✅</div>
+
+    <!-- 方案C -->
+    <div class="strategy-card risky">
+      <span class="strategy-badge badge-least">高风险</span>
+      <div class="strategy-header">
+        <div class="strategy-name">方案C · 维持现状，硬撑</div>
+        <div class="strategy-desc">不卖不租，靠工资硬扛，等2027年消费贷自然结清</div>
+      </div>
+      <div class="strategy-body">
+        <div class="cf-timeline">
+          <div class="cf-row">
+            <span class="cf-period">现在–7月</span>
+            <div class="cf-bar-wrap"><div class="cf-bar bar-red" style="width:100%">月缺口 −5万+</div></div>
+          </div>
+          <div class="cf-row">
+            <span class="cf-period">8月</span>
+            <div class="cf-bar-wrap"><div class="cf-bar bar-red" style="width:95%">50万到期还本</div></div>
+          </div>
+          <div class="cf-row">
+            <span class="cf-period">2027年4月</span>
+            <div class="cf-bar-wrap"><div class="cf-bar bar-yellow" style="width:40%">月结余 +1.3万</div></div>
+          </div>
+        </div>
+        <div class="verdict-row">
+          <span class="verdict-chip chip-red">8月资金危机</span>
+          <span class="verdict-chip chip-red">累计消耗60万+</span>
+          <span class="verdict-chip chip-red">不推荐</span>
+        </div>
+        <div class="strategy-key-risks">
+          <strong>风险：</strong>12个月累计缺口超过60万，且8月有50万气球还款，基本无法依靠工资覆盖，极易引发连锁违约。
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /strategy-grid -->
+
+  <!-- ══════════════════════════════════ -->
+  <!--    利息成本全透视                    -->
+  <!-- ══════════════════════════════════ -->
+
+  <div class="section-title">💰 非房贷利息成本全透视</div>
+
+  <!-- 核心洞察 -->
+  <div style="background:#0f2540;border:1px solid #1e4a7a;border-radius:12px;padding:16px 20px;margin-bottom:20px;">
+    <div style="font-size:.72rem;font-weight:700;color:#60a5fa;letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px;">💡 关键发现</div>
+    <div style="font-size:.88rem;color:#93c5fd;line-height:1.8;">
+      非房贷月供合计约 <strong style="color:#f8fafc">66,628元</strong>，其中真正的"利息成本"只有约 <strong style="color:#fbbf24">4,335元/月</strong>，占比仅 <strong style="color:#fbbf24">6.5%</strong>。<br>
+      剩余 <strong style="color:#f8fafc">93.5%（约62,293元）都是在还本金</strong>，不是利息。<br>
+      所以你的问题核心是<strong style="color:#f87171">本金太多、还款期太集中</strong>，而不是"利率太高"拖垮了你。<br>
+      另：招行APP贷款已确认合同利率7.30%，但正享受平台利息补贴，剩余11期实付利息仅<strong style="color:#4ade80">421元</strong>，是全表最划算的贷款，切勿提前还。
     </div>
   </div>
 
-  <!-- ===== PHASE 1 ===== -->
+  <!-- 利息明细表 -->
+  <div style="background:#1e293b;border-radius:14px;border:1px solid #334155;margin-bottom:20px;overflow:hidden;">
+    <div style="padding:14px 20px;background:linear-gradient(135deg,#1e293b,#0f172a);border-bottom:1px solid #334155;font-size:.9rem;font-weight:700;color:#f8fafc;">
+      📊 逐笔利息明细
+    </div>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;font-size:.78rem;">
+      <thead>
+        <tr style="background:#0f172a;">
+          <th style="padding:9px 14px;text-align:left;color:#64748b;font-weight:600;font-size:.72rem;white-space:nowrap;">贷款</th>
+          <th style="padding:9px 14px;text-align:right;color:#64748b;font-weight:600;font-size:.72rem;white-space:nowrap;">余额</th>
+          <th style="padding:9px 14px;text-align:right;color:#64748b;font-weight:600;font-size:.72rem;white-space:nowrap;">年化利率</th>
+          <th style="padding:9px 14px;text-align:right;color:#64748b;font-weight:600;font-size:.72rem;white-space:nowrap;">月利息（当前）</th>
+          <th style="padding:9px 14px;text-align:right;color:#64748b;font-weight:600;font-size:.72rem;white-space:nowrap;">年化利息</th>
+          <th style="padding:9px 14px;text-align:right;color:#64748b;font-weight:600;font-size:.72rem;white-space:nowrap;">剩余总利息</th>
+          <th style="padding:9px 14px;text-align:left;color:#64748b;font-weight:600;font-size:.72rem;">备注</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 借呗 -->
+        <tr style="background:#1c0f0f;">
+          <td style="padding:10px 14px;color:#f1f5f9;font-weight:700;white-space:nowrap;">借呗①② 合计</td>
+          <td style="padding:10px 14px;text-align:right;color:#f87171;font-weight:700;">10万</td>
+          <td style="padding:10px 14px;text-align:right;"><span style="background:#7f1d1d;color:#fca5a5;padding:2px 8px;border-radius:20px;font-size:.7rem;font-weight:700;">12.78%</span></td>
+          <td style="padding:10px 14px;text-align:right;color:#f87171;font-weight:700;">1,065元</td>
+          <td style="padding:10px 14px;text-align:right;color:#f87171;">12,780元</td>
+          <td style="padding:10px 14px;text-align:right;color:#f87171;font-weight:700;">~1,224元</td>
+          <td style="padding:10px 14px;color:#64748b;font-size:.72rem;">仅3期，首期后立刻还清可节省~960元</td>
+        </tr>
+        <!-- 北京银行 -->
+        <tr>
+          <td style="padding:10px 14px;color:#f1f5f9;font-weight:600;white-space:nowrap;">北京银行</td>
+          <td style="padding:10px 14px;text-align:right;color:#f87171;font-weight:700;">19.95万</td>
+          <td style="padding:10px 14px;text-align:right;"><span style="background:#78350f;color:#fcd34d;padding:2px 8px;border-radius:20px;font-size:.7rem;font-weight:700;">7.30%</span></td>
+          <td style="padding:10px 14px;text-align:right;color:#fbbf24;font-weight:700;">1,213元↘</td>
+          <td style="padding:10px 14px;text-align:right;color:#fbbf24;">14,563元</td>
+          <td style="padding:10px 14px;text-align:right;color:#fbbf24;font-weight:700;">8,940元</td>
+          <td style="padding:10px 14px;color:#64748b;font-size:.72rem;">等额本息·利息每月递减·2027/03自然结清</td>
+        </tr>
+        <!-- 微众 -->
+        <tr style="background:#0f172a33;">
+          <td style="padding:10px 14px;color:#f1f5f9;font-weight:600;white-space:nowrap;">微众银行</td>
+          <td style="padding:10px 14px;text-align:right;color:#fbbf24;font-weight:700;">5.13万</td>
+          <td style="padding:10px 14px;text-align:right;"><span style="background:#78350f;color:#fcd34d;padding:2px 8px;border-radius:20px;font-size:.7rem;font-weight:700;">7.20%</span></td>
+          <td style="padding:10px 14px;text-align:right;color:#fbbf24;font-weight:700;">308元↘</td>
+          <td style="padding:10px 14px;text-align:right;color:#fbbf24;">3,696元</td>
+          <td style="padding:10px 14px;text-align:right;color:#fbbf24;font-weight:700;">9,564元</td>
+          <td style="padding:10px 14px;color:#64748b;font-size:.72rem;">等额本息·利息递减·2028/03结清</td>
+        </tr>
+        <!-- 招商银行APP贷款 -->
+        <tr>
+          <td style="padding:10px 14px;color:#f1f5f9;font-weight:600;white-space:nowrap;">招行APP贷款</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">5.53万</td>
+          <td style="padding:10px 14px;text-align:right;"><span style="background:#064e3b;color:#6ee7b7;padding:2px 8px;border-radius:20px;font-size:.7rem;font-weight:700;">7.30%↓优惠</span></td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">309元↘</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;">~730元（合同）</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;"><span style="background:#14532d;color:#86efac;padding:2px 6px;border-radius:4px;">仅421元🎉</span></td>
+          <td style="padding:10px 14px;color:#64748b;font-size:.72rem;">正享受利息优惠·平台补贴1,599元·提前还罚200元·<strong style="color:#4ade80">不建议提前还</strong></td>
+        </tr>
+        <!-- 建行快贷① -->
+        <tr style="background:#0f172a33;">
+          <td style="padding:10px 14px;color:#f1f5f9;font-weight:600;white-space:nowrap;">建行快贷①</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">20万</td>
+          <td style="padding:10px 14px;text-align:right;"><span style="background:#064e3b;color:#6ee7b7;padding:2px 8px;border-radius:20px;font-size:.7rem;font-weight:700;">3.00%</span></td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">500元</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;">6,000元</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">2,500元</td>
+          <td style="padding:10px 14px;color:#64748b;font-size:.72rem;">先息后本·8月到期·争取续贷</td>
+        </tr>
+        <!-- 建行快贷② -->
+        <tr>
+          <td style="padding:10px 14px;color:#f1f5f9;font-weight:600;white-space:nowrap;">建行快贷②</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">10万</td>
+          <td style="padding:10px 14px;text-align:right;"><span style="background:#064e3b;color:#6ee7b7;padding:2px 8px;border-radius:20px;font-size:.7rem;font-weight:700;">3.00%</span></td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">250元</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;">3,000元</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">1,250元</td>
+          <td style="padding:10px 14px;color:#64748b;font-size:.72rem;">先息后本·8月到期·争取续贷</td>
+        </tr>
+        <!-- 招行 -->
+        <tr style="background:#0f172a33;">
+          <td style="padding:10px 14px;color:#f1f5f9;font-weight:600;white-space:nowrap;">招行闪电贷</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">20万</td>
+          <td style="padding:10px 14px;text-align:right;"><span style="background:#064e3b;color:#6ee7b7;padding:2px 8px;border-radius:20px;font-size:.7rem;font-weight:700;">3.00%</span></td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">500元</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;">6,000元</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">4,000元</td>
+          <td style="padding:10px 14px;color:#64748b;font-size:.72rem;">先息后本·10月到期·争取续贷</td>
+        </tr>
+        <!-- 7.6万 -->
+        <tr>
+          <td style="padding:10px 14px;color:#f1f5f9;font-weight:600;white-space:nowrap;">7.6万贷款</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">~7.6万</td>
+          <td style="padding:10px 14px;text-align:right;"><span style="background:#064e3b;color:#6ee7b7;padding:2px 8px;border-radius:20px;font-size:.7rem;font-weight:700;">3.00%</span></td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">~190元↘</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;">~1,140元</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">~1,220元</td>
+          <td style="padding:10px 14px;color:#64748b;font-size:.72rem;">等额本息·已近尾声·2027/01结清</td>
+        </tr>
+        <!-- 亲友 -->
+        <tr style="background:#0f172a33;">
+          <td style="padding:10px 14px;color:#f1f5f9;font-weight:600;white-space:nowrap;">亲友借款（合计）</td>
+          <td style="padding:10px 14px;text-align:right;color:#c084fc;font-weight:700;">47万</td>
+          <td style="padding:10px 14px;text-align:right;"><span style="background:#1e1b4b;color:#a5b4fc;padding:2px 8px;border-radius:20px;font-size:.7rem;font-weight:700;">0%</span></td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">0元</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;">0元</td>
+          <td style="padding:10px 14px;text-align:right;color:#4ade80;font-weight:700;">0元</td>
+          <td style="padding:10px 14px;color:#64748b;font-size:.72rem;">无利息，弹性还款，但不能无限拖</td>
+        </tr>
+        <!-- 合计行 -->
+        <tr style="background:#1e293b;border-top:2px solid #334155;">
+          <td style="padding:12px 14px;color:#f8fafc;font-weight:800;">合计</td>
+          <td style="padding:12px 14px;text-align:right;color:#f87171;font-weight:800;">~145万</td>
+          <td style="padding:12px 14px;"></td>
+          <td style="padding:12px 14px;text-align:right;color:#fbbf24;font-weight:800;">~4,335元/月</td>
+          <td style="padding:12px 14px;text-align:right;color:#fbbf24;font-weight:800;">~47,909元/年</td>
+          <td style="padding:12px 14px;text-align:right;color:#fbbf24;font-weight:800;">~29,119元</td>
+          <td style="padding:12px 14px;color:#64748b;font-size:.72rem;">全部已确认 ✅</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- 利息变化趋势 -->
+  <div style="background:#1e293b;border-radius:14px;border:1px solid #334155;margin-bottom:20px;overflow:hidden;">
+    <div style="padding:14px 20px;background:linear-gradient(135deg,#1e293b,#0f172a);border-bottom:1px solid #334155;font-size:.9rem;font-weight:700;color:#f8fafc;">
+      📉 月利息支出随时间的变化
+    </div>
+    <div style="padding:18px 20px;">
+      <div style="display:flex;flex-direction:column;gap:10px;">
+
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="font-size:.75rem;color:#94a3b8;width:130px;flex-shrink:0;text-align:right;">现在（3月）</div>
+          <div style="flex:1;background:#0f172a;border-radius:6px;height:28px;position:relative;overflow:hidden;">
+            <div style="width:100%;height:100%;background:linear-gradient(90deg,#dc2626,#ef4444);display:flex;align-items:center;padding:0 10px;">
+              <span style="font-size:.75rem;font-weight:700;color:#fff;">4,026元/月（含借呗）</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="font-size:.75rem;color:#94a3b8;width:130px;flex-shrink:0;text-align:right;">5月（借呗还清后）</div>
+          <div style="flex:1;background:#0f172a;border-radius:6px;height:28px;position:relative;overflow:hidden;">
+            <div style="width:73%;height:100%;background:linear-gradient(90deg,#d97706,#f59e0b);display:flex;align-items:center;padding:0 10px;">
+              <span style="font-size:.75rem;font-weight:700;color:#fff;">2,961元/月</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="font-size:.75rem;color:#94a3b8;width:130px;flex-shrink:0;text-align:right;">2027年1月（7.6万+某平台结清）</div>
+          <div style="flex:1;background:#0f172a;border-radius:6px;height:28px;position:relative;overflow:hidden;">
+            <div style="width:38%;height:100%;background:linear-gradient(90deg,#ca8a04,#eab308);display:flex;align-items:center;padding:0 10px;min-width:130px;">
+              <span style="font-size:.75rem;font-weight:700;color:#fff;">~1,550元/月</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="font-size:.75rem;color:#94a3b8;width:130px;flex-shrink:0;text-align:right;">2027年4月（北京银行结清）</div>
+          <div style="flex:1;background:#0f172a;border-radius:6px;height:28px;position:relative;overflow:hidden;">
+            <div style="width:14%;height:100%;background:linear-gradient(90deg,#16a34a,#22c55e);display:flex;align-items:center;padding:0 10px;min-width:100px;">
+              <span style="font-size:.75rem;font-weight:700;color:#fff;">~550元/月</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="font-size:.75rem;color:#94a3b8;width:130px;flex-shrink:0;text-align:right;">卖房后（方案A）</div>
+          <div style="flex:1;background:#0f172a;border-radius:6px;height:28px;position:relative;overflow:hidden;">
+            <div style="width:5%;height:100%;background:linear-gradient(90deg,#2563eb,#3b82f6);display:flex;align-items:center;padding:0 10px;min-width:80px;">
+              <span style="font-size:.75rem;font-weight:700;color:#fff;">0元 ✅</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 月供结构拆解 -->
+  <div style="background:#1e293b;border-radius:14px;border:1px solid #334155;margin-bottom:20px;overflow:hidden;">
+    <div style="padding:14px 20px;background:linear-gradient(135deg,#1e293b,#0f172a);border-bottom:1px solid #334155;font-size:.9rem;font-weight:700;color:#f8fafc;">
+      🔍 非房贷月供里，本金 vs 利息的真实拆解
+    </div>
+    <div style="padding:18px 20px;">
+      <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:.78rem;">
+        <thead>
+          <tr style="background:#0f172a;">
+            <th style="padding:8px 12px;text-align:left;color:#64748b;font-weight:600;font-size:.72rem;">贷款</th>
+            <th style="padding:8px 12px;text-align:right;color:#64748b;font-weight:600;font-size:.72rem;">月供总额</th>
+            <th style="padding:8px 12px;text-align:right;color:#64748b;font-weight:600;font-size:.72rem;">其中利息</th>
+            <th style="padding:8px 12px;text-align:right;color:#64748b;font-weight:600;font-size:.72rem;">其中本金</th>
+            <th style="padding:8px 12px;text-align:left;color:#64748b;font-weight:600;font-size:.72rem;">利息占比</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:9px 12px;color:#f1f5f9;">北京银行</td>
+            <td style="padding:9px 12px;text-align:right;color:#f1f5f9;font-weight:600;">17,370元</td>
+            <td style="padding:9px 12px;text-align:right;color:#fbbf24;">1,213元</td>
+            <td style="padding:9px 12px;text-align:right;color:#4ade80;">16,157元</td>
+            <td style="padding:9px 12px;">
+              <div style="background:#0f172a;border-radius:4px;height:14px;width:100%;overflow:hidden;">
+                <div style="width:7%;height:100%;background:#ca8a04;"></div>
+              </div>
+              <span style="font-size:.68rem;color:#94a3b8;">7%</span>
+            </td>
+          </tr>
+          <tr style="background:#0f172a22;">
+            <td style="padding:9px 12px;color:#f1f5f9;">微众银行</td>
+            <td style="padding:9px 12px;text-align:right;color:#f1f5f9;font-weight:600;">2,536元</td>
+            <td style="padding:9px 12px;text-align:right;color:#fbbf24;">308元</td>
+            <td style="padding:9px 12px;text-align:right;color:#4ade80;">2,228元</td>
+            <td style="padding:9px 12px;">
+              <div style="background:#0f172a;border-radius:4px;height:14px;width:100%;overflow:hidden;">
+                <div style="width:12%;height:100%;background:#ca8a04;"></div>
+              </div>
+              <span style="font-size:.68rem;color:#94a3b8;">12%</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;color:#f1f5f9;">招行APP贷款</td>
+            <td style="padding:9px 12px;text-align:right;color:#f1f5f9;font-weight:600;">5,207元</td>
+            <td style="padding:9px 12px;text-align:right;color:#4ade80;">309元</td>
+            <td style="padding:9px 12px;text-align:right;color:#4ade80;">4,898元</td>
+            <td style="padding:9px 12px;">
+              <div style="background:#0f172a;border-radius:4px;height:14px;width:100%;overflow:hidden;">
+                <div style="width:6%;height:100%;background:#16a34a;min-width:4px;"></div>
+              </div>
+              <span style="font-size:.68rem;color:#94a3b8;">6%（享优惠，实际＜1%）</span>
+            </td>
+          </tr>
+          <tr style="background:#0f172a22;">
+            <td style="padding:9px 12px;color:#f1f5f9;">7.6万贷款</td>
+            <td style="padding:9px 12px;text-align:right;color:#f1f5f9;font-weight:600;">6,435元</td>
+            <td style="padding:9px 12px;text-align:right;color:#4ade80;">~190元</td>
+            <td style="padding:9px 12px;text-align:right;color:#4ade80;">~6,245元</td>
+            <td style="padding:9px 12px;">
+              <div style="background:#0f172a;border-radius:4px;height:14px;width:100%;overflow:hidden;">
+                <div style="width:3%;height:100%;background:#16a34a;min-width:4px;"></div>
+              </div>
+              <span style="font-size:.68rem;color:#94a3b8;">3%</span>
+            </td>
+          </tr>
+          <tr style="background:#0f172a22;">
+            <td style="padding:9px 12px;color:#f1f5f9;">建行快贷①②+招行</td>
+            <td style="padding:9px 12px;text-align:right;color:#f1f5f9;font-weight:600;">1,250元</td>
+            <td style="padding:9px 12px;text-align:right;color:#4ade80;">1,250元</td>
+            <td style="padding:9px 12px;text-align:right;color:#94a3b8;">0（到期还本）</td>
+            <td style="padding:9px 12px;">
+              <div style="background:#0f172a;border-radius:4px;height:14px;width:100%;overflow:hidden;">
+                <div style="width:100%;height:100%;background:#16a34a;"></div>
+              </div>
+              <span style="font-size:.68rem;color:#94a3b8;">100%（先息后本）</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;color:#f1f5f9;">借呗①②</td>
+            <td style="padding:9px 12px;text-align:right;color:#f1f5f9;font-weight:600;">33,830元</td>
+            <td style="padding:9px 12px;text-align:right;color:#f87171;">1,065元</td>
+            <td style="padding:9px 12px;text-align:right;color:#4ade80;">32,765元</td>
+            <td style="padding:9px 12px;">
+              <div style="background:#0f172a;border-radius:4px;height:14px;width:100%;overflow:hidden;">
+                <div style="width:3%;height:100%;background:#dc2626;min-width:4px;"></div>
+              </div>
+              <span style="font-size:.68rem;color:#94a3b8;">3%（但年化12.78%！）</span>
+            </td>
+          </tr>
+          <tr style="background:#1e293b;border-top:2px solid #334155;">
+            <td style="padding:10px 12px;color:#f8fafc;font-weight:800;">合计</td>
+            <td style="padding:10px 12px;text-align:right;color:#f87171;font-weight:800;">61,421元</td>
+            <td style="padding:10px 12px;text-align:right;color:#fbbf24;font-weight:800;">4,026元</td>
+            <td style="padding:10px 12px;text-align:right;color:#4ade80;font-weight:800;">57,395元</td>
+            <td style="padding:10px 12px;color:#64748b;font-size:.72rem;font-weight:700;">利息仅占6.5%</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div style="margin-top:14px;background:#0f2540;border:1px solid #1e4a7a;border-radius:8px;padding:12px 14px;font-size:.8rem;color:#93c5fd;line-height:1.7;">
+        💡 <strong style="color:#f8fafc">每月还的61,421元里，有57,395元是在还本金，只有4,026元是利息成本。</strong><br>
+        这意味着：你不是被利息压垮的，而是被"短期内要还太多本金"压垮的。卖房或续贷的核心价值，正是把本金还款压力分散到更长的时间线上。
+      </div>
+    </div>
+  </div>
+
+  <!-- 方案A利息总成本说明 -->
+  <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:32px;">
+    <div style="background:#1e293b;border-radius:12px;border:1px solid #3b82f655;padding:16px;">
+      <div style="font-size:.75rem;font-weight:700;color:#60a5fa;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;">方案A · 半年后卖房（9月前）</div>
+      <div style="font-size:.82rem;color:#94a3b8;line-height:1.8;">
+        非房贷利息支出：过渡期6个月约 <strong style="color:#fbbf24;font-size:1.1rem;">2–3万元</strong>，到账后一次清零<br>
+        <span style="font-size:.75rem;">9月到账后彻底结束非房贷利息，之后每月节省约4,335元利息</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════ -->
+  <!--    方案A执行详解                    -->
+  <!-- ══════════════════════════════════ -->
+
+  <div class="detail-section">
+    <div class="detail-header">📊 方案A逐阶段现金流（半年过渡版）</div>
+    <div class="detail-body">
+
+      <div class="month-flow-grid">
+        <div class="mf-card">
+          <div class="mf-period">阶段1 · 现在–4月（借呗峰值期）</div>
+          <div class="mf-row"><span class="mk">工资+公积金</span><span class="mp">+57,271</span></div>
+          <div class="mf-row"><span class="mk">月供峰值</span><span class="mn">−93,539</span></div>
+          <div class="mf-row"><span class="mk">生活支出</span><span class="mn">−15,000</span></div>
+          <div class="mf-result red">月缺口 −51,268元 ⚠️（同时启动卖房）</div>
+        </div>
+        <div class="mf-card">
+          <div class="mf-period">阶段2 · 4–9月（借呗还清后，挂牌期）</div>
+          <div class="mf-row"><span class="mk">工资+公积金</span><span class="mp">+57,271</span></div>
+          <div class="mf-row"><span class="mk">月供（消费贷+房贷）</span><span class="mn">−59,539</span></div>
+          <div class="mf-row"><span class="mk">生活支出</span><span class="mn">−15,000</span></div>
+          <div class="mf-result red">月缺口 约 −17,268元（共约6个月）</div>
+        </div>
+        <div class="mf-card">
+          <div class="mf-period">阶段3 · 9月（到账后，长期）</div>
+          <div class="mf-row"><span class="mk">工资+公积金</span><span class="mp">+57,271</span></div>
+          <div class="mf-row"><span class="mk">月供（仅兴业房贷）</span><span class="mn">−27,447</span></div>
+          <div class="mf-row"><span class="mk">生活支出</span><span class="mn">−15,000</span></div>
+          <div class="mf-result green">月结余 +14,824元 ✅（清债146万后）</div>
+        </div>
+      </div>
+
+      <!-- 方案A关键风险节点 -->
+      <div class="section-title" style="font-size:.88rem; margin-top:20px; margin-bottom:12px;">⚠️ 6个月内的关键节点</div>
+
+      <div class="risk-list">
+        <div class="risk-item">
+          <div class="risk-dot" style="background:#ef4444"></div>
+          <div class="risk-content">
+            <div class="risk-title">⚡ 建行快贷到期（8月12日/25日，共30万）</div>
+            <div class="risk-desc">
+              这是方案A半年窗口内的最大风险点。若9月前房款未到账，需提前确认续贷资质。<br>
+              <strong style="color:#fca5a5">建议：4月即联系建行确认，留足时间。如能在8月前完成过户，完全规避。</strong>
+            </div>
+          </div>
+        </div>
+        <div class="risk-item">
+          <div class="risk-dot" style="background:#f59e0b"></div>
+          <div class="risk-content">
+            <div class="risk-title">装修资金（兴业，15–20万简装）</div>
+            <div class="risk-desc">
+              卖房款到账前需垫付装修款。可用建行低息资金（3%）先垫，到账后归还。<br>
+              过渡期租房约3个月，月租约5,000元，共约1.5万，纳入过渡期成本。
+            </div>
+          </div>
+        </div>
+        <div class="risk-item">
+          <div class="risk-dot" style="background:#a855f7"></div>
+          <div class="risk-content">
+            <div class="risk-title">6个月累计缺口（约10万）</div>
+            <div class="risk-desc">
+              过渡期月均缺口约1.7万，6个月合计约10万。手头6.7万 + 借呗还清后的释放，仍有缺口约3万。<br>
+              <strong style="color:#d8b4fe">建议朋友间的朋友借款或动用公积金账户余额（如有）先行垫付。</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box" style="margin-top:14px;">
+        💡 <strong>核心逻辑：</strong>半年后卖出 vs 现在卖出，多付利息约2–3万，但换来了6个月的准备时间——谈好老婆、装修搬家、择机挂牌。这是用时间换取家庭共识的成本，值得的。
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════ -->
+  <!--    执行时间线（方案A）               -->
+  <!-- ══════════════════════════════════ -->
+
+  <div class="timeline-section">
+    <div class="timeline-header">⏰ 方案A 执行时间线（半年版）</div>
+    <div class="timeline-body">
+
+      <div class="tl-item">
+        <div class="tl-dot dot-red">!</div>
+        <div class="tl-content">
+          <div class="tl-date">本周（3月15–22日）</div>
+          <div class="tl-title">三件事同时启动</div>
+          <div class="tl-detail">① 跟小滨沟通延期至7月31日（手头6.7万先还，说明卖房计划）<br>② 跟老婆坐下来，用数字一起过一遍这份计划<br>③ 联系链家/贝壳中介，评估510万挂牌策略</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot dot-red">!</div>
+        <div class="tl-content">
+          <div class="tl-date">3月底–4月初</div>
+          <div class="tl-title">启动兴业简装 + 临时租房过渡</div>
+          <div class="tl-detail">先做最低限度装修（预算控制在15–20万），装修期间临时租房约3个月<br>用建行低息资金垫付装修款，卖房到账后归还</div>
+          <div class="tl-amount color-orange">装修约15–20万，过渡租房约1.5万</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot dot-orange"></div>
+        <div class="tl-content">
+          <div class="tl-date">4月1日</div>
+          <div class="tl-title">借呗首期扣款，随后提前还清</div>
+          <div class="tl-detail">首期扣款约33,830元，扣完后立刻还清剩余本金约6.67万<br>每月释放33,830元现金流，5月起月缺口大幅收窄</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot dot-orange"></div>
+        <div class="tl-content">
+          <div class="tl-date">5–6月</div>
+          <div class="tl-title">搬入兴业，建行正式挂牌出售</div>
+          <div class="tl-detail">以510万目标价挂牌，底价490万。同步跟进买家，确保9月前完成过户</div>
+          <div class="tl-amount color-yellow">⚠️ 同时关注建行快贷（8月到期），提前确认续贷</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot dot-orange"></div>
+        <div class="tl-content">
+          <div class="tl-date">7–8月（关键节点）</div>
+          <div class="tl-title">建行快贷到期（共30万）</div>
+          <div class="tl-detail">若房款已到账 → 直接还清，无需操作<br>若未到账 → 必须提前确认续贷资质，最迟4月开始询问</div>
+          <div class="tl-amount color-red">死线节点，务必提前处理</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot dot-green"></div>
+        <div class="tl-content">
+          <div class="tl-date">9月（目标到账）</div>
+          <div class="tl-title">建行那套成交，377万到账</div>
+          <div class="tl-detail">还清建行贷款122万 → 净得约255万<br>一次性偿还所有非房贷（146万）→ 每月节省约6.7万月供</div>
+          <div class="tl-amount color-green">到手安全垫约109万，月结余 +2.9万 ✅</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot dot-green"></div>
+        <div class="tl-content">
+          <div class="tl-date">10月起（长期）</div>
+          <div class="tl-title">债务清零，全面转入财富积累期</div>
+          <div class="tl-detail">仅剩兴业银行房贷27,447元/月，月结余约2.9万<br>开始执行雪崩法：每月结余优先偿还微众等剩余债务，同步建立应急基金</div>
+          <div class="tl-amount color-green">彻底翻身 🎯</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════ -->
+  <!--    决策要点                         -->
+  <!-- ══════════════════════════════════ -->
+
+  <div class="decision-banner">
+    <div class="db-title">💡 方案A成功的三个关键</div>
+    <div class="db-body">
+      <strong>① 家庭共识</strong>：老婆同意是第一步。从云谷送孩子上绿城育华仅需20分钟，用数字讲清楚：住建行每月多出去6万，相当于每年多花72万。<br><br>
+      <strong>② 8月节点提前确认</strong>：若9月前无法成交，需提前（4月起）确认建行快贷续贷资质，不能等到8月才处理。<br><br>
+      <strong>③ 挂牌不拖延</strong>：越早挂牌，越早成交，每推迟一个月，多付利息约1万，多承受一个月心理压力。
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ══════════════════════════════════ -->
+  <!--       10本书智慧（4阶段）            -->
+  <!-- ══════════════════════════════════ -->
+
+  <div class="section-title">📚 10本书智慧 · 债务重组方法论</div>
+
+  <!-- PHASE 1 -->
   <div class="phase phase-p1">
     <div class="phase-header">
       <div class="phase-num">01</div>
@@ -598,8 +939,6 @@
       </div>
     </div>
     <div class="phase-body">
-
-      <!-- Book 1 -->
       <div class="book-card">
         <div class="book-meta">
           <div class="book-icon">📖</div>
@@ -611,20 +950,14 @@
         </div>
         <div class="quote-block">
           <div class="quote-label">📌 原文参考 · 针对负债者的四条忠告</div>
-          <div class="quote-text">
-            "第一，把你的信用卡剪掉，一张都不要留。第二，如果你正在用分期付款购买某件东西，那么同时把同等金额的钱存入你的储蓄账户。第三，在你还清所有债务之前，不要再用分期付款购买任何新的东西。第四，为你的债主列一张清单，每个月按比例分配一笔固定的钱还给他们，哪怕每人只还很少。"
-          </div>
+          <div class="quote-text">"第一，把你的信用卡剪掉，一张都不要留。第二，如果你正在用分期付款购买某件东西，那么同时把同等金额的钱存入你的储蓄账户。第三，在你还清所有债务之前，不要再用分期付款购买任何新的东西。第四，为你的债主列一张清单，每个月按比例分配一笔固定的钱还给他们，哪怕每人只还很少。"</div>
         </div>
         <div class="apply-block">
           <div class="apply-label">⚡ 对应你的情况</div>
-          <div class="apply-text">
-            你现在最危险的行为是<strong>借呗①②（12.78%年化）</strong>——这是全表最贵的钱，舍费尔的核心逻辑是：还债期间，绝对不能让新的高息债务继续进来。<br><br>
-            <strong>立刻执行：</strong>4月借呗首期扣款（~33,830元）不可避免，但首期扣完后立刻用低息资金提前还清剩余本金，绝不让第二、三期的12.78%继续滚。
-          </div>
+          <div class="apply-text">你现在最危险的行为是<strong>借呗①②（12.78%年化）</strong>。4月首期扣完后立刻提前还清，不让12.78%的利息继续滚。无论选哪个方案，这一步都必须做。</div>
         </div>
       </div>
 
-      <!-- Book 2 -->
       <div class="book-card">
         <div class="book-meta">
           <div class="book-icon">📖</div>
@@ -636,38 +969,29 @@
         </div>
         <div class="quote-block">
           <div class="quote-label">📌 原文参考 · 阿卡德的债务偿还法</div>
-          <div class="quote-text">
-            "我的收入被分成了十份。其中七份，我用来维持生计，不超过这个数。其中两份，我用来偿还债务，分配给我的每一位债权人。剩下一份，我留给自己。我去找每一位债权人，告诉他：'我没有能力立刻还清你的钱，但如果你给我时间，我保证每个月将我收入的一部分交给你，直到全部还清。'我的债权人们看到我如此认真，都接受了。"
-          </div>
+          <div class="quote-text">"我的收入被分成了十份。其中七份，我用来维持生计，不超过这个数。其中两份，我用来偿还债务，分配给我的每一位债权人。剩下一份，我留给自己。我去找每一位债权人，告诉他：'我没有能力立刻还清你的钱，但如果你给我时间，我保证每个月将我收入的一部分交给你，直到全部还清。'"</div>
         </div>
         <div class="quote-block">
           <div class="quote-label">📌 原文参考 · 储蓄的根本原则</div>
-          <div class="quote-text">
-            "你所赚的每一分钱，都有一部分是你自己的。至少十分之一是属于你的，不能用来还债，不能用来吃饭，它只属于你。"
-          </div>
+          <div class="quote-text">"你所赚的每一分钱，都有一部分是你自己的。至少十分之一是属于你的，不能用来还债，不能用来吃饭，它只属于你。"</div>
         </div>
         <div class="apply-block">
-          <div class="apply-label">⚡ 卖房后执行的月度分配法则</div>
-          <div class="apply-text">
-            月收入 57,271元，按10-70-20比例分配：
-          </div>
-          <table class="mini-table" style="margin-top:10px;">
-            <thead>
-              <tr><th>分配</th><th>比例</th><th>金额</th><th>用途</th></tr>
-            </thead>
+          <div class="apply-label">⚡ 稳定后执行的月度分配（方案A通用）</div>
+          <div class="apply-text"></div>
+          <table class="mini-table" style="margin-top:8px">
+            <thead><tr><th>分配</th><th>比例</th><th>金额</th><th>用途</th></tr></thead>
             <tbody>
               <tr><td>强制储蓄</td><td>10%</td><td>5,727元</td><td>雷打不动，建立安全垫</td></tr>
-              <tr><td>生活支出</td><td>70%</td><td>40,090元</td><td>日常、孩子、餐饮、租房</td></tr>
-              <tr><td>加速还长辈</td><td>20%</td><td>11,454元</td><td>爷爷奶奶+外公外婆25万，约2年还清</td></tr>
+              <tr><td>生活支出</td><td>70%</td><td>40,090元</td><td>日常、孩子、餐饮</td></tr>
+              <tr><td>加速还长辈</td><td>20%</td><td>11,454元</td><td>爷爷奶奶+外公外婆，约2年还清</td></tr>
             </tbody>
           </table>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- ===== PHASE 2 ===== -->
+  <!-- PHASE 2 -->
   <div class="phase phase-p2">
     <div class="phase-header">
       <div class="phase-num">02</div>
@@ -677,8 +1001,6 @@
       </div>
     </div>
     <div class="phase-body">
-
-      <!-- Book 3 -->
       <div class="book-card">
         <div class="book-meta">
           <div class="book-icon">📖</div>
@@ -690,42 +1012,34 @@
         </div>
         <div class="quote-block">
           <div class="quote-label">📌 原文参考 · 婴儿步骤（Baby Steps）</div>
-          <div class="quote-text">
-            "第一步：先存1,000美元的应急基金，一分不多，一分不少，只是为了防止小意外把你的计划打乱。第二步：用债务雪球法还清所有债务（房贷除外）。第三步：将应急基金扩充到3到6个月的生活费用。"
-          </div>
+          <div class="quote-text">"第一步：先存1,000美元的应急基金，一分不多，一分不少，只是为了防止小意外把你的计划打乱。第二步：用债务雪球法还清所有债务（房贷除外）。第三步：将应急基金扩充到3到6个月的生活费用。"</div>
         </div>
         <div class="quote-block">
-          <div class="quote-label">📌 原文参考 · 债务雪球法（Debt Snowball）</div>
-          <div class="quote-text">
-            "把你所有的债务从金额最小到最大排列，不要管利率。集中所有多余的钱还最小的那笔，其他的只付最低还款额。最小的还清后，把那笔钱加到下一笔债务的还款里。依次循环，雪球越滚越大。"
-          </div>
+          <div class="quote-label">📌 原文参考 · 债务雪球法</div>
+          <div class="quote-text">"把你所有的债务从金额最小到最大排列，不要管利率。集中所有多余的钱还最小的那笔，其他的只付最低还款额。最小的还清后，把那笔钱加到下一笔债务的还款里。依次循环，雪球越滚越大。"</div>
         </div>
         <div class="apply-block">
-          <div class="apply-label">⚡ 你的专属还债顺序（雪崩法 > 雪球法）</div>
-          <div class="apply-text">
-            拉姆齐推崇按金额从小到大（雪球法），但你有12.78%的高息借呗，利率远高于其他债务。对你而言，<strong>优先消灭最高利率</strong>更合算，称为"雪崩法"：
-          </div>
+          <div class="apply-label">⚡ 你的专属还债顺序（按利率高到低）</div>
+          <div class="apply-text"></div>
           <div class="code-block">
 <span class="c-label">第1优先 · 借呗①② @ 12.78%</span>
-<span class="c-comment">→ 4月首期扣完，立刻提前还清剩余 ~6.67万</span>
-<span class="c-green">→ 每月释放 33,830元 现金流</span>
+<span class="c-comment">→ 4月首期后立刻提前还清，释放 33,830元/月</span>
 
-<span class="c-label">第2优先 · 卖房款到账当天，一次性清除</span>
-  北京银行  <span class="c-red">19.95万 @ 7.30%</span>
-  微众银行  <span class="c-red"> 5.13万 @ 7.20%</span>
-  某平台    <span class="c-red"> 6.00万 @ 待确认</span>
-  建行快贷  <span class="c-yellow">30.00万 @ 3.00%</span>
-  招行闪电  <span class="c-yellow">20.00万 @ 3.00%</span>
-  亲友借款  <span class="c-blue">47.00万 @ 0%</span>
-  <span class="c-comment">合计：~128万</span>
+<span class="c-label">第2优先 · 高息消费贷（卖房款到账后集中清）</span>
+  北京银行 <span class="c-red">19.95万 @ 7.30%</span>  → 2027/03自然结清
+  微众银行 <span class="c-red"> 5.13万 @ 7.20%</span>
+  某平台   <span class="c-red"> 6.00万 @ 待确认</span>  → 2027/01自然结清
 
-<span class="c-label">第3优先 · 兴业房贷 339万 @ 2.80%</span>
-<span class="c-comment">→ 利率极低，长期正常还，无需提前还</span>
+<span class="c-label">第3优先 · 先息后本（续贷维持3%，或卖房款清掉）</span>
+  建行快贷 <span class="c-yellow">30万 @ 3.00%</span>  → 优先续贷
+  招行闪电 <span class="c-yellow">20万 @ 3.00%</span>  → 优先续贷
+
+<span class="c-label">长期维持 · 两套房贷</span>
+<span class="c-comment">→ 利率2.80%/3.11%，低于通胀，正常还即可</span>
           </div>
         </div>
       </div>
 
-      <!-- Book 4 -->
       <div class="book-card">
         <div class="book-meta">
           <div class="book-icon">📖</div>
@@ -737,36 +1051,21 @@
         </div>
         <div class="quote-block">
           <div class="quote-label">📌 原文参考 · 资产与负债的真正定义</div>
-          <div class="quote-text">
-            "富人购买资产。穷人只有支出。中产阶级购买他们以为是资产的负债。"
-          </div>
+          <div class="quote-text">"富人购买资产。穷人只有支出。中产阶级购买他们以为是资产的负债。"</div>
         </div>
         <div class="quote-block">
           <div class="quote-label">📌 原文参考 · 最简单的判断标准</div>
-          <div class="quote-text">
-            "资产是能把钱放进你口袋里的东西。负债是把钱从你口袋里掏走的东西。就这么简单。"
-          </div>
+          <div class="quote-text">"资产是能把钱放进你口袋里的东西。负债是把钱从你口袋里掏走的东西。就这么简单。"</div>
         </div>
         <div class="apply-block">
-          <div class="apply-label">⚡ 用清崎框架看你的两套房</div>
-          <div class="apply-text"></div>
-          <table class="mini-table" style="margin-top:6px;">
-            <thead>
-              <tr><th>房产</th><th>清崎的判断</th><th>你的行动</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>兴业那套（自住）</td><td>负债 — 每月掏出17,853元</td><td>搬进去住，接受这笔成本</td></tr>
-              <tr><td>建行那套（出售）</td><td><strong style="color:#4ade80">转化为流动资产</strong></td><td>卖掉，变成377万消灭其他负债</td></tr>
-            </tbody>
-          </table>
-          <div style="margin-top:10px;font-size:0.8rem;color:#64748b;">你做的决定（卖建行那套）完全符合清崎逻辑：把一个每月抽血的负债，转化为能帮你消灭其他负债的资产。</div>
+          <div class="apply-label">⚡ 建行那套是你的最大杠杆</div>
+          <div class="apply-text">方案A把建行那套变成377万现金，一次性清零所有非房贷债务。这不是"卖掉资产"，这是把一套每月抽血6万的负担，变成彻底解放现金流的钥匙。</div>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- ===== PHASE 3 ===== -->
+  <!-- PHASE 3 -->
   <div class="phase phase-p3">
     <div class="phase-header">
       <div class="phase-num">03</div>
@@ -776,8 +1075,6 @@
       </div>
     </div>
     <div class="phase-body">
-
-      <!-- Book 5 -->
       <div class="book-card">
         <div class="book-meta">
           <div class="book-icon">📖</div>
@@ -789,28 +1086,14 @@
         </div>
         <div class="quote-block">
           <div class="quote-label">📌 原文参考 · 财富是你看不见的东西</div>
-          <div class="quote-text">
-            "财富是你没有买的豪车，是你没有戴的名表，是你没有购置的首饰，是你没有炫耀的假期。财富是你放弃了的那些消费选择。当你把财富变成了你看得见的东西，它就不再是财富了。"
-          </div>
-        </div>
-        <div class="quote-block">
-          <div class="quote-label">📌 原文参考 · 储蓄的本质</div>
-          <div class="quote-text">
-            "储蓄是你的收入与你自我认知之间的差距。如果你觉得自己需要过某种生活才有尊严，你就永远存不了钱。"
-          </div>
+          <div class="quote-text">"财富是你没有买的豪车，是你没有戴的名表，是你没有购置的首饰，是你没有炫耀的假期。财富是你放弃了的那些消费选择。当你把财富变成了你看得见的东西，它就不再是财富了。"</div>
         </div>
         <div class="apply-block">
-          <div class="apply-label">⚡ 卖房后最危险的念头</div>
-          <div class="apply-text">
-            卖房后手里有179万安全垫，每月结余约2.9万。这时最危险的是：<br>
-            "终于可以换个好车了" / "装修要做好一点" / "终于可以出国旅游了"<br><br>
-            豪泽尔会说：<strong>你看不见的那些没花出去的钱，才是让你睡得着觉的真正财富。</strong><br><br>
-            <strong>一个具体的防线：</strong>卖房后的179万，放在独立账户，只有在月供涨价或收入下降时才动用。
-          </div>
+          <div class="apply-label">⚡ 卖房后的心理陷阱</div>
+          <div class="apply-text">9月到账后月结余约2.9万。这时最危险的念头是"终于可以好好装修了""终于可以换车了"。豪泽尔会说：<strong>看不见的那109万安全垫，才是你睡得着觉的根本。先建应急基金，再谈享受。</strong></div>
         </div>
       </div>
 
-      <!-- Book 6 -->
       <div class="book-card">
         <div class="book-meta">
           <div class="book-icon">📖</div>
@@ -822,33 +1105,22 @@
         </div>
         <div class="quote-block">
           <div class="quote-label">📌 原文参考 · 习惯的本质</div>
-          <div class="quote-text">
-            "你不会上升到目标的高度，而是会下降到系统的水平。目标是你想要的结果，系统是导致那些结果的流程。"
-          </div>
-        </div>
-        <div class="quote-block">
-          <div class="quote-label">📌 原文参考 · 身份认同的转变</div>
-          <div class="quote-text">
-            "每一个行动都是你希望成为的那种人的投票。你存下100元，不只是100元，而是在投票说'我是一个会存钱的人'。你记下一笔账，不只是记账，而是在说'我是一个掌控财务的人'。"
-          </div>
+          <div class="quote-text">"你不会上升到目标的高度，而是会下降到系统的水平。目标是你想要的结果，系统是导致那些结果的流程。"</div>
         </div>
         <div class="apply-block">
-          <div class="apply-label">⚡ 建立三个微习惯（每个不超过2分钟）</div>
+          <div class="apply-label">⚡ 三个微习惯（每个不超过2分钟）</div>
           <div class="apply-text"></div>
-          <table class="mini-table" style="margin-top:8px;">
-            <thead>
-              <tr><th>习惯</th><th>触发器</th><th>执行动作</th></tr>
-            </thead>
+          <table class="mini-table" style="margin-top:8px">
+            <thead><tr><th>习惯</th><th>触发器</th><th>执行动作</th></tr></thead>
             <tbody>
-              <tr><td>每日记账</td><td>睡前刷牙后</td><td>打开记账App，记今天支出</td></tr>
-              <tr><td>月度债务复盘</td><td>每月1号发工资后</td><td>更新债务余额表，看数字变小</td></tr>
-              <tr><td>冷静消费</td><td>想买超500元的东西</td><td>加购物车，等48小时再决定</td></tr>
+              <tr><td>每日记账</td><td>睡前刷牙后</td><td>打开App，记今天支出</td></tr>
+              <tr><td>月度债务复盘</td><td>每月1号发工资后</td><td>更新债务余额，看数字变小</td></tr>
+              <tr><td>冷静消费</td><td>想买超500元的东西</td><td>加购物车，等48小时</td></tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- Book 7 -->
       <div class="book-card">
         <div class="book-meta">
           <div class="book-icon">📖</div>
@@ -860,35 +1132,25 @@
         </div>
         <div class="quote-block">
           <div class="quote-label">📌 原文参考 · 两种思维系统</div>
-          <div class="quote-text">
-            "系统1自动运行，快速，不费力，不受意志控制。系统2需要努力，缓慢，理性，但懒惰。大多数情况下，系统1在驾驶，系统2在打盹。"
-          </div>
-        </div>
-        <div class="quote-block">
-          <div class="quote-label">📌 原文参考 · 框架效应</div>
-          <div class="quote-text">
-            "同样一个选择，表述方式不同，人们会做出截然不同的决定。'这笔分期只要每月500元'和'这笔贷款3年总利息要付4,800元'，说的是同一件事，感受却完全不同。"
-          </div>
+          <div class="quote-text">"系统1自动运行，快速，不费力，不受意志控制。系统2需要努力，缓慢，理性，但懒惰。大多数情况下，系统1在驾驶，系统2在打盹。"</div>
         </div>
         <div class="apply-block">
           <div class="apply-label">⚡ 用系统2重新看"低月供"陷阱</div>
-          <div class="apply-text">以后看到任何分期广告，强迫自己做这道计算：</div>
+          <div class="apply-text"></div>
           <div class="code-block">
 <span class="c-comment">// 借呗5万，12.78%，3期的真实成本</span>
 看起来：每月 <span class="c-yellow">16,915元</span>，好像还好
-真实：  3个月总还款 <span class="c-red">50,745元</span>
-多付利息：<span class="c-red">745元</span>（短短3个月！）
+实际：  3个月总还款 <span class="c-red">50,745元</span>，多付利息 <span class="c-red">745元</span>
 年化：  <span class="c-red">12.78%</span> = 每借10万，每年多付12,780元
 
 <span class="c-comment">// 正确的问题不是"月供多少"，而是"总利息多少"</span>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- ===== PHASE 4 ===== -->
+  <!-- PHASE 4 -->
   <div class="phase phase-p4">
     <div class="phase-header">
       <div class="phase-num">04</div>
@@ -898,8 +1160,6 @@
       </div>
     </div>
     <div class="phase-body">
-
-      <!-- Book 8 -->
       <div class="book-card">
         <div class="book-meta">
           <div class="book-icon">📖</div>
@@ -911,27 +1171,14 @@
         </div>
         <div class="quote-block">
           <div class="quote-label">📌 原文参考 · 经济学的一课</div>
-          <div class="quote-text">
-            "经济学的全部艺术，在于不仅仅看到眼前直接可见的效果，而是要追踪任何政策或行为更长远、更广泛的后果；不仅仅考虑对某一特定群体的影响，而是要考虑对所有人的影响。"
-          </div>
+          <div class="quote-text">"经济学的全部艺术，在于不仅仅看到眼前直接可见的效果，而是要追踪任何政策或行为更长远、更广泛的后果；不仅仅考虑对某一特定群体的影响，而是要考虑对所有人的影响。"</div>
         </div>
         <div class="apply-block">
-          <div class="apply-label">⚡ 用机会成本重新看你的债务利息</div>
-          <div class="apply-text">你每年有将近6周的时间，是在纯粹为利息打工，什么都没得到：</div>
-          <table class="mini-table" style="margin-top:8px;">
-            <thead>
-              <tr><th>债务</th><th>年化利息</th><th>相当于工作天数（税前）</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>借呗10万 @ 12.78%</td><td>12,780元</td><td>约10天工资</td></tr>
-              <tr><td>北京银行19.95万 @ 7.30%</td><td>14,563元</td><td>约12天工资</td></tr>
-              <tr><td>全部有息债务年化利息</td><td>约4-5万元</td><td><strong style="color:#f87171">约35-40天工资</strong></td></tr>
-            </tbody>
-          </table>
+          <div class="apply-label">⚡ 半年过渡期的"看不见代价"</div>
+          <div class="apply-text">选择半年后卖出，多付利息约2–3万，多承受6个月财务压力。但换来了家庭共识和从容搬迁的时间。这2–3万是购买"家庭决策质量"的成本，是值得的。</div>
         </div>
       </div>
 
-      <!-- Book 9 -->
       <div class="book-card">
         <div class="book-meta">
           <div class="book-icon">📖</div>
@@ -943,33 +1190,22 @@
         </div>
         <div class="quote-block">
           <div class="quote-label">📌 原文参考 · 激励是现代生活的基石</div>
-          <div class="quote-text">
-            "如果说经济学是研究激励机制的学科，那么生活中大多数问题，都可以归结为某人的激励机制设计错了。"
-          </div>
-        </div>
-        <div class="quote-block">
-          <div class="quote-label">📌 原文参考 · 信息不对称</div>
-          <div class="quote-text">
-            "专家会利用信息不对称来谋取自身利益。关键在于：你要知道专家在哪些地方和你的利益是一致的，在哪些地方是相反的。"
-          </div>
+          <div class="quote-text">"如果说经济学是研究激励机制的学科，那么生活中大多数问题，都可以归结为某人的激励机制设计错了。"</div>
         </div>
         <div class="apply-block">
-          <div class="apply-label">⚡ 识别哪些"产品"利用了你的激励机制</div>
+          <div class="apply-label">⚡ 识别金融产品的激励陷阱</div>
           <div class="apply-text"></div>
-          <table class="mini-table" style="margin-top:8px;">
-            <thead>
-              <tr><th>金融产品</th><th>对方的激励</th><th>你的真实代价</th></tr>
-            </thead>
+          <table class="mini-table" style="margin-top:6px">
+            <thead><tr><th>金融产品</th><th>对方的激励</th><th>你的真实代价</th></tr></thead>
             <tbody>
               <tr><td>借呗"首期利息五折"</td><td>让你觉得便宜，尽快借钱</td><td>后续利率12.78%如常</td></tr>
               <tr><td>"先息后本，月付低"</td><td>让月供看起来小</td><td>到期一次还本，风险集中</td></tr>
-              <tr><td>消费贷"秒批秒到"</td><td>降低决策摩擦，让你冲动借</td><td>最冲动时借了最贵的钱</td></tr>
+              <tr><td>消费贷"秒批"</td><td>降低决策摩擦</td><td>最冲动时借了最贵的钱</td></tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- Book 10 -->
       <div class="book-card">
         <div class="book-meta">
           <div class="book-icon">📖</div>
@@ -980,123 +1216,22 @@
           </div>
         </div>
         <div class="quote-block">
-          <div class="quote-label">📌 原文参考 · 债务周期的本质</div>
-          <div class="quote-text">
-            "债务危机的发生方式几乎总是相同的。人们借钱购买的资产价格上涨，上涨又吸引更多人借钱，直到债务无法继续被偿还。然后开始去杠杆。"
-          </div>
-        </div>
-        <div class="quote-block">
           <div class="quote-label">📌 原文参考 · 债务是可以管理的</div>
-          <div class="quote-text">
-            "债务危机尽管痛苦，但通常是可以管理的。几乎所有看起来无法摆脱的债务困境，最终都通过某种形式的去杠杆化得到了解决。关键是要以理性而非恐慌来应对它。"
-          </div>
+          <div class="quote-text">"债务危机尽管痛苦，但通常是可以管理的。几乎所有看起来无法摆脱的债务困境，最终都通过某种形式的去杠杆化得到了解决。关键是要以理性而非恐慌来应对它。"</div>
         </div>
         <div class="apply-block">
-          <div class="apply-label">⚡ 你正在做的就是达利欧说的"美丽去杠杆"</div>
-          <div class="apply-text"></div>
-          <table class="mini-table" style="margin-top:8px;">
-            <thead>
-              <tr><th>达利欧的四种方式</th><th>你的对应行动</th></tr>
-            </thead>
+          <div class="apply-label">⚡ 方案A就是达利欧的"美丽去杠杆"</div>
+          <div class="apply-text">你的方案A完整对应了达利欧框架的三个支柱：</div>
+          <table class="mini-table" style="margin-top:6px">
+            <thead><tr><th>达利欧的方式</th><th>方案A 对应操作</th></tr></thead>
             <tbody>
-              <tr><td>削减支出（紧缩）</td><td>控制生活支出，延迟装修升级</td></tr>
-              <tr><td>债务重组</td><td>续贷低息贷款，协商亲友延期</td></tr>
-              <tr><td>资产变现</td><td><strong style="color:#c084fc">卖建行那套，377万一次清账</strong></td></tr>
-              <tr><td>印钱（不适用个人）</td><td>—</td></tr>
+              <tr><td>削减支出</td><td>控制生活支出，暂停非必要消费</td></tr>
+              <tr><td>债务重组</td><td>先息后本续贷（低息），借呗提前还清</td></tr>
+              <tr><td>资产变现</td><td>卖房377万，一次到位清零非房贷</td></tr>
             </tbody>
           </table>
-          <div style="margin-top:10px;font-size:0.8rem;color:#94a3b8;">你用的是最健康的去杠杆方式：<strong>以资产换流动性，而非违约或借新债。</strong></div>
         </div>
       </div>
-
-    </div>
-  </div>
-
-  <!-- ===== TIMELINE ===== -->
-  <div class="timeline-section">
-    <div class="timeline-header">⏰ 完整执行时间线</div>
-    <div class="timeline-body">
-
-      <div class="tl-item">
-        <div class="tl-dot dot-red">!</div>
-        <div class="tl-content">
-          <div class="tl-date">本周内（3月15–22日）</div>
-          <div class="tl-title">启动两件最重要的事</div>
-          <div class="tl-detail">
-            ① 联系中介挂牌建行那套，目标价510万，底价490万<br>
-            ② 跟小滨沟通：房子已挂牌，申请延期至7月31日
-          </div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot dot-red">!</div>
-        <div class="tl-content">
-          <div class="tl-date">3月30日</div>
-          <div class="tl-title">小滨10万到期</div>
-          <div class="tl-detail">用6.7万现金先还，剩余3.3万协商延期至卖房款到账</div>
-          <div class="tl-amount color-red">10万元</div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot dot-orange"></div>
-        <div class="tl-content">
-          <div class="tl-date">4月1日</div>
-          <div class="tl-title">借呗①②首期扣款（不可避免）</div>
-          <div class="tl-detail">首期扣完后，立刻提前还清剩余本金 ~6.67万</div>
-          <div class="tl-amount color-orange">首期 ~33,830元，随后还清 ~66,900元</div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot dot-orange"></div>
-        <div class="tl-content">
-          <div class="tl-date">4月中旬（借呗还清后）</div>
-          <div class="tl-title">月供压力大幅下降</div>
-          <div class="tl-detail">月供从93,539元降至约59,539元，每月少还34,000元</div>
-          <div class="tl-amount color-green">月供减少 ~33,830元 ✅</div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot dot-blue"></div>
-        <div class="tl-content">
-          <div class="tl-date">5–6月</div>
-          <div class="tl-title">推进卖房谈判，争取签约</div>
-          <div class="tl-detail">
-            同时跟月子沟通：申请延期至8月还款<br>
-            联系建行确认快贷续贷条件（以防卖房延期）
-          </div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot dot-blue"></div>
-        <div class="tl-content">
-          <div class="tl-date">7月（目标）</div>
-          <div class="tl-title">卖房款377万到账</div>
-          <div class="tl-detail">
-            按顺序一次性清偿：高息消费贷31万 → 先息后本50万 → 亲友47万<br>
-            同时：预留装修款40万 + 过渡租房3个月3万
-          </div>
-          <div class="tl-amount color-green">剩余安全垫 ~206万 ✅</div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot dot-green"></div>
-        <div class="tl-content">
-          <div class="tl-date">8月起（长期）</div>
-          <div class="tl-title">新生活节奏开始</div>
-          <div class="tl-detail">
-            月收入57,271 − 兴业房贷17,853 − 生活15,000 = 月结余约24,418元<br>
-            执行巴比伦10-70-20法则，2年内还清爷爷奶奶+外公外婆25万
-          </div>
-          <div class="tl-amount color-green">彻底翻身 🎯</div>
-        </div>
-      </div>
-
     </div>
   </div>
 
@@ -1105,81 +1240,77 @@
     <h2>📚 10本书的核心智慧 · 一句话总结</h2>
     <div class="summary-item">
       <div class="summary-book">《小狗钱钱》</div>
-      <div class="summary-lesson">告诉你：<strong>今天就停止让债务变大</strong>——毁掉信用卡，不再新增高息负债。</div>
+      <div class="summary-lesson">告诉你：<strong>今天就停止让债务变大</strong>——借呗4月首期后立刻还清，无论选哪个方案都一样。</div>
     </div>
     <div class="summary-item">
       <div class="summary-book">《巴比伦最富有的人》</div>
-      <div class="summary-lesson">告诉你：<strong>按比例分配，每个月留一份给自己</strong>——收入的10%是你的，还债的同时要保留希望。</div>
+      <div class="summary-lesson">告诉你：<strong>按比例分配，永远留一份给自己</strong>——稳定后10-70-20执行，2年还清长辈25万。</div>
     </div>
     <div class="summary-item">
       <div class="summary-book">《全面财务大改造》</div>
-      <div class="summary-lesson">告诉你：<strong>按顺序消灭，一笔一笔地赢</strong>——从利率最高的开始，雪球越滚越大。</div>
+      <div class="summary-lesson">告诉你：<strong>按利率从高到低消灭</strong>——12.78%先死，7.3%次之，3%的维持，2.8%的不动。</div>
     </div>
     <div class="summary-item">
       <div class="summary-book">《富爸爸穷爸爸》</div>
-      <div class="summary-lesson">告诉你：<strong>卖掉负债，留住资产</strong>——建行那套每月抽血，卖掉变现才是正确动作。</div>
+      <div class="summary-lesson">告诉你：<strong>让资产往口袋里放钱</strong>——建行那套出租或卖掉，不能继续让它抽血。</div>
     </div>
     <div class="summary-item">
       <div class="summary-book">《金钱心理学》</div>
-      <div class="summary-lesson">告诉你：<strong>看不见的钱，才是真正的财富</strong>——卖房后的206万安全垫，不动它就是最大的财富。</div>
+      <div class="summary-lesson">告诉你：<strong>看不见的安全垫，才是真正的财富</strong>——206万不动，比换车装修更有价值。</div>
     </div>
     <div class="summary-item">
       <div class="summary-book">《掌控习惯》</div>
-      <div class="summary-lesson">告诉你：<strong>建立系统，不依赖意志力</strong>——每天2分钟记账，比每年立一个"要存钱"的目标有效100倍。</div>
+      <div class="summary-lesson">告诉你：<strong>建立系统，不依赖意志力</strong>——每天2分钟记账，比每年立"要存钱"的目标有效100倍。</div>
     </div>
     <div class="summary-item">
       <div class="summary-book">《思考，快与慢》</div>
-      <div class="summary-lesson">告诉你：<strong>花钱前强迫自己慢下来</strong>——在用系统1冲动消费前，启动系统2算清楚总利息。</div>
+      <div class="summary-lesson">告诉你：<strong>花钱前启动慢思考</strong>——看到任何分期，先算总利息，不看月供。</div>
     </div>
     <div class="summary-item">
       <div class="summary-book">《一课经济学》</div>
-      <div class="summary-lesson">告诉你：<strong>每笔利息都是你看不见的代价</strong>——你每年有35-40天是在为利息打工，什么都没得到。</div>
+      <div class="summary-lesson">告诉你：<strong>算清看不见的代价</strong>——缓一年卖房，多付6–8万利息，这是机会成本。</div>
     </div>
     <div class="summary-item">
       <div class="summary-book">《魔鬼经济学》</div>
-      <div class="summary-lesson">告诉你：<strong>识别对方的激励，保护自己的利益</strong>——"低月供""秒批"都是为了让你在最冲动时借最贵的钱。</div>
+      <div class="summary-lesson">告诉你：<strong>识别对方的激励</strong>——"低月供""秒批"都是为了在你最冲动时让你借最贵的钱。</div>
     </div>
     <div class="summary-item">
       <div class="summary-book">《债务危机》</div>
-      <div class="summary-lesson">告诉你：<strong>你在做正确的去杠杆，痛苦是暂时的</strong>——以资产换流动性，这是最健康的解法，几乎所有债务危机都这样解决的。</div>
+      <div class="summary-lesson">告诉你：<strong>你在做正确的去杠杆</strong>——方案A以资产换流动性，正是达利欧所有债务危机解法的核心。</div>
     </div>
   </div>
 
-  <!-- Action Checklist -->
+  <!-- Checklist -->
   <div class="checklist-section">
-    <h2>✅ 立刻行动清单</h2>
-
+    <h2>✅ 方案A · 立刻行动清单</h2>
     <div class="check-group">
-      <div class="check-group-title">本周（最高优先级）</div>
-      <div class="check-item"><div class="check-box"></div><span>联系中介，挂牌建行那套，目标510万，底价490万<span class="urgency-tag tag-red">最重要</span></span></div>
-      <div class="check-item"><div class="check-box"></div><span>跟小滨沟通，说明卖房进展，申请延期至7月31日</span></div>
-      <div class="check-item"><div class="check-box"></div><span>跟月子沟通，申请延期至8月31日</span></div>
+      <div class="check-group-title">本周内 · 最高优先级</div>
+      <div class="check-item"><div class="check-box"></div><span>跟小滨沟通延期至7月31日（手头6.7万先还，说明卖房计划）<span class="urgency-tag tag-red">15天死线</span></span></div>
+      <div class="check-item"><div class="check-box"></div><span>跟老婆坐下来，一起过数字：月缺口6万 vs 卖后月结余2.9万，让她参与决策<span class="urgency-tag tag-red">最重要的一步</span></span></div>
+      <div class="check-item"><div class="check-box"></div><span>联系链家/贝壳，评估建行那套510万挂牌策略<span class="urgency-tag tag-orange">方案A启动</span></span></div>
     </div>
-
     <div class="check-group">
-      <div class="check-group-title">4月（借呗处理）</div>
-      <div class="check-item"><div class="check-box"></div><span>4月1日借呗首期扣款后<span class="urgency-tag tag-orange">当天</span>，立刻安排提前还清剩余本金约6.67万</span></div>
-      <div class="check-item"><div class="check-box"></div><span>联系建行客户经理，确认8月快贷①②续贷条件</span></div>
+      <div class="check-group-title">4月 · 关键操作</div>
+      <div class="check-item"><div class="check-box"></div><span>4月1日借呗首期扣款后<span class="urgency-tag tag-orange">当天</span>，立刻还清剩余本金约6.67万</span></div>
+      <div class="check-item"><div class="check-box"></div><span>启动兴业简装（预算15–20万），临时租房3个月</span></div>
+      <div class="check-item"><div class="check-box"></div><span>联系建行+招行，提前确认8月先息后本续贷条件（防止卖房未成交时的断口）<span class="urgency-tag tag-orange">备用预案</span></span></div>
     </div>
-
     <div class="check-group">
-      <div class="check-group-title">卖房款到账当天</div>
-      <div class="check-item"><div class="check-box"></div><span>按顺序还清：高息消费贷→先息后本贷款→亲友借款</span></div>
-      <div class="check-item"><div class="check-box"></div><span>40万装修款转入专用账户，专款专用，不超支</span></div>
-      <div class="check-item"><div class="check-box"></div><span>剩余安全垫（约166万+）放独立账户，不轻易动用</span></div>
+      <div class="check-group-title">5–9月 · 执行节点</div>
+      <div class="check-item"><div class="check-box"></div><span>搬入兴业，建行那套正式挂牌出售（目标9月前完成过户）</span></div>
+      <div class="check-item"><div class="check-box"></div><span>8月建行快贷30万到期：若房款已到账则直接还清；未到账则启动续贷</span></div>
+      <div class="check-item"><div class="check-box"></div><span>9月到账后：一次性偿还所有非房贷（146万），余款建立应急基金</span></div>
     </div>
-
     <div class="check-group">
       <div class="check-group-title">长期执行</div>
       <div class="check-item"><div class="check-box"></div><span>开始记账（每天2分钟，睡前刷牙后触发）</span></div>
-      <div class="check-item"><div class="check-box"></div><span>每月1号复盘债务余额表，看数字变小</span></div>
-      <div class="check-item"><div class="check-box"></div><span>执行巴比伦10-70-20法则，2年内还清爷爷奶奶+外公外婆25万</span></div>
+      <div class="check-item"><div class="check-box"></div><span>每月1号复盘债务余额，看数字变小</span></div>
+      <div class="check-item"><div class="check-box"></div><span>执行10-70-20法则，2年内还清家里借款25万</span></div>
     </div>
   </div>
 
-  <!-- Footer -->
   <div class="footer-note">
-    <strong>⚠️ 说明：</strong>以上书籍引用均基于原著内容整理，中文译本因版本不同措辞可能略有差异，建议对照实体书核实原文。税费计算基于杭州2026年3月政策，实际以税务局窗口确认为准。房产市值及卖房周期为估算值，实际以市场成交情况为准。
+    <strong>⚠️ 说明：</strong>书籍引用均基于原著内容整理，中文译本因版本不同措辞可能略有差异，建议对照实体书核实。税费计算基于杭州2026年政策。租金估算（蒋村12,000元/月）为市场参考值，实际以挂牌后市场反馈为准。月供数据含公积金6,000元每月抵扣房贷。
   </div>
 
 </div>
